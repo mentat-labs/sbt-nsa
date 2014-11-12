@@ -1,7 +1,7 @@
 package hr.element.sbt.nsa
 
 object `-target` {
-  def custom(target: String) = ValueSetting("-target", target)
+  def custom(target: String) = ChoiceSetting("-target", target)
 
   def jvm(version: Double) = custom("jvm" + version)
 
