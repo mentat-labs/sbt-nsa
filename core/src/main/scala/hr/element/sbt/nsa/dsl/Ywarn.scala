@@ -1,6 +1,32 @@
 package hr.element.sbt.nsa
 package dsl
 
+object adapted
+object args
+
+object dead
+object code
+
+object inaccessible
+
+object infer
+object any
+
+object nullary
+object unit
+object nullary_override
+object `override`
+
+object numeric
+object widen
+
+object unused
+object unused_import
+object `import`
+
+object discard
+object value
+
 object Ywarn {
   val unary_- = `-Ywarn`
   object `-Ywarn` {

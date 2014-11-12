@@ -1,6 +1,18 @@
 package hr.element.sbt.nsa
 package dsl
 
+object free
+object terms
+object types
+
+object `implicit`
+object conversions
+object implicit_conversions
+object implicits
+
+object reflective
+object calls
+
 object Xlog {
   val unary_- = `-Xlog`
   object `-Xlog` {

@@ -1,6 +1,9 @@
 package hr.element.sbt.nsa
 package dsl
 
+object classfile
+object name
+
 object Xmax {
   val unary_- = `-Xmax`
   object `-Xmax` {
