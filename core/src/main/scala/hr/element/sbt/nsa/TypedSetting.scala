@@ -4,7 +4,7 @@ trait TypedSetting {
   def settings: Seq[String]
 }
 
-abstract class JustSetting extends TypedSetting {
+abstract class JustSetting extends TypedSetting { self: Product =>
   def settings = Seq(toString)
 }
 
