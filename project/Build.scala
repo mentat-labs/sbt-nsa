@@ -3,12 +3,12 @@ import Keys._
 
 object Build extends Build {
   val ElementReleases  = "Element Releases"  at "http://repo.element.hr/nexus/content/repositories/releases/"
-  val ElementSnapshots = "Element Snapshots" at "http://repo.element.hr/nexus/content/repositories/snapshots/" 
+  val ElementSnapshots = "Element Snapshots" at "http://repo.element.hr/nexus/content/repositories/snapshots/"
 
   private def defaultSettings =
     Defaults.defaultSettings ++ Seq(
-      organization := "hr.element"
-      
+      organization := "hr.element.sbt"
+
     , scalacOptions := Seq(
         "-deprecation"
       , "-encoding", "UTF-8"
@@ -34,21 +34,23 @@ object Build extends Build {
       , "-Ywarn-inaccessible"
       , "-Ywarn-nullary-override"
       , "-Ywarn-nullary-unit"
-      , "-Ywarn-numeric-widen" 
-      ) 
+      , "-Ywarn-numeric-widen"
+      )
 
     , publishArtifact in (Compile, packageDoc) := false
     , publishTo := Some(if (version.value endsWith "-SNAPSHOT") ElementSnapshots else ElementReleases)
     , credentials ++= {
         val creds = Path.userHome / ".config" / "sbt-nsa" / "nexus.config"
         if (creds.exists) Some(Credentials(creds)) else None
-      }.toSeq 
+      }.toSeq
     )
 
   lazy val sbtNsaCore = Project(
     "sbt-nsa-core"
   , file("core")
-  , settings = defaultSettings
+  , settings = defaultSettings ++ Seq(
+      initialCommands in console := "import hr.element.sbt.nsa._, dsl._"
+    )
   )
 
   lazy val sbtNsaPlugin = Project(
