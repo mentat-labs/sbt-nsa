@@ -2,6 +2,9 @@ package hr.element.sbt.nsa
 
 trait TypedSetting {
   def settings: Seq[String]
+//  def since: Option[ScalaVersion]
+//  def deprecated: Option[ScalaVersion]
+//  def removed: Option[ScalaVersion]
 }
 
 abstract class JustSetting extends TypedSetting { self: Product =>

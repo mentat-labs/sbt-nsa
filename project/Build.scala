@@ -57,7 +57,9 @@ object Build extends Build {
     "sbt-nsa-plugin"
   ,  file("plugin")
   , dependencies = Seq(sbtNsaCore)
-  , settings = defaultSettings
+  , settings = defaultSettings ++ Seq(
+      sbtPlugin := true
+    )
   )
 
   lazy val root = Project(

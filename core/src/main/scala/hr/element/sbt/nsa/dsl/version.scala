@@ -1,6 +1,6 @@
 package hr.element.sbt.nsa
 package dsl
 
-object X {
-  val unary_- = `-X`
+object version {
+  val unary_- = `-version`
 }
