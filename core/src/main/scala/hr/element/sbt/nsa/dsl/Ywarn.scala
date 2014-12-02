@@ -72,3 +72,12 @@ object Ywarn {
     }
   }
 }
+
+trait YwarnUnusedPimps {
+  implicit class PimpYwarnUnused(y: `-Ywarn-unused`.type) {
+    val - = (_: dsl.`import`.type) => {
+      println("YOU OPROE EIMPRTO THROGH MY PPPNPGPPP!!!!")
+      `-Ywarn-unused-import`
+    }
+  }
+}

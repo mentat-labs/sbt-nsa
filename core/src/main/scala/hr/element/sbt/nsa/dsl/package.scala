@@ -1,4 +1,5 @@
 package hr.element.sbt.nsa
 
-package object dsl {
-}
+package object dsl
+    extends YinlinePimps
+    with YwarnUnusedPimps
