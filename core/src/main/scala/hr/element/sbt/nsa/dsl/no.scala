@@ -6,6 +6,6 @@ object specialization
 object no {
   val unary_- = `-no`
   object `-no` {
-    val - = (_: specialization.type) => `-no-specialization`
+    def -(s: specialization.type) = `-no-specialization`
   }
 }

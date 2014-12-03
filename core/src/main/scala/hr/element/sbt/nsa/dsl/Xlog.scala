@@ -24,7 +24,7 @@ object Xlog {
 
     def -(i: `implicit`.type) = `-Xlog-implicit`
     object `-Xlog-implicit` {
-      val - = (_: conversions.type) => `-Xlog-implicit-conversions`
+      def -(c: conversions.type) = `-Xlog-implicit-conversions`
     }
 
     // helper method instead of -Xlog-`implicit`-conversions
@@ -34,7 +34,7 @@ object Xlog {
 
     def -(r: reflective.type) = `-Xlog-reflective`
     object `-Xlog-reflective` {
-      val - = (_: calls.type) => `-Xlog-reflective-calls`
+      def -(c: calls.type) = `-Xlog-reflective-calls`
     }
   }
 }

@@ -32,19 +32,19 @@ object Ywarn {
   object `-Ywarn` {
     def -(a: adapted.type) = `-Ywarn-adapted`
     object `-Ywarn-adapted` {
-      val - = (_: args.type) => `-Ywarn-adapted-args`
+      def -(a: args.type) = `-Ywarn-adapted-args`
     }
 
     def -(d: dead.type) = `-Ywarn-dead`
     object `-Ywarn-dead` {
-      val - = (_: code.type) => `-Ywarn-dead-code`
+      def -(c: code.type) = `-Ywarn-dead-code`
     }
 
     def -(i: inaccessible.type) = `-Ywarn-inaccessible`
 
     def -(i: infer.type) = `-Ywarn-infer`
     object `-Ywarn-infer` {
-      val - = (_: any.type) => `-Ywarn-infer-any`
+      def -(a: any.type) = `-Ywarn-infer-any`
     }
 
     def -(n: nullary.type) = `-Ywarn-nullary`
@@ -58,7 +58,7 @@ object Ywarn {
 
     def -(n: numeric.type) = `-Ywarn-numeric`
     object `-Ywarn-numeric` {
-      val - = (_: widen.type) => `-Ywarn-numeric-widen`
+      def -(w: widen.type) = `-Ywarn-numeric-widen`
     }
 
     def -(u: unused.type) = `-Ywarn-unused`
@@ -68,16 +68,13 @@ object Ywarn {
 
     def -(v: value.type) = `-Ywarn-value`
     object `-Ywarn-value` {
-      val - = (_: discard.type) => `-Ywarn-value-discard`
+      def -(d: discard.type) = `-Ywarn-value-discard`
     }
   }
 }
 
 trait YwarnUnusedPimps {
   implicit class PimpYwarnUnused(y: `-Ywarn-unused`.type) {
-    val - = (_: dsl.`import`.type) => {
-      println("YOU OPROE EIMPRTO THROGH MY PPPNPGPPP!!!!")
-      `-Ywarn-unused-import`
-    }
+    def -(d: dsl.`import`.type) = `-Ywarn-unused-import`
   }
 }
