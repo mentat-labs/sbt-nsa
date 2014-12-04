@@ -7,7 +7,7 @@ object Build extends Build {
 
   private def defaultSettings =
     Defaults.defaultSettings ++ Seq(
-      organization := "hr.element.sbt"
+      organization := "hr.element.nsa"
 
     , scalacOptions := Seq(
         "-deprecation"
@@ -45,27 +45,27 @@ object Build extends Build {
       }.toSeq
     )
 
-  lazy val sbtNsaCore = Project(
-    "sbt-nsa-core"
-  , file("core")
+  lazy val nsaCore = Project(
+    "nsa-core"
+  , file("nsa-core")
   , settings = defaultSettings ++ Seq(
-      initialCommands in console := "import hr.element.sbt.nsa._, dsl._"
+      initialCommands in console := "import hr.element.nsa._"
     )
   )
 
-  lazy val sbtNsaPlugin = Project(
-    "sbt-nsa-plugin"
-  ,  file("plugin")
-  , dependencies = Seq(sbtNsaCore)
+  lazy val nsaDsl = Project(
+    "nsa-dsl"
+  , file("nsa-dsl")
+  , dependencies = Seq(nsaCore)
   , settings = defaultSettings ++ Seq(
-      sbtPlugin := true
+      initialCommands in console := "import hr.element.nsa._, dsl._"
     )
   )
 
   lazy val root = Project(
-    "sbt-nsa"
+    "root"
   , file(".")
-  , aggregate = Seq(sbtNsaCore, sbtNsaPlugin)
+  , aggregate = Seq(nsaCore, nsaDsl)
   , settings = defaultSettings ++ Seq(
       publishArtifact := false
     )
