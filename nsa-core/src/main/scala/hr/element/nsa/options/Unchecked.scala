@@ -1,3 +1,3 @@
 package hr.element.nsa
 
-case object `-unchecked` extends JustSetting
+case object `-unchecked` extends JustOption

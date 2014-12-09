@@ -1,3 +1,3 @@
 package hr.element.nsa
 
-case object `-Xcheckinit` extends JustSetting
+case object `-Xcheckinit` extends JustOption

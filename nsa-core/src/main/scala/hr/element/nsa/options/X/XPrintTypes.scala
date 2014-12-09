@@ -1,5 +1,5 @@
 package hr.element.nsa
 
-case object `-Xprint-types` extends JustSetting {
-  override def since = `2.6.0`
+case object `-Xprint-types` extends JustOption {
+  override val since = ScalacVersion.`2.6.0`
 }

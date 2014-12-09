@@ -1,3 +1,3 @@
 package hr.element.nsa
 
-case object `-X` extends JustSetting
+case object `-X` extends JustOption

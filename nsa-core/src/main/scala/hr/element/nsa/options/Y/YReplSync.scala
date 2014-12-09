@@ -1,3 +1,3 @@
 package hr.element.nsa
 
-case object `-Yrepl-sync` extends JustSetting
+case object `-Yrepl-sync` extends JustOption

@@ -1,3 +1,3 @@
 package hr.element.nsa
 
-case object `-Xlog-reflective-calls` extends JustSetting
+case object `-Xlog-reflective-calls` extends JustOption

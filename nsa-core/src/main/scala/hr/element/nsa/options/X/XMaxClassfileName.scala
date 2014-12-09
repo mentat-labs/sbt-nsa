@@ -1,7 +1,7 @@
 package hr.element.nsa
 
 object `-Xmax-classfile-name` {
-  def of(length: Int) = ValueSetting("-Xmax-classfile-name", length)
+  def of(length: Int) = ValueOption("-Xmax-classfile-name", length)
 
   // --- cut here --- generated code below --- cut here ---
 

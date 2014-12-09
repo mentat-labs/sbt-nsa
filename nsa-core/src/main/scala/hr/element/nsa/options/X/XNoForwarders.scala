@@ -1,3 +1,3 @@
 package hr.element.nsa
 
-case object `-Xno-forwarders` extends JustSetting
+case object `-Xno-forwarders` extends JustOption

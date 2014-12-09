@@ -1,3 +1,3 @@
 package hr.element.nsa
 
-case object `-Xlog-implicits` extends JustSetting
+case object `-Xlog-implicits` extends JustOption

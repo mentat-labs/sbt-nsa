@@ -1,7 +1,7 @@
 package hr.element.nsa
 
 object `-encoding` {
-  def custom(encoding: String) = new ValueSetting("-encoding", encoding)
+  def custom(encoding: String) = ValueOption("-encoding", encoding)
 
   def UTF(version: Int) = custom("UTF" + version)
 

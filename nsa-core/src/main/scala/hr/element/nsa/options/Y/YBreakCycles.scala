@@ -1,5 +1,5 @@
 package hr.element.nsa
 
-case object `-Ybreak-cycles` extends JustSetting {
-  override val since = `2.11.0`
+case object `-Ybreak-cycles` extends JustOption {
+  override val since = ScalacVersion.`2.11.0`
 }

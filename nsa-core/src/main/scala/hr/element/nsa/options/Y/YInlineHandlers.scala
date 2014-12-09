@@ -1,3 +1,3 @@
 package hr.element.nsa
 
-case object `-Yinline-handlers` extends JustSetting
+case object `-Yinline-handlers` extends JustOption

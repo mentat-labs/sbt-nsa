@@ -1,5 +1,5 @@
 package hr.element.nsa
 
-case object `-Ydisable-unreachable-prevention` extends JustSetting {
-  override def since = `2.11.0`
+case object `-Ydisable-unreachable-prevention` extends JustOption {
+  override val since = ScalacVersion.`2.11.0`
 }

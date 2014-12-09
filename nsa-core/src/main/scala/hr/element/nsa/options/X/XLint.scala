@@ -1,3 +1,3 @@
 package hr.element.nsa
 
-case object `-Xlint` extends JustSetting
+case object `-Xlint` extends JustOption

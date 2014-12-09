@@ -1,3 +1,3 @@
 package hr.element.nsa
 
-case object `-usemanifestcp` extends JustSetting
+case object `-usemanifestcp` extends JustOption

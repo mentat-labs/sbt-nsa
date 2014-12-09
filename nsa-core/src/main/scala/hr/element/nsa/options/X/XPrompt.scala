@@ -1,5 +1,5 @@
 package hr.element.nsa
 
-case object `-Xprompt` extends JustSetting {
-  override def since = `2.6.0`
+case object `-Xprompt` extends JustOption {
+  override val since = ScalacVersion.`2.6.0`
 }

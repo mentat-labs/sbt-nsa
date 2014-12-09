@@ -1,7 +1,9 @@
 package hr.element.nsa
 
 object `-language` {
-  def custom(feature: String) = ChoiceSetting("-language", feature)
+  def custom(feature: String) = new ChoiceOption("-language", feature) {
+    override val since = ScalacVersion.`2.10.0`
+  }
 
   def `_` = custom("_")
   def `help` = custom("help")

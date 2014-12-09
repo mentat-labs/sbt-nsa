@@ -58,7 +58,7 @@ object Build extends Build {
   , file("nsa-dsl")
   , dependencies = Seq(nsaCore)
   , settings = defaultSettings ++ Seq(
-      initialCommands in console := "import hr.element.nsa._, dsl._"
+      initialCommands in console := "import hr.element.nsa._, experimental_dsl._"
     )
   )
 

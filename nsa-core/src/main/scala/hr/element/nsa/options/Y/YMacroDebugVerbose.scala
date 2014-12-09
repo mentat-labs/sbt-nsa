@@ -1,5 +1,5 @@
 package hr.element.nsa
 
-case object `-Ymacro-debug-verbose` extends JustSetting {
-  override val since = `2.10.0`
+case object `-Ymacro-debug-verbose` extends JustOption {
+  override val since = ScalacVersion.`2.10.0`
 }

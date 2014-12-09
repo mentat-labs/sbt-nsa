@@ -1,7 +1,7 @@
 package hr.element.nsa
 
 object `-g` {
-  def custom(level: String) = ValueSetting("-g", level)
+  def custom(level: String) = ValueOption("-g", level)
 
   def none = custom("none")
   def source = custom("source")
