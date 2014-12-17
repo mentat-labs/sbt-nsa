@@ -7,7 +7,7 @@ object Build extends Build {
 
   private def defaultSettings =
     Defaults.defaultSettings ++ Seq(
-      organization := "hr.element.nsa"
+      organization := "com.mentatlabs.nsa"
 
     , scalacOptions := Seq(
         "-deprecation"
@@ -49,7 +49,7 @@ object Build extends Build {
     "nsa-core"
   , file("nsa-core")
   , settings = defaultSettings ++ Seq(
-      initialCommands in console := "import hr.element.nsa._"
+      initialCommands in console := "import com.mentatlabs.nsa._"
     )
   )
 
@@ -58,7 +58,7 @@ object Build extends Build {
   , file("nsa-dsl")
   , dependencies = Seq(nsaCore)
   , settings = defaultSettings ++ Seq(
-      initialCommands in console := "import hr.element.nsa._, experimental_dsl._"
+      initialCommands in console := "import com.mentatlabs.nsa._, experimental_dsl._"
     )
   )
 

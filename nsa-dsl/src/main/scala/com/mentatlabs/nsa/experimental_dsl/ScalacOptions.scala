@@ -1,0 +1,72 @@
+package com.mentatlabs.nsa
+package experimental_dsl
+
+trait ScalacOptions
+    extends ScalacCoreOptions
+    with ScalacAdvancedOptions
+    with ScalacPrivateOptions
+
+trait ScalacCoreOptions
+    extends DeprecationDSL
+    with EncodingDSL
+    with ExplaintypesDSL
+    with FeatureDSL
+    with GDSL
+    with HelpDSL
+    with LanguageDSL
+    with NobootcpDSL
+    with NoDSL
+    with NowarnDSL
+    with OptimiseDSL
+    with PrintDSL
+    with TargetDSL
+    with UncheckedDSL
+    with UniqidDSL
+    with UsejavacpDSL
+    with UsemanifestcpDSL
+    with VerboseDSL
+    with VersionDSL
+
+trait ScalacAdvancedOptions
+    extends XDSL
+    with XcheckinitDSL
+    with XdevDSL
+    with XdisableDSL
+    with XexperimentalDSL
+    with XfatalDSL
+    with XfullDSL
+    with XfutureDSL
+    with XlintDSL
+    with XlogDSL
+    with XmaxDSL
+    with XnoDSL
+    with XnojlineDSL
+    with XprintDSL
+    with XpromptDSL
+    with XresidentDSL
+    with XstrictDSL
+    with XverifyDSL
+
+trait ScalacPrivateOptions
+    extends YDSL
+    with YclosureDSL
+    with YconstDSL
+    with YdeadDSL
+    with YdebugDSL
+    with YdisableDSL
+    with YdocDSL
+    with YetaDSL
+    with YideDSL
+    with YinferDSL
+    with YinlineDSL
+    with YissueDSL
+    with YmacroDSL
+    with YnooptimiseDSL
+    with YpatmatDSL
+    with YposDSL
+    with YpresentationDSL
+    with YquasiquoteDSL
+    with YreifyDSL
+    with YreplDSL
+    with YtyperDSL
+    with YwarnDSL
