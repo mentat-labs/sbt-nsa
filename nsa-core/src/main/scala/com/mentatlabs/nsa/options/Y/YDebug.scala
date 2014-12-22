@@ -1,5 +1,0 @@
-package com.mentatlabs.nsa
-
-case object `-Ydebug` extends JustOption {
-  override val since = ScalacVersion.`2.6.0`
-}

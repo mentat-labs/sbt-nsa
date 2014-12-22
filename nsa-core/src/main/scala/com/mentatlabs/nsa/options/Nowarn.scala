@@ -1,3 +1,6 @@
 package com.mentatlabs.nsa
 
-case object `-nowarn` extends JustOption
+/** Generate no warnings. */
+case object `-nowarn` extends JustOption {
+  val since = ScalacVersion.`2.0.0`
+}

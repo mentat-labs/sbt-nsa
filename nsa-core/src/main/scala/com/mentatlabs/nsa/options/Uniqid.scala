@@ -1,3 +1,6 @@
 package com.mentatlabs.nsa
 
-case object `-uniqid` extends JustOption
+/** Uniquely tag all identifiers in debugging output. */
+case object `-uniqid` extends JustOption {
+  val since = ScalacVersion.`2.0.0`
+}

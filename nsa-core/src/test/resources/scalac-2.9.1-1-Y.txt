@@ -1,0 +1,73 @@
+Usage: scalac <options> <source files>
+
+-- Notes on option parsing --
+Boolean settings are always false unless set.
+Where multiple values are accepted, they should be comma-separated.
+  example: -Xplugin:plugin1,plugin2
+<phase> means one or a list of:
+  (partial) phase names, phase ids, phase id ranges, or the string "all".
+  example: -Xprint:all prints all phases.
+  example: -Xprint:expl,24-26 prints phases explicitouter, closelim, dce, jvm.
+  example: -Xprint:-4 prints only the phases up to typer.
+
+Possible private options include:
+  -Ybrowse:<phase>                    Browse the abstract syntax tree after <phase>.
+  -Ycheck:<phase>                     Check the tree at the end of <phase>.
+  -Yclosure-elim                      Perform closure elimination.
+  -Ycompact-trees                     Use compact tree printer when displaying trees.
+  -Ydead-code                         Perform dead code elimination.
+  -Ydebug                             Increase the quantity of debugging output.
+  -Ydependent-method-types            Allow dependent method types.
+  -Ygen-javap <dir>                   Generate a parallel output directory of .javap files.
+  -Yinfer-argument-types              Infer types for arguments of overriden methods.
+  -Yinline                            Perform inlining when possible.
+  -Ylinearizer:<which>                Linearizer to use (normal,dfs,rpo,dump) default:rpo
+  -Ylog:<phase>                       Log operations during <phase>.
+  -Ylog-classpath                     Output information about what classpath is being applied.
+  -Yno-completion                     Disable tab-completion in the REPL.
+  -Yno-generic-signatures             Suppress generation of generic signatures for Java.
+  -Yno-imports                        Compile without any implicit imports.
+  -Yno-self-type-checks               Suppress check for self-type conformance among inherited members.
+  -Yno-squeeze                        Disable creation of compact code in matching.
+  -Ynotnull                           Enable (experimental and incomplete) scala.NotNull.
+  -Ypmat-naive                        Desugar matches as naively as possible.
+  -Ypresentation-delay <n>            Wait number of ms after typing before starting typechecking
+  -Ypresentation-log <file>           Log presentation compiler events into file
+  -Ypresentation-replay <file>        Replay presentation compiler events from file
+  -Ypresentation-verbose              Print information about presentation compiler tasks.
+  -Yprofile:<phase>                   (Requires jvm -agentpath to contain yjgpagent) Profile CPU usage of given phases. <phase>.
+  -Yprofile-class <class>             Name of profiler class.
+  -Yprofile-memory                    Profile memory, get heap snapshot after each compiler run (requires yjpagent, see above).
+  -Yrangepos                          Use range positions for syntax trees.
+  -Yrecursion <n>                     Set recursion depth used when locking symbols.
+  -Yrepl-sync                         Do not use asynchronous code for repl startup
+  -Yresolve-term-conflict:<strategy>  Resolve term conflicts (package,object,error) default:error
+  -Yrich-exceptions                   Fancier exceptions.  Set source search path with -Dscala.control.sourcepath
+  -Yself-in-annots                    Include a "self" identifier inside of annotations.
+  -Yshow:<phase>                      (Requires -Xshow-class or -Xshow-object) Show after <phase>.
+  -Yshow-syms                         Print the AST symbol hierarchy after each phase.
+  -Yshow-trees                        (Requires -Xprint:) Print detailed ASTs.
+  -Yskip:<phase>                      Skip <phase>.
+  -Ystatistics                        Print compiler statistics.
+  -Ystop-after:<phase>                Stop after given phase <phase>.
+  -Ystop-before:<phase>               Stop before given phase <phase>.
+  -Ystruct-dispatch:<policy>          structural method dispatch policy (no-cache,mono-cache,poly-cache,invoke-dynamic) default:poly-cache
+  -Ywarn-all                          Enable all -Y warnings.
+  -Ywarn-dead-code                    Warn when dead code is identified.
+  -Ywarn-inaccessible                 Warn about inaccessible types in method signatures.
+  -Ywarn-nullary-override             Warn when non-nullary overrides nullary, e.g. `def foo()` over `def foo`.
+  -Ywarn-nullary-unit                 Warn when nullary methods return Unit.
+  -Ywarn-numeric-widen                Warn when numerics are widened.
+  -Ywarn-value-discard                Warn when non-Unit expression results are unused.
+
+Additional debug settings:
+  -Ybuild-manager-debug               Generate debug information for the Refined Build Manager compiler.
+  -Ybuilder-debug:<manager>           Compile using the specified build manager. (none,refined,simple) default:none
+  -Ycompletion-debug                  Trace all tab completion activity.
+  -Ydoc-debug                         Trace all scaladoc activity.
+  -Yide-debug                         Generate, validate and output trees using the interactive compiler.
+  -Yinfer-debug                       Trace type inference and implicit search.
+  -Ypmat-debug                        Trace all pattern matcher activity.
+  -Ypresentation-debug                Enable debugging output for the presentation compiler.
+  -Yrepl-debug                        Trace all repl activity.
+  -Ytyper-debug                       Trace all type assignments.

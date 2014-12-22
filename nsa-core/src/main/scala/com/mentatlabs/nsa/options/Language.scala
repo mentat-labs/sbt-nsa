@@ -1,8 +1,12 @@
 package com.mentatlabs.nsa
 
+/** Enable or disable language features: `_' for all, `-language:help' to list */
 object `-language` {
-  def custom(feature: String) = new ChoiceOption("-language", feature) {
-    override val since = ScalacVersion.`2.10.0`
+  private val since = ScalacVersion.`2.10.0`
+
+  case class custom(feature: String)
+      extends ChoiceOption("-language", feature) {
+    val since = `-language`.since
   }
 
   def `_` = custom("_")
@@ -12,7 +16,7 @@ object `-language` {
   def `-dynamics` = custom("-dynamics")
 
   def `postfixOps` = custom("postfixOps")
-  def `-postfixOps` = custom("postfixOps")
+  def `-postfixOps` = custom("-postfixOps")
 
   def `reflectiveCalls` = custom("reflectiveCalls")
   def `-reflectiveCalls` = custom("-reflectiveCalls")
@@ -21,7 +25,7 @@ object `-language` {
   def `-implicitConversions` = custom("-implicitConversions")
 
   def `existentials` = custom("existentials")
-  def `-existentials` = custom("existentials")
+  def `-existentials` = custom("-existentials")
 
   def `experimental.macros` = custom("experimental.macros")
   def `-experimental.macros` = custom("-experimental.macros")

@@ -1,3 +1,6 @@
 package com.mentatlabs.nsa
 
-case object `-verbose` extends JustOption
+/** Output messages about what the compiler is doing. */
+case object `-verbose` extends JustOption {
+  val since = ScalacVersion.`2.0.0`
+}

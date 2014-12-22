@@ -1,5 +1,6 @@
 package com.mentatlabs.nsa
 
+/** Emit warning and location for usages of features that should be imported explicitly. */
 case object `-feature` extends JustOption {
-  override val since = ScalacVersion.`2.10.0`
+  val since = ScalacVersion.`2.10.0`
 }

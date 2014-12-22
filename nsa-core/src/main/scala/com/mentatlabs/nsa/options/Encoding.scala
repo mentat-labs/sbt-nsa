@@ -1,7 +1,13 @@
 package com.mentatlabs.nsa
 
+/** Specify character encoding used by source files. */
 object `-encoding` {
-  def custom(encoding: String) = ValueOption("-encoding", encoding)
+  private val since = ScalacVersion.`2.0.0`
+
+  case class custom(encoding: String)
+      extends ValueOption("-encoding", encoding) {
+    val since = `-encoding`.since
+  }
 
   def UTF(version: Int) = custom("UTF" + version)
 

@@ -1,18 +1,17 @@
 package com.mentatlabs.nsa
 
+/** Target platform for object files. */
 object `-target` {
-  def custom(target: String, from: ScalacVersion, to: Option[ScalacVersion]) =
-    new ChoiceOption("-target", target) {
-      override val since = from
-      override val removed = to
-    }
+  private val since = ScalacVersion.`2.0.0`
 
-  def jvm(version: Double) = {
-    val from = ScalacVersion.`2.0.0`
-    val to = Some(ScalacVersion.`2.12.0`)
-    custom("jvm" + version, from, to)
+  case class custom(target: String)
+      extends ChoiceOption("-target", target) {
+    val since = `-target`.since
+    override val deprecated = None // FIXME: <1.6 are deprecated in new Scalac versions
+    override val removed = None // FIXME: <1.7 are removed in new Scalac versions
   }
 
+  def jvm(version: Double) = custom("jvm" + version)
   def `jvm-1.4` = jvm(-1.4)
   def `jvm-1.5` = jvm(-1.5)
   def `jvm-1.6` = jvm(-1.6)

@@ -6,8 +6,8 @@ object Build extends Build {
   val ElementSnapshots = "Element Snapshots" at "http://repo.element.hr/nexus/content/repositories/snapshots/"
 
   private def defaultSettings =
-    Defaults.defaultSettings ++ Seq(
-      organization := "com.mentatlabs.nsa"
+    Defaults.coreDefaultSettings ++ Seq(
+      organization := "com.mentatlabs.sbt"
 
     , scalacOptions := Seq(
         "-deprecation"
@@ -37,6 +37,8 @@ object Build extends Build {
       , "-Ywarn-numeric-widen"
       )
 
+    , scalacOptions in Test ++= Seq("-Yrangepos")
+
     , publishArtifact in (Compile, packageDoc) := false
     , publishTo := Some(if (version.value endsWith "-SNAPSHOT") ElementSnapshots else ElementReleases)
     , credentials ++= {
@@ -50,6 +52,10 @@ object Build extends Build {
   , file("nsa-core")
   , settings = defaultSettings ++ Seq(
       initialCommands in console := "import com.mentatlabs.nsa._"
+    , libraryDependencies ++= Seq(
+        "org.specs2" %% "specs2-core" % "2.4.15" % "test"
+      , "com.github.scala-incubator.io" %% "scala-io-file" % "0.4.3" % "test"
+      )
     )
   )
 
@@ -59,6 +65,9 @@ object Build extends Build {
   , dependencies = Seq(nsaCore)
   , settings = defaultSettings ++ Seq(
       initialCommands in console := "import com.mentatlabs.nsa._, experimental_dsl._"
+    , libraryDependencies ++= Seq(
+        "org.specs2" %% "specs2-core" % "2.4.15" % "test"
+      )
     )
   )
 

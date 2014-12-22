@@ -1,3 +1,6 @@
 package com.mentatlabs.nsa
 
-case object `-help` extends JustOption
+/** Print a synopsis of standard options */
+case object `-help` extends JustOption {
+  val since = ScalacVersion.`2.0.0`
+}

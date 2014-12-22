@@ -1,3 +1,6 @@
 package com.mentatlabs.nsa
 
-case object `-usejavacp` extends JustOption
+/** Utilize the java.class.path in classpath resolution. */
+case object `-usejavacp` extends JustOption {
+  val since = ScalacVersion.`2.8.0`
+}

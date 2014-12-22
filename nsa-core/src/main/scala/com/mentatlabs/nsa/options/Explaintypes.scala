@@ -1,3 +1,6 @@
 package com.mentatlabs.nsa
 
-case object `-explaintypes` extends JustOption
+/** Explain type errors in more detail. */
+case object `-explaintypes` extends JustOption {
+  val since = ScalacVersion.`2.0.0`
+}
