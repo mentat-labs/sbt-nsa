@@ -5,15 +5,15 @@ import experimental_dsl._
 trait TypedScalacOptions
     extends ScalacOptions {
 
-  implicit def Pimp1Param(p1: String) =
+  implicit def PimpString(s: String) =
     new TypedOption {
-      override def params: Seq[String] = Seq(p1)
+      override def params: Seq[String] = Seq(s)
       override def since: ScalacVersion = ScalacVersion.`2.0.0`
     }
 
-  implicit def Pimp2Param(p12: Product2[String, String]) =
+  implicit def PimpProduct(p: Product) =
     new TypedOption {
-      override def params: Seq[String] = Seq(p12._1, p12._2)
+      override def params: Seq[String] = p.productIterator.map(_.toString).toSeq
       override def since: ScalacVersion = ScalacVersion.`2.0.0`
     }
 

@@ -15,6 +15,7 @@ class PrivateOptionsSpec extends TypedOptionsSpec {
   -Yinline                           ${`-Yinline test`}                           ${`-Yinline`}
   -Yinline-handlers                  ${`-Yinline-handlers test`}                  ${`-Yinline-handlers`}
   -Yinline-warnings                  ${`-Yinline-warnings test`}                  ${`-Yinline-warnings`}
+  -Yinfer-argument-types             ${`-Yinfer-argument-types test`}             ${`-Yinfer-argument-types`}
   -Ylog-classpath                    ${`-Ylog-classpath test`}                    ${`-Ylog-classpath`}
   -Ymacro-debug-lite                 ${`-Ymacro-debug-lite test`}                 ${`-Ymacro-debug-lite`}
   -Ymacro-debug-verbose              ${`-Ymacro-debug-verbose test`}              ${`-Ymacro-debug-verbose`}
@@ -91,6 +92,9 @@ class PrivateOptionsSpec extends TypedOptionsSpec {
 
   def `-Yinline-warnings test` =
     `-Yinline-warnings` =>= "-Yinline-warnings"
+
+  def `-Yinfer-argument-types test` =
+    `-Yinfer-argument-types` =>= "-Yinfer-argument-types"
 
   def `-Ylog-classpath test` =
     `-Ylog-classpath` =>= "-Ylog-classpath"

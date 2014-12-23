@@ -11,6 +11,8 @@ trait YmacroDSL extends ExperimentalDSL with VerboseDSL with NoDSL {
         def -(v: verbose.type) = `-Ymacro-debug-verbose`
       }
 
+      def -(e: expand.type) = `-Ymacro-expand`
+
       def -(n: no.type) = `-Ymacro-no`
       object `-Ymacro-no` {
         def -(e: expand.type) = `-Ymacro-no-expand`

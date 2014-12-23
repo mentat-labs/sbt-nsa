@@ -11,7 +11,6 @@ class AdvancedOptionsSpec extends TypedOptionsSpec {
   -Xfatal-warnings             ${`-Xfatal-warnings test`}             ${`-Xfatal-warnings`}
   -Xfull-lubs                  ${`-Xfull-lubs test`}                  ${`-Xfull-lubs`}
   -Xfuture                     ${`-Xfuture test`}                     ${`-Xfuture`}
-  -Yinfer-argument-types       ${`-Yinfer-argument-types test`}       ${`-Yinfer-argument-types`}
   -Xlint                       ${`-Xlint test`}                       ${`-Xlint` `_`}
   -Xlog-free-terms             ${`-Xlog-free-terms test`}             ${`-Xlog-free-terms`}
   -Xlog-free-types             ${`-Xlog-free-types test`}             ${`-Xlog-free-types`}
@@ -70,9 +69,6 @@ class AdvancedOptionsSpec extends TypedOptionsSpec {
 
   def `-Xfuture test` =
     `-Xfuture` =>= "-Xfuture"
-
-  def `-Yinfer-argument-types test` =
-    `-Yinfer-argument-types` =>= "-Yinfer-argument-types"
 
   def `-Xlint test` =
     (`-Xlint` `_`)                          =>= "-Xlint:_" and

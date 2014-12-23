@@ -32,6 +32,7 @@ trait ScalacAdvancedOptions
     with XcheckinitDSL
     with XdevDSL
     with XdisableDSL
+    with XelideDSL
     with XexperimentalDSL
     with XfatalDSL
     with XfullDSL
@@ -41,18 +42,25 @@ trait ScalacAdvancedOptions
     with XmaxDSL
     with XnoDSL
     with XnojlineDSL
+    with XpluginDSL
     with XprintDSL
     with XpromptDSL
     with XresidentDSL
+    with XshowDSL
+    with XsourceDSL
     with XstrictDSL
     with XverifyDSL
 
 trait ScalacPrivateOptions
     extends YDSL
+    with YbackendDSL
+    with YbreakDSL
     with YclosureDSL
+    with YcompactDSL
     with YconstDSL
     with YdeadDSL
     with YdebugDSL
+    with YdelambdafyDSL
     with YdisableDSL
     with YdocDSL
     with YetaDSL
@@ -60,13 +68,18 @@ trait ScalacPrivateOptions
     with YinferDSL
     with YinlineDSL
     with YissueDSL
+    with YlogDSL
     with YmacroDSL
+    with YnoDSL
     with YnooptimiseDSL
+    with YoverrideDSL
     with YpatmatDSL
     with YposDSL
     with YpresentationDSL
     with YquasiquoteDSL
+    with YrangeposDSL
     with YreifyDSL
     with YreplDSL
     with YtyperDSL
+    with YshowDSL
     with YwarnDSL

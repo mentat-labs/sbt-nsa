@@ -1,8 +1,6 @@
-package com.mentatlabs.nsa
-package experimental_dsl
-package test
+package com.mentatlabs.nsa.test
 
-class DSLCoreOptionsSpec extends DSLOptionSpec {
+class DSLCoreOptionsSpec extends DSLOptionsSpec {
   def is = s2"""
   -deprecation         ${`-deprecation test`}
   -encoding            ${`-encoding test`}

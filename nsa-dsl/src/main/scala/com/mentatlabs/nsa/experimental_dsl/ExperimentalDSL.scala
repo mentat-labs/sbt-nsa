@@ -6,12 +6,22 @@ trait ExperimentalDSL {
   object analysis
   object any
   object args
+  object argument
   object assertions
+  object based
+  object below
   object by
   object calls
+  object `class`
+  object class_based
   object classfile
+  object classpath
   object code
+  object compact
+  object completion
   object conversions
+  object copypaste
+  object cycles
   object dead
   object debug
   object discard
@@ -19,31 +29,47 @@ trait ExperimentalDSL {
   object expand
   object forwarders
   object free
+  object generic
   object handlers
+  object impl
+  object impl_class
   object `implicit`
   object implicit_conversions
   object implicits
   object `import`
+  object imports
   object inaccessible
   object infer
   object inference
   object keeps
+  object list
   object lite
+  object load
   object lubs
   object name
   object nullary
   object nullary_override
   object numeric
+  object objects
   object opt
   object `override`
   object patmat
+  object phases
   object pos
+  object predef
   object prevention
   object reflective
+  object signatures
   object specialization
   object star
+  object strict
+  object stringified
+  object symkinds
+  object symowners
+  object syms
   object sync
   object terms
+  object trees
   object types
   object uescape
   object unit
@@ -51,6 +77,7 @@ trait ExperimentalDSL {
   object unused
   object unused_import
   object value
+  object vars
   object warnings
   object widen
 }
