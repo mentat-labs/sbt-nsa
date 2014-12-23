@@ -19,6 +19,7 @@ trait ExperimentalDSL {
   object code
   object compact
   object completion
+  object conflict
   object conversions
   object copypaste
   object cycles
@@ -68,6 +69,7 @@ trait ExperimentalDSL {
   object symowners
   object syms
   object sync
+  object term
   object terms
   object trees
   object types

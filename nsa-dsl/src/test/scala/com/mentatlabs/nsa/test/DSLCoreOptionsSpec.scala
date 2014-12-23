@@ -31,7 +31,7 @@ class DSLCoreOptionsSpec extends DSLOptionsSpec {
   def `-encoding test` = new TypedScalacOptions { def options = Seq(
     -encoding ASCII          , ("-encoding", "ASCII")
   , -encoding UTF-8          , ("-encoding", "UTF-8")
-  , -encoding `ISO-8859-1`   , ("-encoding", "ISO-8859-1")
+  , -encoding ISO-8859-1     , ("-encoding", "ISO-8859-1")
   , -encoding custom "FooBar", ("-encoding", "FooBar")
   )}
 

@@ -34,6 +34,7 @@ class DSLPrivateOptionsSpec extends DSLOptionsSpec {
   -Yreify-copypaste                  ${`-Yreify-copypaste test`}
   -Yrepl-class-based                 ${`-Yrepl-class-based test`}
   -Yrepl-sync                        ${`-Yrepl-sync test`}
+  -Yresolve-term-conflict            ${`-Yresolve-term-conflict test`}
   -Yshow-symkinds                    ${`-Yshow-symkinds test`}
   -Yshow-symowners                   ${`-Yshow-symowners test`}
   -Yshow-syms                        ${`-Yshow-syms test`}
@@ -188,6 +189,13 @@ class DSLPrivateOptionsSpec extends DSLOptionsSpec {
 
   def `-Yrepl-sync test` = new TypedScalacOptions { def options = Seq(
     -Yrepl-sync, "-Yrepl-sync"
+  )}
+
+  def `-Yresolve-term-conflict test` = new TypedScalacOptions { def options = Seq(
+    -Yresolve-term-conflict `package`      , "-Yresolve-term-conflict:package"
+  , -Yresolve-term-conflict `object`       , "-Yresolve-term-conflict:object"
+  , -Yresolve-term-conflict error          , "-Yresolve-term-conflict:error"
+  , -Yresolve-term-conflict custom "FooBar", "-Yresolve-term-conflict:FooBar"
   )}
 
   def `-Yshow-symkinds test` = new TypedScalacOptions { def options = Seq(

@@ -80,6 +80,7 @@ trait ScalacPrivateOptions
     with YrangeposDSL
     with YreifyDSL
     with YreplDSL
+    with YresolveDSL
     with YtyperDSL
     with YshowDSL
     with YwarnDSL

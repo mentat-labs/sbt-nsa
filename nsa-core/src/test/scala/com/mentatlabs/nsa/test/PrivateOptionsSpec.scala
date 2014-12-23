@@ -35,6 +35,7 @@ class PrivateOptionsSpec extends TypedOptionsSpec {
   -Yreify-copypaste                  ${`-Yreify-copypaste test`}                  ${`-Yreify-copypaste`}
   -Yrepl-class-based                 ${`-Yrepl-class-based test`}                 ${`-Yrepl-class-based`}
   -Yrepl-sync                        ${`-Yrepl-sync test`}                        ${`-Yrepl-sync`}
+  -Yresolve-term-conflict            ${`-Yresolve-term-conflict test`}            ${`-Yresolve-term-conflict` error}
   -Yshow-symkinds                    ${`-Yshow-symkinds test`}                    ${`-Yshow-symkinds`}
   -Yshow-symowners                   ${`-Yshow-symowners test`}                   ${`-Yshow-symowners`}
   -Yshow-syms                        ${`-Yshow-syms test`}                        ${`-Yshow-syms`}
@@ -155,6 +156,12 @@ class PrivateOptionsSpec extends TypedOptionsSpec {
 
   def `-Yrepl-sync test` =
     `-Yrepl-sync` =>= "-Yrepl-sync"
+
+  def `-Yresolve-term-conflict test` =
+    (`-Yresolve-term-conflict` `package`)       =>= "-Yresolve-term-conflict:package" and
+    (`-Yresolve-term-conflict` `object`)        =>= "-Yresolve-term-conflict:object" and
+    (`-Yresolve-term-conflict` error)           =>= "-Yresolve-term-conflict:error" and
+    (`-Yresolve-term-conflict` custom "FooBar") =>= "-Yresolve-term-conflict:FooBar"
 
   def `-Yshow-symkinds test` =
     `-Yshow-symkinds` =>= "-Yshow-symkinds"
