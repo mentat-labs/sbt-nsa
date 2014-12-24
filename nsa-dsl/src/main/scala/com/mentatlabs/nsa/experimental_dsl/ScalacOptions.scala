@@ -72,6 +72,7 @@ trait ScalacPrivateOptions
     with YmacroDSL
     with YnoDSL
     with YnooptimiseDSL
+    with YoptDSL
     with YoverrideDSL
     with YpatmatDSL
     with YposDSL
@@ -83,4 +84,7 @@ trait ScalacPrivateOptions
     with YresolveDSL
     with YtyperDSL
     with YshowDSL
+    with YskipDSL
+    with YstatisticsDSL
+    with YstopDSL
     with YwarnDSL

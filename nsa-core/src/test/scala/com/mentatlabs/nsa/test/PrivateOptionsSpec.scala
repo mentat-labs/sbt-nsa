@@ -27,6 +27,7 @@ class PrivateOptionsSpec extends TypedOptionsSpec {
   -Yno-load-impl-class               ${`-Yno-load-impl-class test`}               ${`-Yno-load-impl-class`}
   -Yno-predef                        ${`-Yno-predef test`}                        ${`-Yno-predef`}
   -Ynooptimise                       ${`-Ynooptimise test`}                       ${`-Ynooptimise`}
+  -Yopt                              ${`-Yopt test`}                              ${`-Yopt` help}
   -Yoverride-objects                 ${`-Yoverride-objects test`}                 ${`-Yoverride-objects`}
   -Yoverride-vars                    ${`-Yoverride-vars test`}                    ${`-Yoverride-vars`}
   -Ypresentation-strict              ${`-Ypresentation-strict test`}              ${`-Ypresentation-strict`}
@@ -42,6 +43,10 @@ class PrivateOptionsSpec extends TypedOptionsSpec {
   -Yshow-trees                       ${`-Yshow-trees test`}                       ${`-Yshow-trees`}
   -Yshow-trees-compact               ${`-Yshow-trees-compact test`}               ${`-Yshow-trees-compact`}
   -Yshow-trees-stringified           ${`-Yshow-trees-stringified test`}           ${`-Yshow-trees-stringified`}
+  -Yskip                             ${`-Yskip test`}                             ${`-Yskip` FooBar}
+  -Ystatistics                       ${`-Ystatistics test`}                       ${`-Ystatistics` FooBar}
+  -Ystop-after                       ${`-Ystop-after test`}                       ${`-Ystop-after` FooBar}
+  -Ystop-before                      ${`-Ystop-before test`}                      ${`-Ystop-before` FooBar}
   -Ywarn-adapted-args                ${`-Ywarn-adapted-args test`}                ${`-Ywarn-adapted-args`}
   -Ywarn-dead-code                   ${`-Ywarn-dead-code test`}                   ${`-Ywarn-dead-code`}
   -Ywarn-inaccessible                ${`-Ywarn-inaccessible test`}                ${`-Ywarn-inaccessible`}
@@ -133,6 +138,20 @@ class PrivateOptionsSpec extends TypedOptionsSpec {
   def `-Ynooptimise test` =
     `-Ynooptimise` =>= "-Ynooptimise"
 
+  def `-Yopt test` =
+    (`-Yopt` `_`)                 =>= "-Yopt:_" and
+    (`-Yopt` help)                =>= "-Yopt:help" and
+    (`-Yopt` `unreachable-code`)  =>= "-Yopt:unreachable-code" and
+    (`-Yopt` `-unreachable-code`) =>= "-Yopt:-unreachable-code" and
+    (`-Yopt` `l:none`)            =>= "-Yopt:l:none" and
+    (`-Yopt` `-l:none`)           =>= "-Yopt:-l:none" and
+    (`-Yopt` `l:default`)         =>= "-Yopt:l:default" and
+    (`-Yopt` `l:method`)          =>= "-Yopt:l:method" and
+    (`-Yopt` `l:project`)         =>= "-Yopt:l:project" and
+    (`-Yopt` `l:classpath`)       =>= "-Yopt:l:classpath" and
+    (`-Yopt` custom "Foo:Bar")    =>= "-Yopt:Foo:Bar" and
+    (`-Yopt` custom "-Foo:Bar")   =>= "-Yopt:-Foo:Bar"
+
   def `-Yoverride-objects test` =
     `-Yoverride-objects` =>= "-Yoverride-objects"
 
@@ -180,6 +199,49 @@ class PrivateOptionsSpec extends TypedOptionsSpec {
 
   def `-Yshow-trees-stringified test` =
     `-Yshow-trees-stringified` =>= "-Yshow-trees-stringified"
+
+  def `-Yskip test` =
+    (`-Yskip` `typer`)   =>= "-Yskip:typer" and
+    (`-Yskip` `patmat`)  =>= "-Yskip:patmat" and
+    (`-Yskip` `erasure`) =>= "-Yskip:erasure" and
+    (`-Yskip` `cleanup`) =>= "-Yskip:cleanup" and
+    (`-Yskip` `jvm`)     =>= "-Yskip:jvm" and
+    (`-Yskip` `FooBar`)  =>= "-Yskip:FooBar"
+
+  def `-Ystatistics test` =
+    (`-Ystatistics` `_`)        =>= "-Ystatistics:_" and
+    (`-Ystatistics` `help`)     =>= "-Ystatistics:help" and
+    (`-Ystatistics` `parser`)   =>= "-Ystatistics:parser" and
+    (`-Ystatistics` `-parser`)  =>= "-Ystatistics:-parser" and
+    (`-Ystatistics` `typer`)    =>= "-Ystatistics:typer" and
+    (`-Ystatistics` `-typer`)   =>= "-Ystatistics:-typer" and
+    (`-Ystatistics` `patmat`)   =>= "-Ystatistics:patmat" and
+    (`-Ystatistics` `-patmat`)  =>= "-Ystatistics:-patmat" and
+    (`-Ystatistics` `erasure`)  =>= "-Ystatistics:erasure" and
+    (`-Ystatistics` `-erasure`) =>= "-Ystatistics:-erasure" and
+    (`-Ystatistics` `cleanup`)  =>= "-Ystatistics:cleanup" and
+    (`-Ystatistics` `-cleanup`) =>= "-Ystatistics:-cleanup" and
+    (`-Ystatistics` `jvm`)      =>= "-Ystatistics:jvm" and
+    (`-Ystatistics` `-jvm`)     =>= "-Ystatistics:-jvm" and
+    (`-Ystatistics` `FooBar`)   =>= "-Ystatistics:FooBar" and
+    (`-Ystatistics` `-FooBar`)  =>= "-Ystatistics:-FooBar"
+
+  def `-Ystop-after test` =
+    (`-Ystop-after` `parser`)  =>= "-Ystop-after:parser" and
+    (`-Ystop-after` `typer`)   =>= "-Ystop-after:typer" and
+    (`-Ystop-after` `patmat`)  =>= "-Ystop-after:patmat" and
+    (`-Ystop-after` `erasure`) =>= "-Ystop-after:erasure" and
+    (`-Ystop-after` `cleanup`) =>= "-Ystop-after:cleanup" and
+    (`-Ystop-after` `jvm`)     =>= "-Ystop-after:jvm" and
+    (`-Ystop-after` `FooBar`)  =>= "-Ystop-after:FooBar"
+
+  def `-Ystop-before test` =
+    (`-Ystop-before` `typer`) =>= "-Ystop-before:typer" and
+    (`-Ystop-before` `patmat`) =>= "-Ystop-before:patmat" and
+    (`-Ystop-before` `erasure`) =>= "-Ystop-before:erasure" and
+    (`-Ystop-before` `cleanup`) =>= "-Ystop-before:cleanup" and
+    (`-Ystop-before` `jvm`) =>= "-Ystop-before:jvm" and
+    (`-Ystop-before` `FooBar`) =>= "-Ystop-before:FooBar"
 
   def `-Ywarn-adapted-args test` =
     `-Ywarn-adapted-args` =>= "-Ywarn-adapted-args"
