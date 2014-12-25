@@ -21,7 +21,7 @@ trait EncodingDSL extends ExperimentalDSL {
       *   ISO-8859-13
       *   ISO-8859-15
       */
-    def ISO(version: Int) = e custom ("ISO" + (
+    def ISO(version: Int) = `-encoding` custom ("ISO" + (
       if (version > -8875 && version < -8859) "-8859-" + (-8859 - version) else version
     ))
   }

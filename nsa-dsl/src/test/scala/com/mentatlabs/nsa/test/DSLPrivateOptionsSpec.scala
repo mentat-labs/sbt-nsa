@@ -26,6 +26,7 @@ class DSLPrivateOptionsSpec extends DSLOptionsSpec {
   -Yno-load-impl-class               ${`-Yno-load-impl-class test`}
   -Yno-predef                        ${`-Yno-predef test`}
   -Ynooptimise                       ${`-Ynooptimise test`}
+  -Yopt                              ${`-Yopt test`}
   -Yoverride-objects                 ${`-Yoverride-objects test`}
   -Yoverride-vars                    ${`-Yoverride-vars test`}
   -Ypresentation-strict              ${`-Ypresentation-strict test`}
@@ -41,6 +42,10 @@ class DSLPrivateOptionsSpec extends DSLOptionsSpec {
   -Yshow-trees                       ${`-Yshow-trees test`}
   -Yshow-trees-compact               ${`-Yshow-trees-compact test`}
   -Yshow-trees-stringified           ${`-Yshow-trees-stringified test`}
+  -Yskip                             ${`-Yskip test`}
+  -Ystatistics                       ${`-Ystatistics test`}
+  -Ystop-after                       ${`-Ystop-after test`}
+  -Ystop-before                      ${`-Ystop-before test`}
   -Ywarn-adapted-args                ${`-Ywarn-adapted-args test`}
   -Ywarn-dead-code                   ${`-Ywarn-dead-code test`}
   -Ywarn-inaccessible                ${`-Ywarn-inaccessible test`}
@@ -157,6 +162,21 @@ class DSLPrivateOptionsSpec extends DSLOptionsSpec {
     -Ynooptimise, "-Ynooptimise"
   )}
 
+  def `-Yopt test` = new TypedScalacOptions { def options = Seq(
+    -Yopt `_`, "-Yopt:_"
+  , -Yopt `help`, "-Yopt:help"
+  , -Yopt `unreachable-code`, "-Yopt:unreachable-code"
+  , -Yopt `-unreachable-code`, "-Yopt:-unreachable-code"
+  , -Yopt `l:none`, "-Yopt:l:none"
+  , -Yopt `-l:none`, "-Yopt:-l:none"
+  , -Yopt `l:default`, "-Yopt:l:default"
+  , -Yopt `l:method`, "-Yopt:l:method"
+  , -Yopt `l:project`, "-Yopt:l:project"
+  , -Yopt `l:classpath`, "-Yopt:l:classpath"
+  , -Yopt custom "Foo:Bar", "-Yopt:Foo:Bar"
+  , -Yopt custom "-Foo:Bar", "-Yopt:-Foo:Bar"
+  )}
+
   def `-Yoverride-objects test` = new TypedScalacOptions { def options = Seq(
     -Yoverride-objects, "-Yoverride-objects"
   )}
@@ -220,6 +240,53 @@ class DSLPrivateOptionsSpec extends DSLOptionsSpec {
 
   def `-Yshow-trees-stringified test` = new TypedScalacOptions { def options = Seq(
     -Yshow-trees-stringified, "-Yshow-trees-stringified"
+  )}
+
+  def `-Yskip test` = new TypedScalacOptions { def options = Seq(
+      -Yskip `typer`  , "-Yskip:typer"
+    , -Yskip `patmat` , "-Yskip:patmat"
+    , -Yskip `erasure`, "-Yskip:erasure"
+    , -Yskip `cleanup`, "-Yskip:cleanup"
+    , -Yskip `jvm`    , "-Yskip:jvm"
+    , -Yskip `FooBar` , "-Yskip:FooBar"
+  )}
+
+  def `-Ystatistics test` = new TypedScalacOptions { def options = Seq(
+      -Ystatistics `_`       , "-Ystatistics:_"
+    , -Ystatistics `help`    , "-Ystatistics:help"
+    , -Ystatistics `parser`  , "-Ystatistics:parser"
+    , -Ystatistics `-parser` , "-Ystatistics:-parser"
+    , -Ystatistics `typer`   , "-Ystatistics:typer"
+    , -Ystatistics `-typer`  , "-Ystatistics:-typer"
+    , -Ystatistics `patmat`  , "-Ystatistics:patmat"
+    , -Ystatistics `-patmat` , "-Ystatistics:-patmat"
+    , -Ystatistics `erasure` , "-Ystatistics:erasure"
+    , -Ystatistics `-erasure`, "-Ystatistics:-erasure"
+    , -Ystatistics `cleanup` , "-Ystatistics:cleanup"
+    , -Ystatistics `-cleanup`, "-Ystatistics:-cleanup"
+    , -Ystatistics `jvm`     , "-Ystatistics:jvm"
+    , -Ystatistics `-jvm`    , "-Ystatistics:-jvm"
+    , -Ystatistics `FooBar`  , "-Ystatistics:FooBar"
+    , -Ystatistics `-FooBar` , "-Ystatistics:-FooBar"
+  )}
+
+  def `-Ystop-after test` = new TypedScalacOptions { def options = Seq(
+      -Ystop-after `parser` , "-Ystop-after:parser"
+    , -Ystop-after `typer`  , "-Ystop-after:typer"
+    , -Ystop-after `patmat` , "-Ystop-after:patmat"
+    , -Ystop-after `erasure`, "-Ystop-after:erasure"
+    , -Ystop-after `cleanup`, "-Ystop-after:cleanup"
+    , -Ystop-after `jvm`    , "-Ystop-after:jvm"
+    , -Ystop-after `FooBar` , "-Ystop-after:FooBar"
+  )}
+
+  def `-Ystop-before test` = new TypedScalacOptions { def options = Seq(
+    -Ystop-before `typer`  , "-Ystop-before:typer"
+  , -Ystop-before `patmat` , "-Ystop-before:patmat"
+  , -Ystop-before `erasure`, "-Ystop-before:erasure"
+  , -Ystop-before `cleanup`, "-Ystop-before:cleanup"
+  , -Ystop-before `jvm`    , "-Ystop-before:jvm"
+  , -Ystop-before `FooBar` , "-Ystop-before:FooBar"
   )}
 
   def `-Ywarn-adapted-args test` = new TypedScalacOptions { def options = Seq(

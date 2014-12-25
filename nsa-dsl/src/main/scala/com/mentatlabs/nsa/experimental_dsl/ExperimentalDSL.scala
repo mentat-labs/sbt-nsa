@@ -3,12 +3,14 @@ package experimental_dsl
 
 trait ExperimentalDSL {
   object adapted
+  object after
   object analysis
   object any
   object args
   object argument
   object assertions
   object based
+  object before
   object below
   object by
   object calls
