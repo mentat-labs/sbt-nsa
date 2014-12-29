@@ -24,7 +24,7 @@ case class ScalacVersion(
           minorDelta
         }
         else {
-          implicitly[Ordering[Option[Int]]].compare(patch, that.patch)
+          Ordering[Option[Int]].compare(patch, that.patch)
         }
       }
     }
@@ -39,7 +39,7 @@ trait ScalacVersionRange {
   def removed: Option[ScalacVersion] = None
 
   def isDefinedAt(scalaVersion: ScalacVersion) =
-    since <= scalaVersion && !removed.exists { _ <= scalaVersion }
+    since <= scalaVersion && removed.forall { scalaVersion < }
 }
 
 object ScalacVersion {

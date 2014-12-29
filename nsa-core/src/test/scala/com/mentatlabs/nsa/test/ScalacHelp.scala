@@ -3,7 +3,7 @@ package test
 
 import ScalacVersion._
 
-object ScalacVersions {
+object ScalacHelpVersions {
   val values = Seq(
     `2.0.0`
   , `2.1.0`, `2.1.1`, `2.1.2`, `2.1.3`, `2.1.4`, `2.1.5`, `2.1.6`, `2.1.7`, `2.1.8`
@@ -19,6 +19,8 @@ object ScalacVersions {
   , `2.11.0`, `2.11.1`, `2.11.2`, `2.11.3`, `2.11.4`
   , `2.12.0`
   )
+
+  val maxLength = values.view.map(_.toString.length).max
 }
 
 class ScalacHelp(
@@ -40,7 +42,7 @@ object ScalacHelp {
       s"Resource doesn't look like a help listing: $resource")
   }.toOption
 
-  val helps = LinkedHashMap.empty ++ (ScalacVersions.values map { sv =>
+  val helps = LinkedHashMap.empty ++ (ScalacHelpVersions.values map { sv =>
     sv -> new ScalacHelp(
       help = read(s"scalac-$sv.txt").getOrElse(
         sys.error(s"Could not read scala help for $sv"))
