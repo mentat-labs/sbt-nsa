@@ -6,7 +6,8 @@ case class ScalacVersion(
     epoch: Int,
     major: Int,
     minor: Int,
-    patch: Option[Int]) extends Ordered[ScalacVersion] {
+    patch: Option[Int],
+    extra: Option[String]) extends Ordered[ScalacVersion] {
 
   def compare(that: ScalacVersion) = {
     val epochDelta = epoch - that.epoch
@@ -24,13 +25,31 @@ case class ScalacVersion(
           minorDelta
         }
         else {
-          Ordering[Option[Int]].compare(patch, that.patch)
+          // Version with patch will rank higher than final (clean) versions
+          val patchDelta = Ordering[Option[Int]].compare(patch, that.patch)
+          if (patchDelta != 0) {
+            patchDelta
+          }
+          else {
+            // Versions with any extra will rank lower than final (clean) version
+            (extra, that.extra) match {
+              case (None, None) => 0
+              case (Some(x), None) => -1
+              case (None, Some(y)) => 1
+              // Milestones will come before RCs because of String ordering */
+              case (Some(x), Some(y)) => x.compareTo(y)
+            }
+          }
         }
       }
     }
   }
 
-  override val toString = epoch + "." + major + "." + minor + patch.map("-" +).getOrElse("")
+  override val toString = (
+    epoch + "." + major + "." + minor
+  + patch.map("-" +).getOrElse("")
+  + extra.map("-" +).getOrElse("")
+  )
 }
 
 trait ScalacVersionRange {
@@ -44,20 +63,21 @@ trait ScalacVersionRange {
 
 object ScalacVersion {
   def apply(epoch: Int, major: Int, minor: Int): ScalacVersion =
-    ScalacVersion(epoch, major, minor, None)
+    ScalacVersion(epoch, major, minor, None, None)
 
   def apply(epoch: Int, major: Int, minor: Int, patch: Int): ScalacVersion =
-    ScalacVersion(epoch, major, minor, Some(patch))
+    ScalacVersion(epoch, major, minor, Some(patch), None)
 
-  private val ScalacVersionPattern = """(\d+?)\.(\d+?)\.(\d+?)(?:-(\d+?))?""" r
+  private val ScalacVersionPattern = """(\d+?)\.(\d+?)\.(\d+?)(?:-(\d+?))?(?:-(\w+?))?""" r
 
   def apply(scalaVersion: String): Option[ScalacVersion] = Try {
-    val ScalacVersionPattern(epochStr, majorStr, minorStr, patchStr) = scalaVersion
+    val ScalacVersionPattern(epochStr, majorStr, minorStr, patchStr, extraStr) = scalaVersion
     val epoch = epochStr.toInt
     val major = majorStr.toInt
     val minor = minorStr.toInt
-    val patch = if (patchStr == null) None else Some(patchStr.toInt)
-    ScalacVersion(epoch, major, minor, patch)
+    val patch = Option(patchStr).map(_.toInt)
+    val extra = Option(extraStr)
+    ScalacVersion(epoch, major, minor, patch, extra)
   }.toOption
 
   // -------------------------------------------------------------------------------------------------------------------
@@ -120,6 +140,7 @@ object ScalacVersion {
   val `2.11.2` = ScalacVersion(2, 11, 2)
   val `2.11.3` = ScalacVersion(2, 11, 3)
   val `2.11.4` = ScalacVersion(2, 11, 4)
+  val `2.11.5` = ScalacVersion(2, 11, 5)
 
   val `2.12.0` = ScalacVersion(2, 12, 0)
 }

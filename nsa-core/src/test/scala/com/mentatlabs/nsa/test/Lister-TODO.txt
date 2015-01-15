@@ -499,6 +499,11 @@
 ================
   2.10.0 - 2.12.0: Check the tree at the end of <phases>
 
+-YclasspathImpl:<implementation>
+================================
+           2.11.5: Choose classpath scanning method. (recursive,flat) default:recursive
+           2.12.0: !! missing !!
+
 -Yclosure-elim
 ==============
     2.6.0 - 2.8.2: Perform closure elimination
@@ -551,6 +556,11 @@
 -Ydisable-unreachable-prevention
 ================================
   2.11.0 - 2.12.0: Disable the prevention of unreachable blocks in code generation.
+
+-YdisableFlatCpCaching
+======================
+           2.11.5: Do not cache flat classpath representation of classpath elements from jars across compiler instances.
+           2.12.0: !! missing !!
 
 -Ydoc
 =====
@@ -743,7 +753,7 @@
 
 -Ypatmat-exhaust-depth <n>
 ==========================
-  2.11.3 - 2.11.4: off
+  2.11.3 - 2.11.5: off
            2.12.0: !! missing !!
 
 -Ypmat-debug
