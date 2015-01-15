@@ -1,5 +1,6 @@
 import sbt._
 import Keys._
+import ScriptedPlugin._
 
 object Build extends Build {
   val ElementReleases  = "Element Releases"  at "http://repo.element.hr/nexus/content/repositories/releases/"
@@ -8,6 +9,8 @@ object Build extends Build {
   private def defaultSettings =
     Defaults.coreDefaultSettings ++ Seq(
       organization := "com.mentatlabs.sbt"
+
+    , scalaVersion := "2.10.4"
 
     , scalacOptions := Seq(
         "-deprecation"
@@ -68,6 +71,16 @@ object Build extends Build {
     , libraryDependencies ++= Seq(
         "org.specs2" %% "specs2-core" % "2.4.15" % "test"
       )
+    )
+  )
+
+  lazy val nsaPlugin = Project(
+    "nsa-plugin"
+  , file("nsa-plugin")
+  , dependencies = Seq(nsaDsl)
+  , settings = defaultSettings ++ scriptedSettings ++ Seq(
+      sbtPlugin := true
+    , scriptedLaunchOpts += "-Dproject.version=" + version.value
     )
   )
 
