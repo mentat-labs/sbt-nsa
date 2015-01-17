@@ -8,7 +8,7 @@ object Build extends Build {
 
   private def defaultSettings =
     Defaults.coreDefaultSettings ++ Seq(
-      organization := "com.mentatlabs.sbt"
+      organization := "com.mentatlabs.nsa"
 
     , scalaVersion := "2.10.4"
 
