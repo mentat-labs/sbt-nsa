@@ -1,15 +1,10 @@
 import sbt._
 import Keys._
-import ScriptedPlugin._
 
 object Build extends Build {
-  val ElementReleases  = "Element Releases"  at "http://repo.element.hr/nexus/content/repositories/releases/"
-  val ElementSnapshots = "Element Snapshots" at "http://repo.element.hr/nexus/content/repositories/snapshots/"
-
   private def defaultSettings =
     Defaults.coreDefaultSettings ++ Seq(
       organization := "com.mentatlabs.nsa"
-
     , scalaVersion := "2.10.4"
 
     , scalacOptions := Seq(
@@ -41,14 +36,12 @@ object Build extends Build {
       )
 
     , scalacOptions in Test ++= Seq("-Yrangepos")
-
-    , publishArtifact in (Compile, packageDoc) := false
-    , publishTo := Some(if (version.value endsWith "-SNAPSHOT") ElementSnapshots else ElementReleases)
-    , credentials ++= {
-        val creds = Path.userHome / ".config" / "sbt-nsa" / "nexus.config"
-        if (creds.exists) Some(Credentials(creds)) else None
-      }.toSeq
     )
+
+  // -----------------------------------------------------------------------------------------------------
+
+  val specs2 = "org.specs2" %% "specs2-core" % "2.4.15"
+  val scalaIo = "com.github.scala-incubator.io" %% "scala-io-file" % "0.4.3"
 
   lazy val nsaCore = Project(
     "nsa-core"
@@ -56,38 +49,18 @@ object Build extends Build {
   , settings = defaultSettings ++ Seq(
       initialCommands in console := "import com.mentatlabs.nsa._"
     , libraryDependencies ++= Seq(
-        "org.specs2" %% "specs2-core" % "2.4.15" % "test"
-      , "com.github.scala-incubator.io" %% "scala-io-file" % "0.4.3" % "test"
+        specs2 % "test"
+      , scalaIo % "test"
       )
     )
   )
 
-  lazy val nsaDsl = Project(
-    "nsa-dsl"
-  , file("nsa-dsl")
-  , dependencies = Seq(nsaCore)
-  , settings = defaultSettings ++ Seq(
-      initialCommands in console := "import com.mentatlabs.nsa._, experimental_dsl._"
-    , libraryDependencies ++= Seq(
-        "org.specs2" %% "specs2-core" % "2.4.15" % "test"
-      )
-    )
-  )
-
-  lazy val nsaPlugin = Project(
-    "nsa-plugin"
-  , file("nsa-plugin")
-  , dependencies = Seq(nsaDsl)
-  , settings = defaultSettings ++ scriptedSettings ++ Seq(
-      sbtPlugin := true
-    , scriptedLaunchOpts += "-Dproject.version=" + version.value
-    )
-  )
+  // -----------------------------------------------------------------------------------------------------
 
   lazy val root = Project(
     "root"
   , file(".")
-  , aggregate = Seq(nsaCore, nsaDsl)
+  , aggregate = Seq(nsaCore)
   , settings = defaultSettings ++ Seq(
       publishArtifact := false
     )
