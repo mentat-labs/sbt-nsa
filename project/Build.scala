@@ -55,12 +55,24 @@ object Build extends Build {
     )
   )
 
+  lazy val nsaDsl = Project(
+    "nsa-dsl"
+  , file("nsa-dsl")
+  , dependencies = Seq(nsaCore)
+  , settings = defaultSettings ++ Seq(
+      initialCommands in console := "import com.mentatlabs.nsa._, experimental_dsl._"
+    , libraryDependencies ++= Seq(
+        specs2 % "test"
+      )
+    )
+  )
+
   // -----------------------------------------------------------------------------------------------------
 
   lazy val root = Project(
     "root"
   , file(".")
-  , aggregate = Seq(nsaCore)
+  , aggregate = Seq(nsaCore, nsaDsl)
   , settings = defaultSettings ++ Seq(
       publishArtifact := false
     )
