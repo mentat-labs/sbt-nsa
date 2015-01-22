@@ -1,0 +1,39 @@
+Usage: scalac <options> <source files>
+Possible private options include:
+  -Ybrowse:<phase>               Browse the abstract syntax tree after <phase> or "all"
+  -Ybuild-manager-debug          Generate debug information for the Refined Build Manager compiler.
+  -Ybuilder-debug:<method>       Compile using the specified build manager (none,refined,simple)
+  -Ycheck:<phase>                Check the tree at the end of <phase> or "all"
+  -Yclosure-elim                 Perform closure elimination
+  -Ycompact-trees                Use compact tree printer when displaying trees
+  -Ycompletion-debug             Trace all tab completion activity.
+  -Ydead-code                    Perform dead code elimination
+  -Ydebug                        Output debugging messages
+  -Ydependent-method-types       Allow dependent method types
+  -Ydetach                       Perform detaching of remote closures
+  -Yide-debug                    Generate, validate and output trees using the interactive compiler.
+  -Yinfer-argument-types         Infer types for arguments of overriden methods
+  -Yinline                       Perform inlining when possible
+  -Ylinearizer:<which>           Linearizer to use (normal,dfs,rpo,dump)
+  -Ylog-classpath                Output information about what classpath is being applied.
+  -Ylog:<phase>                  Log operations in <phase> or "all"
+  -Yno-completion                Disable tab-completion in the REPL
+  -Yno-generic-signatures        Suppress generation of generic signatures for Java
+  -Yno-imports                   Compile without any implicit imports
+  -Yno-predefs                   Compile without any implicit predefined values
+  -Ynotnull                      Enable the experimental and incomplete scala.NotNull
+  -Ypmat-debug                   Trace all pattern matcher activity.
+  -Ypmat-naive                   Desugar matches as naively as possible..
+  -Yrangepos                     Use range positions for syntax trees.
+  -Yrecursion                    Recursion depth used when locking symbols
+  -Yrepl-debug                   Trace all repl activity.
+  -Yself-in-annots               Include a "self" identifier inside of annotations
+  -Yshow-trees                   Show detailed trees when used in connection with -print:phase
+  -Yskip:<phase>                 Skip <phase> or "all"
+  -Ysqueeze:<enabled>            if on, creates compact code in matching (on,off)
+  -Ystatistics                   Print compiler statistics
+  -Ystop:<phase>                 Stop after phase <phase> or "all"
+  -Ystruct-dispatch:<method>     Selects dispatch method for structural refinement method calls (no-cache,mono-cache,poly-cache,invoke-dynamic)
+  -Ysuppress-vt-typer-warnings   Suppress warnings from the typer when testing the virtual class encoding, NOT FOR FINAL!
+  -Ytyper-debug                  Trace all type assignements
+  -Ywarn-dead-code               Emit warnings for dead code

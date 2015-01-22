@@ -1,0 +1,22 @@
+Usage: scalac <options> <source files>
+where possible standard options include:
+  -g:<g>                       Specify level of generated debugging info (none,source,line,vars,notailcalls)
+  -nowarn                      Generate no warnings
+  -verbose                     Output messages about what the compiler is doing
+  -deprecation                 Output source locations where deprecated APIs are used
+  -unchecked                   Enable detailed unchecked warnings
+  -classpath <path>            Specify where to find user class files
+  -sourcepath <path>           Specify where to find input source files
+  -bootclasspath <path>        Override location of bootstrap class files
+  -extdirs <dirs>              Override location of installed extensions
+  -d <directory>               Specify where to place generated class files
+  -encoding <encoding>         Specify character encoding used by source files
+  -target:<target>             Specify for which target object files should be built (jvm-1.5,jvm-1.4,msil)
+  -print                       Print program with all Scala-specific features removed
+  -optimise                    Generates faster bytecode by applying optimisations to the program
+  -explaintypes                Explain type errors in more detail
+  -uniqid                      Print identifiers with unique names for debugging
+  -version                     Print product version and exit
+  -help                        Print a synopsis of standard options
+  -X                           Print a synopsis of advanced options
+  @<file>                      A text file containing compiler arguments (options and source files)
