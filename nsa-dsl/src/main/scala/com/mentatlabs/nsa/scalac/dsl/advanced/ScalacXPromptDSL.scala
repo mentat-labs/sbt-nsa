@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacXPromptDSL extends ScalacDSL {
+trait ScalacXPromptDSL
+    extends ScalacOptionDSL {
+
   object Xprompt {
     val unary_- = ScalacXPrompt
   }

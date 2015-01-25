@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacXPrintDSL extends ScalacDSL {
+trait ScalacXPrintDSL
+    extends ScalacOptionDSL {
+
   object Xprint {
     val unary_- = `-Xprint`
     object `-Xprint` {

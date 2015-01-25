@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacXCheckinitDSL extends ScalacDSL {
+trait ScalacXCheckinitDSL
+    extends ScalacOptionDSL {
+
   object Xcheckinit {
     val unary_- = ScalacXCheckinit
   }

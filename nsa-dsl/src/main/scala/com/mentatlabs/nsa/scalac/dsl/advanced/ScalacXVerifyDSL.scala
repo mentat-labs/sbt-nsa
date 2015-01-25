@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacXVerifyDSL extends ScalacDSL {
+trait ScalacXVerifyDSL
+    extends ScalacOptionDSL {
+
   object Xverify {
     val unary_- = ScalacXVerify
   }

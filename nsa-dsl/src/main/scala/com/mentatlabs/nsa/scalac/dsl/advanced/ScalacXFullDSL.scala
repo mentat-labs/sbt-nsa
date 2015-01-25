@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacXFullDSL extends ScalacDSL {
+trait ScalacXFullDSL
+    extends ScalacOptionDSL {
+
   object Xfull {
     val unary_- = `-Xfull`
     object `-Xfull` {

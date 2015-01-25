@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacXLogDSL extends ScalacDSL {
+trait ScalacXLogDSL
+    extends ScalacOptionDSL {
+
   object Xlog {
     val unary_- = `-Xlog`
     object `-Xlog` {

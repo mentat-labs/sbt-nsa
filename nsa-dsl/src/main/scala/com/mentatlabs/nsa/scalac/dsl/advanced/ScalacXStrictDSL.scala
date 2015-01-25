@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacXStrictDSL extends ScalacDSL {
+trait ScalacXStrictDSL
+    extends ScalacOptionDSL {
+
   object Xstrict {
     val unary_- = `-Xstrict`
     object `-Xstrict` {

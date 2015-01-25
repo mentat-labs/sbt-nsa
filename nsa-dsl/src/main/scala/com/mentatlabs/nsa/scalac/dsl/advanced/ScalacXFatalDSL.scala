@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacXFatalDSL extends ScalacDSL {
+trait ScalacXFatalDSL
+    extends ScalacOptionDSL {
+
   object Xfatal {
     val unary_- = `-Xfatal`
     object `-Xfatal` {
