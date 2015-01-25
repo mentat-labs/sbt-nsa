@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacDeprecationDSL extends ScalacDSL {
+trait ScalacDeprecationDSL
+    extends ScalacOptionDSL {
+
   object deprecation {
     val unary_- = ScalacDeprecation
   }

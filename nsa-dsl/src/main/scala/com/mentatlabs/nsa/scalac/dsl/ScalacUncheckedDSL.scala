@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacUncheckedDSL extends ScalacDSL {
+trait ScalacUncheckedDSL
+    extends ScalacOptionDSL {
+
   object unchecked {
     val unary_- = ScalacUnchecked
   }

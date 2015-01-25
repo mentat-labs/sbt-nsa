@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacFeatureDSL extends ScalacDSL {
+trait ScalacFeatureDSL
+    extends ScalacOptionDSL {
+
   object feature {
     val unary_- = ScalacFeature
   }

@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacNobootcpDSL extends ScalacDSL {
+trait ScalacNobootcpDSL
+    extends ScalacOptionDSL {
+
   object nobootcp {
     val unary_- = ScalacNobootcp
   }

@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacUniqidDSL extends ScalacDSL {
+trait ScalacUniqidDSL
+    extends ScalacOptionDSL {
+
   object uniqid {
     val unary_- = ScalacUniqid
   }

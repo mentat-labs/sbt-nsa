@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacVersionDSL {
+trait ScalacVersionDSL
+    extends ScalacOptionDSL {
+
   object version {
     val unary_- = ScalacVersion
   }

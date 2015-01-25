@@ -1,17 +1,33 @@
 package com.mentatlabs.nsa
 package scalac
 
-trait ScalacDSL {
+trait IntProxy {
+  def apply(value: Int) = new WithInt(value)
+  class WithInt(val value: Int)
+}
+
+trait StringProxy {
+  def apply(value: String) = new WithString(value)
+  class WithString(val value: String)
+}
+
+// TODO: better way to defeat StringProxy#WithString conflict after erasure
+trait StringProxy2 {
+  def apply(value: String) = new WithString2(value)
+  class WithString2(val value: String)
+}
+
+trait ScalacOptionDSL {
   object adapted
-  object after
+  object after extends StringProxy
   object analysis
   object any
   object args
   object argument
   object assertions
   object based
-  object before
-  object below
+  object before extends StringProxy2
+  object below extends IntProxy
   object by
   object calls
   object `class`
@@ -21,7 +37,7 @@ trait ScalacDSL {
   object code
   object compact
   object completion
-  object conflict
+  object conflict extends StringProxy
   object conversions
   object copypaste
   object cycles
@@ -29,7 +45,7 @@ trait ScalacDSL {
   object debug
   object discard
   object elim
-  object expand
+  object expand extends StringProxy
   object forwarders
   object free
   object generic
@@ -49,7 +65,7 @@ trait ScalacDSL {
   object lite
   object load
   object lubs
-  object name
+  object name extends IntProxy
   object nullary
   object nullary_override
   object numeric

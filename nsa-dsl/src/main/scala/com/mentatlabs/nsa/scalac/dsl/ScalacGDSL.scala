@@ -4,8 +4,14 @@ package dsl
 
 import options._
 
-trait ScalacGDSL extends ScalacDSL {
+trait ScalacGDSL
+    extends ScalacOptionDSL {
+
   object g {
     val unary_- = ScalacG
+
+    def apply(level: String) = new {
+      def unary_- = ScalacG(level)
+    }
   }
 }

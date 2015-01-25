@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacUsemanifestcpDSL extends ScalacDSL {
+trait ScalacUsemanifestcpDSL
+    extends ScalacOptionDSL {
+
   object usemanifestcp {
     val unary_- = ScalacUsemanifestcp
   }

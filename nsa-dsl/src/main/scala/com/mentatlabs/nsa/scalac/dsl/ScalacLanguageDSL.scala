@@ -4,8 +4,14 @@ package dsl
 
 import options._
 
-trait ScalacLanguageDSL extends ScalacDSL {
+trait ScalacLanguageDSL
+    extends ScalacOptionDSL {
+
   object language {
     val unary_- = ScalacLanguage
+
+    def apply(feature: String) = new {
+      def unary_- = ScalacLanguage(feature)
+    }
   }
 }

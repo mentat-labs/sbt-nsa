@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacExplaintypesDSL extends ScalacDSL {
+trait ScalacExplaintypesDSL
+    extends ScalacOptionDSL {
+
   object explaintypes {
     val unary_- = ScalacExplaintypes
   }

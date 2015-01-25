@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacUsejavacpDSL extends ScalacDSL {
+trait ScalacUsejavacpDSL
+    extends ScalacOptionDSL {
+
   object usejavacp {
     val unary_- = ScalacUsejavacp
   }

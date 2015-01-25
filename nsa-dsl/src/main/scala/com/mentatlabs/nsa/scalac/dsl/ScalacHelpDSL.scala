@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacHelpDSL extends ScalacDSL {
+trait ScalacHelpDSL
+    extends ScalacOptionDSL {
+
   object help {
     val unary_- = ScalacHelp
   }
