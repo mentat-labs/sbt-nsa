@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacYPatmatDSL extends ScalacDSL {
+trait ScalacYPatmatDSL
+    extends ScalacOptionDSL {
+
   object Ypatmat {
     val unary_- = `-Ypatmat`
     object `-Ypatmat` {

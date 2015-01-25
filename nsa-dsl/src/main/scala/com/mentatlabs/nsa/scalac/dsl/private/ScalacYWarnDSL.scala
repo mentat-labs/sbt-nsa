@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacYWarnDSL extends ScalacDSL {
+trait ScalacYWarnDSL
+    extends ScalacOptionDSL {
+
   object Ywarn {
     val unary_- = `-Ywarn`
     object `-Ywarn` {

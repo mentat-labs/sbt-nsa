@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacYEtaDSL extends ScalacDSL {
+trait ScalacYEtaDSL
+    extends ScalacOptionDSL {
+
   object Yeta {
     val unary_- = `-Yeta`
     object `-Yeta` {

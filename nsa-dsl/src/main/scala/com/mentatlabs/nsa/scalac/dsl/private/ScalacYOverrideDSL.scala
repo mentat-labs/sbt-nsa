@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacYOverrideDSL extends ScalacDSL {
+trait ScalacYOverrideDSL
+    extends ScalacOptionDSL {
+
   object Yoverride {
     val unary_- = `-Yoverride`
     object `-Yoverride` {

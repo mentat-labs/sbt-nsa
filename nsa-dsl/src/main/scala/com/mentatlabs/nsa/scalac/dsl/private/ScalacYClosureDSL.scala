@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacYClosureDSL extends ScalacDSL {
+trait ScalacYClosureDSL
+    extends ScalacOptionDSL {
+
   object Yclosure {
     val unary_- = `-Yclosure`
     object `-Yclosure` {

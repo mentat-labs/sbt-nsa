@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacYIssueDSL extends ScalacDSL {
+trait ScalacYIssueDSL
+    extends ScalacOptionDSL {
+
   object Yissue {
     val unary_- = `-Yissue`
     object `-Yissue` {

@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacYQuasiquoteDSL extends ScalacDSL {
+trait ScalacYQuasiquoteDSL
+    extends ScalacOptionDSL {
+
   object Yquasiquote {
     val unary_- = `-Yquasiquote`
     object `-Yquasiquote` {

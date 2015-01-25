@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacYNoDSL extends ScalacDSL {
+trait ScalacYNoDSL
+    extends ScalacOptionDSL {
+
   object Yno {
     val unary_- = `-Yno`
     object `-Yno` {

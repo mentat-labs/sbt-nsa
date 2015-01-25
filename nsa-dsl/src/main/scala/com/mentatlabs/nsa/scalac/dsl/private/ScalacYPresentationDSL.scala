@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacYPresentationDSL extends ScalacDSL with ScalacVerboseDSL {
+trait ScalacYPresentationDSL
+    extends ScalacOptionDSL with ScalacVerboseDSL {
+
   object Ypresentation {
     val unary_- = `-Ypresentation`
     object `-Ypresentation` {

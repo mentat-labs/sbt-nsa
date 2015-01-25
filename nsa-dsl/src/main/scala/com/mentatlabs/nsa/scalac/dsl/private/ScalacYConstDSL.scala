@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacYConstDSL extends ScalacDSL {
+trait ScalacYConstDSL
+    extends ScalacOptionDSL {
+
   object Yconst {
     val unary_- = `-Yconst`
     object `-Yconst` {

@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacYRangeposDSL extends ScalacDSL {
+trait ScalacYRangeposDSL
+    extends ScalacOptionDSL {
+
   object Yrangepos {
     val unary_- = ScalacYRangepos
   }

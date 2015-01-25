@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacYReifyDSL extends ScalacDSL {
+trait ScalacYReifyDSL
+    extends ScalacOptionDSL {
+
   object Yreify {
     val unary_- = `-Yreify`
     object `-Yreify` {

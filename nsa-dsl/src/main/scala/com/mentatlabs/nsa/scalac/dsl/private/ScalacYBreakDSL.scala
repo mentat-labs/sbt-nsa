@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacYBreakDSL extends ScalacDSL {
+trait ScalacYBreakDSL
+    extends ScalacOptionDSL {
+
   object Ybreak {
     val unary_- = `-Ybreak`
     object `-Ybreak` {

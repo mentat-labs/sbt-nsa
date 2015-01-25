@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacYInferDSL extends ScalacDSL {
+trait ScalacYInferDSL
+    extends ScalacOptionDSL {
+
   object Yinfer {
     val unary_- = `-Yinfer`
     object `-Yinfer` {

@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacYDisableDSL extends ScalacDSL {
+trait ScalacYDisableDSL
+    extends ScalacOptionDSL {
+
   object Ydisable {
     val unary_- = `-Ydisable`
     object `-Ydisable` {

@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacYInlineDSL extends ScalacDSL {
+trait ScalacYInlineDSL
+    extends ScalacOptionDSL {
+
   object Yinline {
     val unary_- = ScalacYInline
   }

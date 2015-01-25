@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacYDebugDSL extends ScalacDSL {
+trait ScalacYDebugDSL
+    extends ScalacOptionDSL {
+
   object Ydebug {
     val unary_- = ScalacYDebug
   }

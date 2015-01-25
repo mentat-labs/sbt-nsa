@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacYMacroDSL extends ScalacDSL with ScalacVerboseDSL with ScalacNoDSL {
+trait ScalacYMacroDSL
+    extends ScalacOptionDSL with ScalacVerboseDSL with ScalacNoDSL {
+
   object Ymacro {
     val unary_- = `-Ymacro`
     object `-Ymacro` {
@@ -15,6 +17,7 @@ trait ScalacYMacroDSL extends ScalacDSL with ScalacVerboseDSL with ScalacNoDSL {
       }
 
       def -(e: expand.type) = ScalacYMacroExpand
+      def -(e: expand.WithString) = ScalacYMacroExpand(e.value)
 
       def -(n: no.type) = `-Ymacro-no`
       object `-Ymacro-no` {

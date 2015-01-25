@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacYReplDSL extends ScalacDSL {
+trait ScalacYReplDSL
+    extends ScalacOptionDSL {
+
   object Yrepl {
     val unary_- = `-Yrepl`
     object `-Yrepl` {

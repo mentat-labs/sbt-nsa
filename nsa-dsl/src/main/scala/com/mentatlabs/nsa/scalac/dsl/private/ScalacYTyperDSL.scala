@@ -4,7 +4,9 @@ package dsl
 
 import options._
 
-trait ScalacYTyperDSL extends ScalacDSL {
+trait ScalacYTyperDSL
+    extends ScalacOptionDSL {
+
   object Ytyper {
     val unary_- = `-Ytyper`
     object `-Ytyper` {
