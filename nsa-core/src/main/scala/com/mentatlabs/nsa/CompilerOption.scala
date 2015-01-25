@@ -29,10 +29,10 @@ trait CompilerOptionValue[T]
 }
 
 /** Compiler option with a name followed by concatenated choices */
-trait CompilerOptionChoice
+trait CompilerOptionChoice[T]
     extends CompilerOption {
   def setting: String
-  def values: Seq[String]
+  def values: Seq[T]
   def params = Seq(setting + (values match {
     case x if x.isEmpty => ""
     case x => x.mkString(":", ",", "")

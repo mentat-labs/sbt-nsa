@@ -12,6 +12,6 @@ abstract class JavacOptionValue[T](val setting: String, val value: T)
     extends CompilerOptionValue[T]
     with JavacOption
 
-abstract class JavacOptionChoice(val setting: String, val values: String*)
-    extends CompilerOptionChoice
+abstract class JavacOptionChoice[T](val setting: String, val values: T*)
+    extends CompilerOptionChoice[T]
     with JavacOption

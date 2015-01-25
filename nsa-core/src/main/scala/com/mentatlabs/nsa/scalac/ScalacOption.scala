@@ -20,6 +20,6 @@ abstract class ScalacOptionValue[T](val setting: String, val value: T)
     extends CompilerOptionValue[T]
     with ScalacOption
 
-abstract class ScalacOptionChoice(val setting: String, val values: String*)
-    extends CompilerOptionChoice
+abstract class ScalacOptionChoice[T](val setting: String, val values: T*)
+    extends CompilerOptionChoice[T]
     with ScalacOption

@@ -1,12 +1,12 @@
 package com.mentatlabs.nsa
 package scalac
 
-import org.specs2._
-import org.specs2.specification.SpecPart
-
+import org.specs2._, specification.SpecPart
 import scala.collection.mutable.{LinkedHashSet => MSet}
 
-trait ScalacOptionsSpec extends Specification {
+trait ScalacOptionsSpec
+    extends Specification {
+
   protected implicit class PimpedScalacOption(typedOption: ScalacOption) {
     def =>=(expected: String) = {
       /* unit tests check options by joining them with a space
@@ -21,7 +21,7 @@ trait ScalacOptionsSpec extends Specification {
     val head = typedOption.params.head
     val pattern = " " + (typedOption match {
       case _: ScalacOptionSwitch => head + "  "
-      case _: ScalacOptionChoice => head.replaceFirst(":.*", "(  |:<)")
+      case _: ScalacOptionChoice[_] => head.replaceFirst(":.*", "(  |:<)")
       case _: ScalacOptionValue[_] => head + "(  | <)"
     }) r
 

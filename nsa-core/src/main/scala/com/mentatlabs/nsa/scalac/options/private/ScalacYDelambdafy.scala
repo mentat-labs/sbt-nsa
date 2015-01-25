@@ -7,7 +7,7 @@ package options
   *   2.11.0 - 2.12.0: Strategy used for translating lambdas into JVM code. (inline,method) default:inline
   */
 object ScalacYDelambdafy
-    extends ScalacOptionChoiceContainer("-Ydelambdafy", `2.11.0`) {
+    extends ScalacOptionChoiceContainer[String]("-Ydelambdafy", `2.11.0`) {
 
   def inline = apply("inline")
   def method = apply("method")

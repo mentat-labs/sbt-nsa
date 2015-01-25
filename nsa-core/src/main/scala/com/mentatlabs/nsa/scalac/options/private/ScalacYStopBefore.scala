@@ -8,7 +8,7 @@ package options
   *   2.10.0 - 2.12.0: Stop before <phases>
   */
 object ScalacYStopBefore
-    extends ScalacOptionChoiceContainer("-Ystop-before", `2.9.0`) {
+    extends ScalacOptionChoiceContainer[String]("-Ystop-before", `2.9.0`) {
 
   def typer = apply("typer")
   def patmat = apply("patmat")

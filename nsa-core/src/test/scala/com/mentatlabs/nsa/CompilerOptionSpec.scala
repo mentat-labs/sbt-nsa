@@ -61,7 +61,7 @@ class CompilerOptionSpec extends Specification {
   }
 
   def compilerChoiceZero = {
-    val option = new CompilerOptionChoice {
+    val option = new CompilerOptionChoice[String] {
       def setting = "-choice"
       def values = Seq.empty
     }
@@ -71,7 +71,7 @@ class CompilerOptionSpec extends Specification {
   }
 
   def compilerChoiceEmpty = {
-    val option = new CompilerOptionChoice {
+    val option = new CompilerOptionChoice[String] {
       def setting = "-choice"
       def values = Seq("")
     }
@@ -81,7 +81,7 @@ class CompilerOptionSpec extends Specification {
   }
 
   def compilerChoiceOne = {
-    val option = new CompilerOptionChoice {
+    val option = new CompilerOptionChoice[String] {
       def setting = "-choice"
       def values = Seq("foo")
     }
@@ -91,7 +91,7 @@ class CompilerOptionSpec extends Specification {
   }
 
   def compilerChoiceMultiple = {
-    val option = new CompilerOptionChoice {
+    val option = new CompilerOptionChoice[String] {
       def setting = "-choice"
       def values = Seq("foo", "bar", "baz")
     }

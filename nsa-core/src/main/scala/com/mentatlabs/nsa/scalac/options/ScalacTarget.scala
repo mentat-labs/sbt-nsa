@@ -17,7 +17,7 @@ import javac.JavacVersion
   *   2.11.3 - 2.12.0: Target platform for object files. All JVM 1.5 targets are deprecated. (jvm-1.5,jvm-1.6,jvm-1.7,jvm-1.8) default:jvm-1.6
   */
 object ScalacTarget
-    extends ScalacOptionChoiceContainer("-target", `2.0.0`) {
+    extends ScalacOptionChoiceContainer[String]("-target", `2.0.0`) {
 
   // FIXME: <1.6 are deprecated in new Scalac versions
   // FIXME: <1.7 are removed in new Scalac versions
@@ -29,6 +29,6 @@ object ScalacTarget
   def `jvm-1.7` = apply("jvm-1.7")
   def `jvm-1.8` = apply("jvm-1.8")
 
-  def apply(javac: JavacVersion): ScalacOptionChoice =
+  def apply(javac: JavacVersion): ScalacOptionChoice[String] =
     apply("jvm" + javac)
 }

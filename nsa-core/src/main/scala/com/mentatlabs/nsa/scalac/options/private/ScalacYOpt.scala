@@ -7,7 +7,7 @@ package options
   *   2.11.3 - 2.12.0: Enable optimizations: `_' for all, `-Yopt:help' to list
   */
 object ScalacYOpt
-    extends ScalacOptionChoiceContainer("-Yopt", `2.11.3`) {
+    extends ScalacOptionChoiceContainer[String]("-Yopt", `2.11.3`) {
 
   def `_` = apply("_")
   def help = apply("help")

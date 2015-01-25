@@ -10,7 +10,7 @@ package options
   *   2.10.0 - 2.12.0: Skip <phases>
   */
 object ScalacYSkip
-    extends ScalacOptionChoiceContainer("-Yskip", `2.6.0`) {
+    extends ScalacOptionChoiceContainer[String]("-Yskip", `2.6.0`) {
 
   def typer = apply("typer")
   def patmat = apply("patmat")

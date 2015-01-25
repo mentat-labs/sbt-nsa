@@ -11,18 +11,22 @@ class ScalacOptionValueContainer[T](
   , protected val since: ScalacVersion
   ) extends ScalacOptionContainer[T] { self =>
 
-  def apply(value: T) =
+  def apply(value: T) = custom(value)
+
+  def custom[U](value: U) =
     new ScalacOptionValue(setting, value) {
       override def since = self.since
     }
 }
 
-class ScalacOptionChoiceContainer(
+class ScalacOptionChoiceContainer[T](
     protected val setting: String
   , protected val since: ScalacVersion
-  ) extends ScalacOptionContainer[String] { self =>
+  ) extends ScalacOptionContainer[T] { self =>
 
-  def apply(value: String) =
+  def apply(value: T) = custom(value)
+
+  def custom[U](value: U) =
     new ScalacOptionChoice(setting, value) {
       override def since = self.since
     }

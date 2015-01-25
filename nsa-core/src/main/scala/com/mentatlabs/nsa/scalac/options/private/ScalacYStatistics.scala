@@ -9,7 +9,7 @@ package options
   *   2.11.3 - 2.12.0: Print compiler statistics for specific phases: `_' for all, `-Ystatistics:help' to list
   */
 object ScalacYStatistics
-    extends ScalacOptionChoiceContainer("-Ystatistics", `2.6.0`) {
+    extends ScalacOptionChoiceContainer[String]("-Ystatistics", `2.6.0`) {
 
   def `_` = apply("_")
   def help = apply("help")
