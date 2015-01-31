@@ -8,7 +8,8 @@ package options
   *   2.11.2 - 2.12.0: Enable or disable specific warnings: `_' for all, `-Xlint:help' to list
   */
 object ScalacXLint
-    extends ScalacOptionChoiceContainer[String]("-Xlint", `2.9.1`) {
+    extends ScalacOptionChoiceContainer[String]("-Xlint", ScalacVersions.`2.9.1`)
+    with ScalacOptionEmptyChoice {
 
   def `_` = apply("_")
   def help = apply("help")

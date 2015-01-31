@@ -8,5 +8,5 @@ package options
   */
 case object ScalacYIdeDebug
     extends ScalacOptionSwitch("-Yide-debug") {
-  val since = `2.8.0`
+  val since = ScalacVersions.`2.8.0`
 }

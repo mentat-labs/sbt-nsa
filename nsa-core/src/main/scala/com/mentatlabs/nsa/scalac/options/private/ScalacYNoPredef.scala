@@ -14,5 +14,5 @@ package options
   */
 case object ScalacYNoPredef
     extends ScalacOptionSwitch("-Yno-predef") {
-  val since = `2.10.0`
+  val since = ScalacVersions.`2.10.0`
 }

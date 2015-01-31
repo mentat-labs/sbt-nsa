@@ -9,5 +9,5 @@ package options
   */
 case object ScalacYWarnUnusedImport
     extends ScalacOptionSwitch("-Ywarn-unused-import") {
-  val since = `2.11.0`
+  val since = ScalacVersions.`2.11.0`
 }

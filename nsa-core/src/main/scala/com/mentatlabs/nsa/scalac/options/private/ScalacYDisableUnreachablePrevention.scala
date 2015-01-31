@@ -8,5 +8,5 @@ package options
   */
 case object ScalacYDisableUnreachablePrevention
     extends ScalacOptionSwitch("-Ydisable-unreachable-prevention") {
-  val since = `2.11.0`
+  val since = ScalacVersions.`2.11.0`
 }

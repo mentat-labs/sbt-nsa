@@ -9,5 +9,5 @@ package options
   */
 case object ScalacXDisableAssertions
     extends ScalacOptionSwitch("-Xdisable-assertions") {
-  val since = `2.6.0`
+  val since = ScalacVersions.`2.6.0`
 }

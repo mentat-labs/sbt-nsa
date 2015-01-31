@@ -9,5 +9,5 @@ package options
   */
 case object ScalacYTyperDebug
     extends ScalacOptionSwitch("-Ytyper-debug") {
-  val since = `2.8.0`
+  val since = ScalacVersions.`2.8.0`
 }

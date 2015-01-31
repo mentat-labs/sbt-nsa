@@ -9,5 +9,5 @@ package options
   */
 case object ScalacXNoUescape
     extends ScalacOptionSwitch("-Xno-uescape") {
-  val since = `2.6.0`
+  val since = ScalacVersions.`2.6.0`
 }

@@ -8,5 +8,5 @@ package options
   */
 case object ScalacXDev
     extends ScalacOptionSwitch("-Xdev") {
-  val since = `2.11.0`
+  val since = ScalacVersions.`2.11.0`
 }

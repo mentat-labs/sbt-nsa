@@ -8,5 +8,5 @@ package options
   */
 case object ScalacUsejavacp
     extends ScalacOptionSwitch("-usejavacp") {
-  val since = `2.8.0`
+  val since = ScalacVersions.`2.8.0`
 }

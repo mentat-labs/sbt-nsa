@@ -9,5 +9,5 @@ package options
   */
 case object ScalacYInferArgumentTypes
     extends ScalacOptionSwitch("-Yinfer-argument-types") {
-  val since = `2.8.1`
+  val since = ScalacVersions.`2.8.1`
 }

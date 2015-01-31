@@ -9,5 +9,5 @@ package options
   */
 case object ScalacYNoCompletion
     extends ScalacOptionSwitch("-Yno-completion") {
-  val since = `2.8.0`
+  val since = ScalacVersions.`2.8.0`
 }

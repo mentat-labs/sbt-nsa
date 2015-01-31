@@ -8,7 +8,7 @@ package options
   *    2.9.0 - 2.12.0: Calls to @elidable methods are omitted if method priority is lower than argument
   */
 object ScalacXElideBelow
-    extends ScalacOptionValueContainer[Int]("-Xelide-below", `2.8.0`) {
+    extends ScalacOptionValueContainer[Int]("-Xelide-below", ScalacVersions.`2.8.0`) {
 
   def ALL     = apply(Int.MinValue)
   def FINEST  = apply(300)

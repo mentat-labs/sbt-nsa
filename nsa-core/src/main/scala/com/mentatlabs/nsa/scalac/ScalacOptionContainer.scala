@@ -7,8 +7,8 @@ trait ScalacOptionContainer[T]
 }
 
 class ScalacOptionValueContainer[T](
-    protected val setting: String
-  , protected val since: ScalacVersion
+    val setting: String
+  , val since: ScalacVersion
   ) extends ScalacOptionContainer[T] { self =>
 
   def apply(value: T) = custom(value)
@@ -20,8 +20,8 @@ class ScalacOptionValueContainer[T](
 }
 
 class ScalacOptionChoiceContainer[T](
-    protected val setting: String
-  , protected val since: ScalacVersion
+    val setting: String
+  , val since: ScalacVersion
   ) extends ScalacOptionContainer[T] { self =>
 
   def apply(value: T) = custom(value)

@@ -17,5 +17,5 @@ package options
 /** Print tree positions, as offsets. */
 case object ScalacXPrintPos
     extends ScalacOptionSwitch("-Xprint-pos") {
-  val since = `2.6.0`
+  val since = ScalacVersions.`2.6.0`
 }

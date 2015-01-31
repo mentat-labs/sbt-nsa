@@ -9,5 +9,5 @@ package options
   */
 case object ScalacXNoForwarders
     extends ScalacOptionSwitch("-Xno-forwarders") {
-  val since = `2.8.0`
+  val since = ScalacVersions.`2.8.0`
 }

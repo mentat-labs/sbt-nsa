@@ -9,5 +9,5 @@ package options
   */
 case object ScalacXLogImplicits
     extends ScalacOptionSwitch("-Xlog-implicits") {
-  val since = `2.7.0`
+  val since = ScalacVersions.`2.7.0`
 }

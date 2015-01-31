@@ -8,5 +8,5 @@ package options
   */
 case object ScalacYBreakCycles
     extends ScalacOptionSwitch("-Ybreak-cycles") {
-  val since = `2.11.0`
+  val since = ScalacVersions.`2.11.0`
 }

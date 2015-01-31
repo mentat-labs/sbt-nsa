@@ -11,7 +11,7 @@ package options
   *    2.9.0 - 2.12.0: Set level of generated debugging info. (none,source,line,vars,notailcalls) default:vars
   */
 object ScalacG
-    extends ScalacOptionChoiceContainer[String]("-g", `2.0.0`) {
+    extends ScalacOptionChoiceContainer[String]("-g", ScalacVersions.`2.0.0`) {
 
   def none = apply("none")
   def source = apply("source")

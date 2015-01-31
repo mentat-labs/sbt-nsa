@@ -10,5 +10,5 @@ package options
   */
 case object ScalacDeprecation
     extends ScalacOptionSwitch("-deprecation") {
-  val since = `2.3.0`
+  val since = ScalacVersions.`2.3.0`
 }

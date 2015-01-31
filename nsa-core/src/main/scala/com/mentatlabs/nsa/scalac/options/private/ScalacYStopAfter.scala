@@ -8,7 +8,7 @@ package options
   *   2.10.0 - 2.12.0: Stop after <phases>
   */
 object ScalacYStopAfter
-    extends ScalacOptionChoiceContainer[String]("-Ystop-after", `2.9.0`) {
+    extends ScalacOptionChoiceContainer[String]("-Ystop-after", ScalacVersions.`2.9.0`) {
 
   def parser = apply("parser")
   def typer = apply("typer")

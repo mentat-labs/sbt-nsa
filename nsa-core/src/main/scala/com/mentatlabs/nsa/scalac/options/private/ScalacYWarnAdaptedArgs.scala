@@ -8,5 +8,5 @@ package options
   */
 case object ScalacYWarnAdaptedArgs
     extends ScalacOptionSwitch("-Ywarn-adapted-args") {
-  val since = `2.10.0`
+  val since = ScalacVersions.`2.10.0`
 }

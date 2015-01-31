@@ -10,5 +10,5 @@ package options
   */
 case object ScalacY
     extends ScalacOptionSwitch("-Y") {
-  val since = `2.6.0`
+  val since = ScalacVersions.`2.6.0`
 }

@@ -7,7 +7,7 @@ package options
   *   2.11.0 - 2.12.0: Treat compiler input as Scala source for the specified version, see SI-8126.
   */
 object ScalacXSource
-    extends ScalacOptionChoiceContainer[String]("-Xsource", `2.11.0`) {
+    extends ScalacOptionChoiceContainer[String]("-Xsource", ScalacVersions.`2.11.0`) {
 
   def apply(sv: scalac.ScalacVersion) =
     custom(sv)

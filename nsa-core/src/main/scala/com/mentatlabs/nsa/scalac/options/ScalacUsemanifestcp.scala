@@ -8,5 +8,5 @@ package options
   */
 case object ScalacUsemanifestcp
     extends ScalacOptionSwitch("-usemanifestcp") {
-  val since = `2.11.0`
+  val since = ScalacVersions.`2.11.0`
 }

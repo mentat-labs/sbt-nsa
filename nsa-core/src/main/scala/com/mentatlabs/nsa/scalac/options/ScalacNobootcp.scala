@@ -8,5 +8,5 @@ package options
   */
 case object ScalacNobootcp
     extends ScalacOptionSwitch("-nobootcp") {
-  val since = `2.9.0`
+  val since = ScalacVersions.`2.9.0`
 }

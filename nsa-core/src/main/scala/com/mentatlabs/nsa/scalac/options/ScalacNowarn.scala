@@ -9,5 +9,5 @@ package options
   */
 case object ScalacNowarn
     extends ScalacOptionSwitch("-nowarn") {
-  val since = `2.0.0`
+  val since = ScalacVersions.`2.0.0`
 }

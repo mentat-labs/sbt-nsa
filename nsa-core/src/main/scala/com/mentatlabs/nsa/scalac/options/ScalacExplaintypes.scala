@@ -9,5 +9,5 @@ package options
   */
 case object ScalacExplaintypes
     extends ScalacOptionSwitch("-explaintypes") {
-  val since = `2.0.0`
+  val since = ScalacVersions.`2.0.0`
 }

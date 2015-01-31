@@ -8,5 +8,5 @@ package options
   */
 case object ScalacYNoLoadImplClass
     extends ScalacOptionSwitch("-Yno-load-impl-class") {
-  val since = `2.11.0`
+  val since = ScalacVersions.`2.11.0`
 }

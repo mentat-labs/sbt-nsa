@@ -7,7 +7,7 @@ package options
   *   2.11.0 - 2.12.0: Choice of bytecode emitter. (GenASM,GenBCode) default:GenASM
   */
 object ScalacYBackend
-    extends ScalacOptionChoiceContainer[String]("-Ybackend", `2.11.0`) {
+    extends ScalacOptionChoiceContainer[String]("-Ybackend", ScalacVersions.`2.11.0`) {
 
   def GenASM = apply("GenASM")
   def GenBCode = apply("GenBCode")

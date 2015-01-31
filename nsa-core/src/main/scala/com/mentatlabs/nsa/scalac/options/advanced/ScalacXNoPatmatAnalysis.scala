@@ -8,5 +8,5 @@ package options
   */
 case object ScalacXNoPatmatAnalysis
     extends ScalacOptionSwitch("-Xno-patmat-analysis") {
-  val since = `2.10.0`
+  val since = ScalacVersions.`2.10.0`
 }

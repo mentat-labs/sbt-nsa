@@ -10,5 +10,5 @@ package options
   */
 case object ScalacXExperimental
     extends ScalacOptionSwitch("-Xexperimental") {
-  val since = `2.2.0`
+  val since = ScalacVersions.`2.2.0`
 }

@@ -39,9 +39,9 @@ object ScalacHelp {
     sv -> new ScalacHelp(
       help = read(s"scalac/scalac-$sv.txt").getOrElse(
         sys.error(s"Could not read scala help for $sv"))
-    , advancedHelp = read(s"scalac/scalac-$sv-X.txt").ensuring(_.isDefined || sv < `2.6.0`,
+    , advancedHelp = read(s"scalac/scalac-$sv-X.txt").ensuring(_.isDefined || sv < ScalacVersions.`2.6.0`,
         sys.error(s"Could not read scala advanced help for $sv"))
-    , privateHelp = read(s"scalac/scalac-$sv-Y.txt").ensuring(_.isDefined || sv < `2.6.0`,
+    , privateHelp = read(s"scalac/scalac-$sv-Y.txt").ensuring(_.isDefined || sv < ScalacVersions.`2.6.0`,
         sys.error(s"Could not read scala private help for $sv"))
     )
   })

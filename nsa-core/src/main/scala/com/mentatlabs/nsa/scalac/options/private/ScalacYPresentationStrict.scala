@@ -8,5 +8,5 @@ package options
   */
 case object ScalacYPresentationStrict
     extends ScalacOptionSwitch("-Ypresentation-strict") {
-  val since = `2.8.2`
+  val since = ScalacVersions.`2.8.2`
 }

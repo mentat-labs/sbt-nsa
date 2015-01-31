@@ -9,5 +9,5 @@ package options
   */
 case object ScalacYWarnNullaryOverride
     extends ScalacOptionSwitch("-Ywarn-nullary-override") {
-  val since = `2.9.1`
+  val since = ScalacVersions.`2.9.1`
 }

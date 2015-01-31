@@ -2,6 +2,7 @@ package com.mentatlabs.nsa
 package scalac
 
 import org.specs2._
+import ScalacVersions._
 
 class ScalacVersionSpec extends Specification {
   def is = s2"""

@@ -8,5 +8,5 @@ package options
   */
 case object ScalacYWarnInaccessible
     extends ScalacOptionSwitch("-Ywarn-inaccessible") {
-  val since = `2.9.1`
+  val since = ScalacVersions.`2.9.1`
 }

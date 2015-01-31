@@ -9,7 +9,7 @@ package options
   */
 case object ScalacYEtaExpandKeepsStar
     extends ScalacOptionSwitch("-Yeta-expand-keeps-star") {
-  val since = `2.10.0`
-  override val deprecated = Some(`2.11.0`)
-  override val removed = Some(`2.12.0`)
+  val since = ScalacVersions.`2.10.0`
+  override val deprecated = Some(ScalacVersions.`2.11.0`)
+  override val removed = Some(ScalacVersions.`2.12.0`)
 }

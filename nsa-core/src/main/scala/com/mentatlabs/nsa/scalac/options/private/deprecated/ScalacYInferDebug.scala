@@ -9,6 +9,6 @@ package options
   */
 case object ScalacYInferDebug
     extends ScalacOptionSwitch("-Yinfer-debug") {
-  val since = `2.9.1`
-  override val deprecated = Some(`2.11.0`)
+  val since = ScalacVersions.`2.9.1`
+  override val deprecated = Some(ScalacVersions.`2.11.0`)
 }

@@ -9,5 +9,5 @@ package options
   */
 case object ScalacYNoGenericSignatures
     extends ScalacOptionSwitch("-Yno-generic-signatures") {
-  val since = `2.7.2`
+  val since = ScalacVersions.`2.7.2`
 }

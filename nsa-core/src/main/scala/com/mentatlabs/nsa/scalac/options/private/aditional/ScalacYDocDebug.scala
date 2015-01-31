@@ -8,5 +8,5 @@ package options
   */
 case object ScalacYDocDebug
     extends ScalacOptionSwitch("-Ydoc-debug") {
-  val since = `2.9.0`
+  val since = ScalacVersions.`2.9.0`
 }

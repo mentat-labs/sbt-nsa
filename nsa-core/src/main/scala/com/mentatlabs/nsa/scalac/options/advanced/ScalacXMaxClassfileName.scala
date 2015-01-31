@@ -8,7 +8,7 @@ package options
   *    2.9.1 - 2.12.0: Maximum filename length for generated classes
   */
 object ScalacXMaxClassfileName
-    extends ScalacOptionValueContainer[Int]("-Xmax-classfile-name", `2.9.0`) {
+    extends ScalacOptionValueContainer[Int]("-Xmax-classfile-name", ScalacVersions.`2.9.0`) {
 
   // Generated code below, do not edit; [see src/miscXMaxClassfileNameGenerator.scala]
 

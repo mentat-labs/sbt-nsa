@@ -11,5 +11,5 @@ package options
   */
 case object ScalacUnchecked
     extends ScalacOptionSwitch("-unchecked") {
-  val since = `2.3.0`
+  val since = ScalacVersions.`2.3.0`
 }

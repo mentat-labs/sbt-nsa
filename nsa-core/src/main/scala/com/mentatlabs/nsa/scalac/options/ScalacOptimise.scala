@@ -8,5 +8,5 @@ package options
   */
 case object ScalacOptimise
     extends ScalacOptionSwitch("-optimise") {
-  val since = `2.6.0`
+  val since = ScalacVersions.`2.6.0`
 }
