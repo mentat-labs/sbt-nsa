@@ -1,10 +1,13 @@
 package com.mentatlabs.nsa
 package scalac
+package dsl
 
-import dsl._
+import experimental._
 
-trait ScalacOptions
-    extends CompilerOptions
+trait ScalacOptionsExperimentalDSL
+    extends ScalacExperimentalDSL
+
+    // core options experimental
     with ScalacDeprecationDSL
     with ScalacEncodingDSL
     with ScalacExplaintypesDSL
@@ -24,10 +27,12 @@ trait ScalacOptions
     with ScalacUsemanifestcpDSL
     with ScalacVerboseDSL
     with ScalacVersionDSL
+    with ScalacXDSL
+
+    // advanced options experimental
     with ScalacXCheckinitDSL
     with ScalacXDevDSL
     with ScalacXDisableDSL
-    with ScalacXDSL
     with ScalacXElideDSL
     with ScalacXExperimentalDSL
     with ScalacXFatalDSL
@@ -46,6 +51,9 @@ trait ScalacOptions
     with ScalacXSourceDSL
     with ScalacXStrictDSL
     with ScalacXVerifyDSL
+    with ScalacYDSL
+
+    // private additional experimental
     with ScalacYBackendDSL
     with ScalacYBreakDSL
     with ScalacYClosureDSL
@@ -56,7 +64,6 @@ trait ScalacOptions
     with ScalacYDelambdafyDSL
     with ScalacYDisableDSL
     with ScalacYDocDSL
-    with ScalacYDSL
     with ScalacYEtaDSL
     with ScalacYIdeDSL
     with ScalacYInferDSL

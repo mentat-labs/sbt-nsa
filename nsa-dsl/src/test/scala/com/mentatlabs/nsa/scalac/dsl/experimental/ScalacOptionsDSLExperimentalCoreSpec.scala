@@ -1,10 +1,11 @@
 package com.mentatlabs.nsa
 package scalac
 package dsl
+package experimental
 
 import java.nio.charset.Charset
 
-class ScalacOptionsDSLCoreSpec extends ScalacOptionsDSLSpec {
+class ScalacOptionsDSLExperimentalCoreSpec extends ScalacOptionsDSLExperimentalSpec {
   def is = s2"""
   -deprecation         ${`-deprecation test`}
   -encoding            ${`-encoding test`}
@@ -28,11 +29,11 @@ class ScalacOptionsDSLCoreSpec extends ScalacOptionsDSLSpec {
   -X                   ${`-X test`}
 """
 
-  def `-deprecation test` = new ScalacOptions { def options = Seq(
+  def `-deprecation test` = new CheckDSL { init (
     -deprecation, "-deprecation"
   )}
 
-  def `-encoding test` = new ScalacOptions { def options = Seq(
+  def `-encoding test` = new CheckDSL { init (
     -encoding ASCII                 , ("-encoding", "ASCII")
   , -encoding UTF-8                 , ("-encoding", "UTF-8")
   , -encoding ISO-8859-1            , ("-encoding", "ISO-8859-1")
@@ -40,15 +41,15 @@ class ScalacOptionsDSLCoreSpec extends ScalacOptionsDSLSpec {
   , -encoding (Charset forName "L1"), ("-encoding", "ISO-8859-1")
   )}
 
-  def `-explaintypes test` = new ScalacOptions { def options = Seq(
+  def `-explaintypes test` = new CheckDSL { init (
     -explaintypes, "-explaintypes"
   )}
 
-  def `-feature test` = new ScalacOptions { def options = Seq(
+  def `-feature test` = new CheckDSL { init (
     -feature, "-feature"
   )}
 
-  def `-g test` = new ScalacOptions { def options = Seq(
+  def `-g test` = new CheckDSL { init (
     -g none       , "-g:none"
   , -g source     , "-g:source"
   , -g line       , "-g:line"
@@ -57,11 +58,11 @@ class ScalacOptionsDSLCoreSpec extends ScalacOptionsDSLSpec {
   , -g ("notc")   , "-g:notc"
   )}
 
-  def `-help test` = new ScalacOptions { def options = Seq(
+  def `-help test` = new CheckDSL { init (
     -help, "-help"
   )}
 
-  def `-language test` = new ScalacOptions { def options = Seq(
+  def `-language test` = new CheckDSL { init (
     -language `_`                   , "-language:_"
   , -language help                  , "-language:help"
   , -language dynamics              , "-language:dynamics"
@@ -79,58 +80,58 @@ class ScalacOptionsDSLCoreSpec extends ScalacOptionsDSLSpec {
   , -language ("fooBar,-baz")       , "-language:fooBar,-baz"
   )}
 
-  def `-nobootcp test` = new ScalacOptions { def options = Seq(
+  def `-nobootcp test` = new CheckDSL { init (
     -nobootcp, "-nobootcp"
   )}
 
-  def `-no-specialization test` = new ScalacOptions { def options = Seq(
+  def `-no-specialization test` = new CheckDSL { init (
     -no-specialization, "-no-specialization"
   )}
 
-  def `-nowarn test` = new ScalacOptions { def options = Seq(
+  def `-nowarn test` = new CheckDSL { init (
     -nowarn, "-nowarn"
   )}
 
-  def `-optimise test` = new ScalacOptions { def options = Seq(
+  def `-optimise test` = new CheckDSL { init (
     -optimise, "-optimise"
   )}
 
-  def `-print test` = new ScalacOptions { def options = Seq(
+  def `-print test` = new CheckDSL { init (
     -print, "-print"
   )}
 
-  def `-target test` = new ScalacOptions { def options = Seq(
+  def `-target test` = new CheckDSL { init (
     -target `jvm-1.6`, "-target:jvm-1.6"
   , -target jvm-1.7  , "-target:jvm-1.7"
   , -target ("msil") , "-target:msil"
   , -target ("cldc") , "-target:cldc"
   )}
 
-  def `-unchecked test` = new ScalacOptions { def options = Seq(
+  def `-unchecked test` = new CheckDSL { init (
     -unchecked, "-unchecked"
   )}
 
-  def `-uniqid test` = new ScalacOptions { def options = Seq(
+  def `-uniqid test` = new CheckDSL { init (
     -uniqid, "-uniqid"
   )}
 
-  def `-usejavacp test` = new ScalacOptions { def options = Seq(
+  def `-usejavacp test` = new CheckDSL { init (
     -usejavacp, "-usejavacp"
   )}
 
-  def `-usemanifestcp test` = new ScalacOptions { def options = Seq(
+  def `-usemanifestcp test` = new CheckDSL { init (
     -usemanifestcp, "-usemanifestcp"
   )}
 
-  def `-verbose test` = new ScalacOptions { def options = Seq(
+  def `-verbose test` = new CheckDSL { init (
     -verbose, "-verbose"
   )}
 
-  def `-version test` = new ScalacOptions { def options = Seq(
+  def `-version test` = new CheckDSL { init (
     -version, "-version"
   )}
 
-  def `-X test` = new ScalacOptions { def options = Seq(
+  def `-X test` = new CheckDSL { init (
     -X, "-X"
   )}
 }

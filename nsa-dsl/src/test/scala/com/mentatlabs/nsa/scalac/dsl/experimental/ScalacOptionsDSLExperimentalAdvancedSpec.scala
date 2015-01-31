@@ -1,8 +1,11 @@
 package com.mentatlabs.nsa
 package scalac
 package dsl
+package experimental
 
-class ScalacOptionsDSLAdvancedSpec extends ScalacOptionsDSLSpec {
+import ScalacVersions._
+
+class ScalacOptionsDSLExperimentalAdvancedSpec extends ScalacOptionsDSLExperimentalSpec {
   def is = s2"""
   -Xcheckinit                  ${`-Xcheckinit test`}
   -Xdev                        ${`-Xdev test`}
@@ -36,19 +39,19 @@ class ScalacOptionsDSLAdvancedSpec extends ScalacOptionsDSLSpec {
   -Y                           ${`-Y test`}
 """
 
-  def `-Xcheckinit test` = new ScalacOptions { def options = Seq(
+  def `-Xcheckinit test` = new CheckDSL { init (
     -Xcheckinit, "-Xcheckinit"
   )}
 
-  def `-Xdev test` = new ScalacOptions { def options = Seq(
+  def `-Xdev test` = new CheckDSL { init (
     -Xdev, "-Xdev"
   )}
 
-  def `-Xdisable-assertions test` = new ScalacOptions { def options = Seq(
+  def `-Xdisable-assertions test` = new CheckDSL { init (
     -Xdisable-assertions, "-Xdisable-assertions"
   )}
 
-  def `-Xelide-below test` = new ScalacOptions { def options = Seq(
+  def `-Xelide-below test` = new CheckDSL { init (
     -Xelide-below ALL      , ("-Xelide-below", "-2147483648")
   , -Xelide-below FINEST   , ("-Xelide-below", "300")
   , -Xelide-below FINER    , ("-Xelide-below", "400")
@@ -64,27 +67,27 @@ class ScalacOptionsDSLAdvancedSpec extends ScalacOptionsDSLSpec {
   , -Xelide-below (-123)   , ("-Xelide-below", "-123")
   )}
 
-  def `-Xexperimental test` = new ScalacOptions { def options = Seq(
+  def `-Xexperimental test` = new CheckDSL { init (
     -Xexperimental, "-Xexperimental"
   )}
 
-  def `-Xfatal-warnings test` = new ScalacOptions { def options = Seq(
+  def `-Xfatal-warnings test` = new CheckDSL { init (
     -Xfatal-warnings, "-Xfatal-warnings"
   )}
 
-  def `-Xfull-lubs test` = new ScalacOptions { def options = Seq(
+  def `-Xfull-lubs test` = new CheckDSL { init (
     -Xfull-lubs, "-Xfull-lubs"
   )}
 
-  def `-Xfuture test` = new ScalacOptions { def options = Seq(
+  def `-Xfuture test` = new CheckDSL { init (
     -Xfuture, "-Xfuture"
   )}
 
-  def `-Yinfer-argument-types test` = new ScalacOptions { def options = Seq(
+  def `-Yinfer-argument-types test` = new CheckDSL { init (
     -Yinfer-argument-types, "-Yinfer-argument-types"
   )}
 
-  def `-Xlint test` = new ScalacOptions { def options = Seq(
+  def `-Xlint test` = new CheckDSL { init (
     -Xlint `_`                         , "-Xlint:_"
   , -Xlint help                        , "-Xlint:help"
   , -Xlint `adapted-args`              , "-Xlint:adapted-args"
@@ -120,72 +123,72 @@ class ScalacOptionsDSLAdvancedSpec extends ScalacOptionsDSLSpec {
   , -Xlint ("foo-bar,-baz")            , "-Xlint:foo-bar,-baz"
   )}
 
-  def `-Xlog-free-terms test` = new ScalacOptions { def options = Seq(
+  def `-Xlog-free-terms test` = new CheckDSL { init (
     -Xlog-free-terms, "-Xlog-free-terms"
   )}
 
-  def `-Xlog-free-types test` = new ScalacOptions { def options = Seq(
+  def `-Xlog-free-types test` = new CheckDSL { init (
     -Xlog-free-types, "-Xlog-free-types"
   )}
 
-  def `-Xlog-implicit-conversions test` = new ScalacOptions { def options = Seq(
+  def `-Xlog-implicit-conversions test` = new CheckDSL { init (
     -Xlog-implicit_conversions, "-Xlog-implicit-conversions"
   )}
 
-  def `-Xlog-implicits test` = new ScalacOptions { def options = Seq(
+  def `-Xlog-implicits test` = new CheckDSL { init (
     -Xlog-implicits, "-Xlog-implicits"
   )}
 
-  def `-Xlog-reflective-calls test` = new ScalacOptions { def options = Seq(
+  def `-Xlog-reflective-calls test` = new CheckDSL { init (
     -Xlog-reflective-calls, "-Xlog-reflective-calls"
   )}
 
-  def `-Xmax-classfile-name test` = new ScalacOptions { def options = Seq(
+  def `-Xmax-classfile-name test` = new CheckDSL { init (
     -Xmax-classfile-name `72` , ("-Xmax-classfile-name", "72")
   , -Xmax-classfile-name (128), ("-Xmax-classfile-name", "128")
   )}
 
-  def `-Xno-forwarders test` = new ScalacOptions { def options = Seq(
+  def `-Xno-forwarders test` = new CheckDSL { init (
     -Xno-forwarders, "-Xno-forwarders"
   )}
 
-  def `-Xnojline test` = new ScalacOptions { def options = Seq(
+  def `-Xnojline test` = new CheckDSL { init (
     -Xnojline, "-Xnojline"
   )}
 
-  def `-Xno-patmat-analysis test` = new ScalacOptions { def options = Seq(
+  def `-Xno-patmat-analysis test` = new CheckDSL { init (
     -Xno-patmat-analysis, "-Xno-patmat-analysis"
   )}
 
-  def `-Xno-uescape test` = new ScalacOptions { def options = Seq(
+  def `-Xno-uescape test` = new CheckDSL { init (
     -Xno-uescape, "-Xno-uescape"
   )}
 
-  def `-Xplugin-list test` = new ScalacOptions { def options = Seq(
+  def `-Xplugin-list test` = new CheckDSL { init (
     -Xplugin-list, "-Xplugin-list"
   )}
 
-  def `-Xprint-pos test` = new ScalacOptions { def options = Seq(
+  def `-Xprint-pos test` = new CheckDSL { init (
     -Xprint-pos, "-Xprint-pos"
   )}
 
-  def `-Xprint-types test` = new ScalacOptions { def options = Seq(
+  def `-Xprint-types test` = new CheckDSL { init (
     -Xprint-types, "-Xprint-types"
   )}
 
-  def `-Xprompt test` = new ScalacOptions { def options = Seq(
+  def `-Xprompt test` = new CheckDSL { init (
     -Xprompt, "-Xprompt"
   )}
 
-  def `-Xresident test` = new ScalacOptions { def options = Seq(
+  def `-Xresident test` = new CheckDSL { init (
     -Xresident, "-Xresident"
   )}
 
-  def `-Xshow-phases test` = new ScalacOptions { def options = Seq(
+  def `-Xshow-phases test` = new CheckDSL { init (
     -Xshow-phases, "-Xshow-phases"
   )}
 
-  def `-Xsource test` = new ScalacOptions { def options = Seq(
+  def `-Xsource test` = new CheckDSL { init (
     -Xsource `2`       , "-Xsource:2"
   , -Xsource `2.10`    , "-Xsource:2.10"
   , -Xsource `2.10.4`  , "-Xsource:2.10.4"
@@ -196,15 +199,15 @@ class ScalacOptionsDSLAdvancedSpec extends ScalacOptionsDSLSpec {
   , -Xsource ("2.3.4") , "-Xsource:2.3.4"
   )}
 
-  def `-Xstrict-inference test` = new ScalacOptions { def options = Seq(
+  def `-Xstrict-inference test` = new CheckDSL { init (
     -Xstrict-inference, "-Xstrict-inference"
   )}
 
-  def `-Xverify test` = new ScalacOptions { def options = Seq(
+  def `-Xverify test` = new CheckDSL { init (
     -Xverify, "-Xverify"
   )}
 
-  def `-Y test` = new ScalacOptions { def options = Seq(
+  def `-Y test` = new CheckDSL { init (
     -Y, "-Y"
   )}
 }
