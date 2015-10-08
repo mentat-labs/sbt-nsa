@@ -24,7 +24,7 @@ where possible standard options include:
   -optimise                       Generates faster bytecode by applying optimisations to the program
   -print                          Print program with Scala-specific features removed.
   -sourcepath <path>              Specify location(s) of source files.
-  -target:<target>                Target platform for object files. All JVM 1.5 - 1.7 targets are deprecated. (jvm-1.5,jvm-1.6,jvm-1.7,jvm-1.8) default:jvm-1.8
+  -target:<target>                Target platform for object files. All JVM 1.5 targets are deprecated. (jvm-1.5,jvm-1.6,jvm-1.7,jvm-1.8) default:jvm-1.6
   -toolcp <path>                  Add to the runner classpath.
   -unchecked                      Enable additional warnings where generated code depends on assumptions.
   -uniqid                         Uniquely tag all identifiers in debugging output.
