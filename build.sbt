@@ -1,8 +1,8 @@
-enablePlugins(NsaPlugin)
+// enablePlugins(NsaPlugin)
 
-crossScalaVersions := Seq(`2.10.4`, `2.11.5`)
+//crossScalaVersions := Seq(`2.10.4`, `2.11.5`)
 
-scalaVersion := crossScalaVersions.value.head
+//scalaVersion := crossScalaVersions.value.head
 
 //scalaVersion := "1.9.9"
 //scalaVersion in Test := "2.0.0"

@@ -118,6 +118,8 @@ object ScalacVersions {
   val `2.10.2` = ScalacVersion(2, 10, 2)
   val `2.10.3` = ScalacVersion(2, 10, 3)
   val `2.10.4` = ScalacVersion(2, 10, 4)
+  val `2.10.5` = ScalacVersion(2, 10, 5)
+  val `2.10.6` = ScalacVersion(2, 10, 6)
 
   val `2.11.0` = ScalacVersion(2, 11, 0)
   val `2.11.1` = ScalacVersion(2, 11, 1)
@@ -125,6 +127,9 @@ object ScalacVersions {
   val `2.11.3` = ScalacVersion(2, 11, 3)
   val `2.11.4` = ScalacVersion(2, 11, 4)
   val `2.11.5` = ScalacVersion(2, 11, 5)
+  val `2.11.6` = ScalacVersion(2, 11, 6)
+  val `2.11.7` = ScalacVersion(2, 11, 7)
+  val `2.11.8` = ScalacVersion(2, 11, 8)
 
   val `2.12.0` = ScalacVersion(2, 12, 0)
 }

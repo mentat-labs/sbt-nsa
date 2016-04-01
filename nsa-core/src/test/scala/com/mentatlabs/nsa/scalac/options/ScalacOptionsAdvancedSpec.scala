@@ -197,6 +197,8 @@ class ScalacOptionsAdvancedSpec extends ScalacOptionsSpec {
     (ScalacXSource `2.10.2`)  =>= "-Xsource:2.10.2" and
     (ScalacXSource `2.10.3`)  =>= "-Xsource:2.10.3" and
     (ScalacXSource `2.10.4`)  =>= "-Xsource:2.10.4" and
+    (ScalacXSource `2.10.5`)  =>= "-Xsource:2.10.5" and
+    (ScalacXSource `2.10.6`)  =>= "-Xsource:2.10.6" and
     (ScalacXSource `2.11`)    =>= "-Xsource:2.11" and
     (ScalacXSource `2.11.0`)  =>= "-Xsource:2.11.0" and
     (ScalacXSource `2.11.1`)  =>= "-Xsource:2.11.1" and
@@ -204,6 +206,9 @@ class ScalacOptionsAdvancedSpec extends ScalacOptionsSpec {
     (ScalacXSource `2.11.3`)  =>= "-Xsource:2.11.3" and
     (ScalacXSource `2.11.4`)  =>= "-Xsource:2.11.4" and
     (ScalacXSource `2.11.5`)  =>= "-Xsource:2.11.5" and
+    (ScalacXSource `2.11.6`)  =>= "-Xsource:2.11.6" and
+    (ScalacXSource `2.11.7`)  =>= "-Xsource:2.11.7" and
+    (ScalacXSource `2.11.8`)  =>= "-Xsource:2.11.8" and
     (ScalacXSource `2.12`)    =>= "-Xsource:2.12" and
     (ScalacXSource `2.12.0`)  =>= "-Xsource:2.12.0"
     (ScalacXSource ("3.0"))   =>= "-Xsource:3.0"

@@ -76,6 +76,8 @@ object ScalacXSource
   val `2.10.2` = apply("2.10.2")
   val `2.10.3` = apply("2.10.3")
   val `2.10.4` = apply("2.10.4")
+  val `2.10.5` = apply("2.10.5")
+  val `2.10.6` = apply("2.10.6")
 
   val `2.11`   = apply("2.11")
   val `2.11.0` = apply("2.11.0")
@@ -84,6 +86,9 @@ object ScalacXSource
   val `2.11.3` = apply("2.11.3")
   val `2.11.4` = apply("2.11.4")
   val `2.11.5` = apply("2.11.5")
+  val `2.11.6` = apply("2.11.6")
+  val `2.11.7` = apply("2.11.7")
+  val `2.11.8` = apply("2.11.8")
 
   val `2.12`   = apply("2.12")
   val `2.12.0` = apply("2.12.0")
