@@ -1,12 +1,13 @@
 enablePlugins(NsaPlugin)
+import nsaExperimentalDsl._
 
-scalaVersion := `2.11.5`
+crossScalaVersions := Seq(`2.11.8`, `2.10.6`)
 
 nsaScalacOptions ++= Seq(
   -deprecation
 , -encoding UTF-8
 , -feature
-, -language (implicitConversions,postfixOps)
+, -language `_`
 , -unchecked
 , -Xcheckinit
 , -Xlint
@@ -20,7 +21,6 @@ nsaScalacOptions ++= Seq(
 , -Ywarn-adapted-args
 , -Ywarn-dead-code
 , -Ywarn-inaccessible
-, -Ywarn-nullary_override
 , -Ywarn-nullary-unit
 , -Ywarn-numeric-widen
 )

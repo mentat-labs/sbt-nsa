@@ -1,77 +1,50 @@
-// enablePlugins(NsaPlugin)
+def commonSettings = Seq(
+  organization := "com.mentatlabs.nsa"
 
-//crossScalaVersions := Seq(`2.10.4`, `2.11.5`)
+, libraryDependencies ++= Seq(
+    "org.specs2" %% "specs2-core" % "2.4.15" % "test"
+  , "com.github.scala-incubator.io" %% "scala-io-file" % (
+      CrossVersion.partialVersion(scalaVersion.value) match {
+        case Some((2, 11)) => "0.4.3-1"
+        case _             => "0.4.3"
+      }) % "test"
+  )
 
-//scalaVersion := crossScalaVersions.value.head
+, unmanagedSourceDirectories in Compile := Seq(scalaSource in Compile value)
+, unmanagedSourceDirectories in Test := Seq(scalaSource in Test value)
 
-//scalaVersion := "1.9.9"
-//scalaVersion in Test := "2.0.0"
-//scalaVersion in Compile := "2.1.0"
+, publishArtifact in (Compile, packageDoc) := false
+)
 
-//
-//name := "Superapp"
-//
-//name in Test := "Testapp"
-//
-//name in Runtime := "Runtimeapp"
-//
-//lazy val psk = taskKey[Unit]("Print Scoped Key")
-//
-//val pskSetting = psk := println("***** [APP NAME] " + name.value)
-//
-//// https://groups.google.com/d/msg/simple-build-tool/A87FFV4Sw4k/KPtygikQvogJ
-//val myPsks = Seq(Compile, Test, Runtime) flatMap { conf =>
-//  inConfig(conf)( Seq(pskSetting) )
-//}
-//
-//myPsks
-//
-//scalacOptions ++= Seq(
-//  "ccc"
-//)
-//
-//scalacOptions in Test ++= Seq(
-//  "ttt"
-//)
-//
-//, scalacOptions ++= {
-//  val nsv = nsaScalacVersion.value
-//
-//  nsaScalacOptions.value flatMap { _ match {
-//    case so: ScalacOption if so isDefinedAt nsv => so.params
-//    case so: ScalacOption => Nil
-//    case x => x.params
-//  }}
-//}
+lazy val nsaCore = (
+  project in file("nsa-core")
+  settings(commonSettings)
+)
 
+lazy val nsaDsl = (
+  project in file("nsa-dsl")
+  settings(commonSettings)
+) dependsOn(nsaCore)
 
-//nsaScalacOptions ++= Seq(
-//  `-deprecation`
-//, `-encoding` UTF-8
-//, `-feature`
-//, `-language` implicitConversions
-//, `-language` postfixOps
-//, `-language` reflectiveCalls
-//, `-optimise`
-//, `-target` jvm-1.6
-//, `-unchecked`
-//, `-Xlint`
-//, `-Xmax-classfile-name` `72`
-//, `-Xno-forwarders`
-//, `-Xstrict-inference`
-//, `-Xverify`
-//, `-Yclosure-elim`
-//, `-Yconst-opt`
-//, `-Ydead-code`
-//, `-Yinline-warnings`
-//, `-Yinline`
-//, `-Yrepl-sync`
-//, `-Ywarn-adapted-args`
-//, `-Ywarn-dead-code`
-//, `-Ywarn-inaccessible`
-//, `-Ywarn-nullary-override`
-//, `-Ywarn-nullary-unit`
-//, `-Ywarn-numeric-widen`
-//)
+def aggregatedCompile = ScopeFilter(inProjects(nsaCore, nsaDsl), inConfigurations(Compile))
+def aggregatedTest = ScopeFilter(inProjects(nsaCore, nsaDsl), inConfigurations(Test))
 
-//nsaScalacOptions in Test := Seq(`-Yrangepos`)
+lazy val sbtNsa = (
+  project in file(".")
+  settings(commonSettings)
+  settings(
+    sources in Compile ++= sources.all(aggregatedCompile).value.flatten
+  , unmanagedSources in Compile ++= unmanagedSources.all(aggregatedCompile).value.flatten
+  , unmanagedSourceDirectories in Compile ++= unmanagedSourceDirectories.all(aggregatedCompile).value.flatten
+  , unmanagedResourceDirectories in Compile ++= unmanagedResourceDirectories.all(aggregatedCompile).value.flatten
+  , sources in Test ++= sources.all(aggregatedTest).value.flatten
+  , unmanagedSources in Test ++= unmanagedSources.all(aggregatedTest).value.flatten
+  , unmanagedSourceDirectories in Test ++= unmanagedSourceDirectories.all(aggregatedTest).value.flatten
+  , unmanagedResourceDirectories in Test ++= unmanagedResourceDirectories.all(aggregatedTest).value.flatten
+  )
+  settings(scriptedSettings)
+  settings(
+    sbtPlugin := true
+  , scriptedLaunchOpts += "-Dproject.version=" + version.value
+  )
+)

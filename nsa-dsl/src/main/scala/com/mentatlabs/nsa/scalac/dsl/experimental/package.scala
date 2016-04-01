@@ -3,6 +3,11 @@ package scalac
 package dsl
 package experimental
 
+trait BooleanProxy {
+  def apply(value: Boolean) = new WithBoolean(value)
+  class WithBoolean(val value: Boolean)
+}
+
 trait IntProxy {
   def apply(value: Int) = new WithInt(value)
   class WithInt(val value: Int)

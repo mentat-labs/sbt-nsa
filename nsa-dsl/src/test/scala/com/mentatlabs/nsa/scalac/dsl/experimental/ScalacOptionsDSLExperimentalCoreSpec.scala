@@ -30,7 +30,9 @@ class ScalacOptionsDSLExperimentalCoreSpec extends ScalacOptionsDSLExperimentalS
 """
 
   def `-deprecation test` = new CheckDSL { init (
-    -deprecation, "-deprecation"
+    -deprecation        , "-deprecation"
+  , -deprecation `false`, "-deprecation:false"
+  , -deprecation (false), "-deprecation:false"
   )}
 
   def `-encoding test` = new CheckDSL { init (

@@ -8,5 +8,9 @@ trait ScalacDeprecationDSL
 
   object deprecation {
     val unary_- = options.ScalacDeprecation
+
+    def apply(value: Boolean) = new {
+      def unary_- = options.ScalacDeprecation(value)
+    }
   }
 }

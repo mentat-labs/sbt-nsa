@@ -54,6 +54,8 @@ trait ScalacVersions {
   val `2.10.2` = ScalacVersions.`2.10.2`
   val `2.10.3` = ScalacVersions.`2.10.3`
   val `2.10.4` = ScalacVersions.`2.10.4`
+  val `2.10.5` = ScalacVersions.`2.10.5`
+  val `2.10.6` = ScalacVersions.`2.10.6`
 
   val `2.11.0` = ScalacVersions.`2.11.0`
   val `2.11.1` = ScalacVersions.`2.11.1`
@@ -61,6 +63,9 @@ trait ScalacVersions {
   val `2.11.3` = ScalacVersions.`2.11.3`
   val `2.11.4` = ScalacVersions.`2.11.4`
   val `2.11.5` = ScalacVersions.`2.11.5`
+  val `2.11.6` = ScalacVersions.`2.11.6`
+  val `2.11.7` = ScalacVersions.`2.11.7`
+  val `2.11.8` = ScalacVersions.`2.11.8`
 
   val `2.12.0` = ScalacVersions.`2.12.0`
 }
