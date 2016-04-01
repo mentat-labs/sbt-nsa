@@ -8,7 +8,6 @@ package options
   *                      deprecated: Use -Ytyper-debug
   */
 case object ScalacYInferDebug
-    extends ScalacOptionSwitch("-Yinfer-debug") {
-  val since = ScalacVersions.`2.9.1`
+    extends ScalacOptionBoolean("-Yinfer-debug", ScalacVersions.`2.9.1`) {
   override val deprecated = Some(ScalacVersions.`2.11.0`)
 }

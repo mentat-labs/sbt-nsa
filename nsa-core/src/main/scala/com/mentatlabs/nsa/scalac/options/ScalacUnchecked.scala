@@ -10,6 +10,4 @@ package options
   *   2.10.0 - 2.12.0: Enable additional warnings where generated code depends on assumptions.
   */
 case object ScalacUnchecked
-    extends ScalacOptionSwitch("-unchecked") {
-  val since = ScalacVersions.`2.3.0`
-}
+    extends ScalacOptionBoolean("-unchecked", ScalacVersions.`2.3.0`)

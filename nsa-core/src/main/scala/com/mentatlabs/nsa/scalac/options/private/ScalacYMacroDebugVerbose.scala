@@ -7,6 +7,4 @@ package options
   *   2.10.0 - 2.12.0: Trace all macro-related activities: compilation, generation of synthetics, classloading, expansion, exceptions.
   */
 case object ScalacYMacroDebugVerbose
-    extends ScalacOptionSwitch("-Ymacro-debug-verbose") {
-  val since = ScalacVersions.`2.10.0`
-}
+    extends ScalacOptionBoolean("-Ymacro-debug-verbose", ScalacVersions.`2.10.0`)

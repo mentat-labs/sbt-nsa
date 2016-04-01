@@ -7,6 +7,4 @@ package options
   *   2.11.0 - 2.12.0: Print owner identifiers next to symbol names.
   */
 case object ScalacYShowSymowners
-    extends ScalacOptionSwitch("-Yshow-symowners") {
-  val since = ScalacVersions.`2.11.0`
-}
+    extends ScalacOptionBoolean("-Yshow-symowners", ScalacVersions.`2.11.0`)

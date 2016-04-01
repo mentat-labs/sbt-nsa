@@ -8,6 +8,4 @@ package options
   *    2.9.0 - 2.12.0: Use compact tree printer when displaying trees.
   */
 case object ScalacYCompactTrees
-    extends ScalacOptionSwitch("-Ycompact-trees") {
-  val since = ScalacVersions.`2.8.0`
-}
+    extends ScalacOptionBoolean("-Ycompact-trees", ScalacVersions.`2.8.0`)

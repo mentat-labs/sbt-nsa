@@ -8,6 +8,4 @@ package options
   *    2.9.0 - 2.12.0: Print tree types (debugging option).
   */
 case object ScalacXPrintTypes
-    extends ScalacOptionSwitch("-Xprint-types") {
-  val since = ScalacVersions.`2.6.0`
-}
+    extends ScalacOptionBoolean("-Xprint-types", ScalacVersions.`2.6.0`)

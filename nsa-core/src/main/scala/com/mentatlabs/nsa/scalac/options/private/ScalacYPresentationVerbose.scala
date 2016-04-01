@@ -7,6 +7,4 @@ package options
   *    2.8.2 - 2.12.0: Print information about presentation compiler tasks.
   */
 case object ScalacYPresentationVerbose
-    extends ScalacOptionSwitch("-Ypresentation-verbose") {
-  val since = ScalacVersions.`2.8.2`
-}
+    extends ScalacOptionBoolean("-Ypresentation-verbose", ScalacVersions.`2.8.2`)

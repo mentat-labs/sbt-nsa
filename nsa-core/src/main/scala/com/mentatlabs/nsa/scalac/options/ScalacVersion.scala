@@ -8,6 +8,4 @@ package options
   *    2.9.0 - 2.12.0: Print product version and exit.
   */
 case object ScalacVersion
-    extends ScalacOptionSwitch("-version") {
-  val since = ScalacVersions.`2.0.0`
-}
+    extends ScalacOptionBoolean("-version", ScalacVersions.`2.0.0`)

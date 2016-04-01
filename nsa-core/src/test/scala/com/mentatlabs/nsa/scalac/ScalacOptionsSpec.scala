@@ -22,6 +22,7 @@ trait ScalacOptionsSpec
 
     val pattern = " " + ((scalacOption: @unchecked) match {
       case _: ScalacOptionSwitch => head + "  "
+      case _: ScalacOptionBoolean => head + "  "
       case _: ScalacOptionChoice[_] => head.replaceFirst(":.*", "(  |:<)")
       case _: ScalacOptionValue[_] => head + "(  | <)"
     }) r

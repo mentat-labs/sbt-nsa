@@ -9,6 +9,4 @@ package options
   *   2.10.0 - 2.12.0: (Requires -Xprint:) Print detailed ASTs in formatted form.
   */
 case object ScalacYShowTrees
-    extends ScalacOptionSwitch("-Yshow-trees") {
-  val since = ScalacVersions.`2.6.0`
-}
+    extends ScalacOptionBoolean("-Yshow-trees", ScalacVersions.`2.6.0`)

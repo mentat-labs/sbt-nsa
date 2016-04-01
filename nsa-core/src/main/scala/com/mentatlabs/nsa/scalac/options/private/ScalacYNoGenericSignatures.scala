@@ -8,6 +8,4 @@ package options
   *    2.9.0 - 2.12.0: Suppress generation of generic signatures for Java.
   */
 case object ScalacYNoGenericSignatures
-    extends ScalacOptionSwitch("-Yno-generic-signatures") {
-  val since = ScalacVersions.`2.7.2`
-}
+    extends ScalacOptionBoolean("-Yno-generic-signatures", ScalacVersions.`2.7.2`)

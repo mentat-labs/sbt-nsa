@@ -7,6 +7,4 @@ package options
   *   2.10.0 - 2.12.0: Print a message when reification creates a free term.
   */
 case object ScalacXLogFreeTerms
-    extends ScalacOptionSwitch("-Xlog-free-terms") {
-  val since = ScalacVersions.`2.10.0`
-}
+    extends ScalacOptionBoolean("-Xlog-free-terms", ScalacVersions.`2.10.0`)

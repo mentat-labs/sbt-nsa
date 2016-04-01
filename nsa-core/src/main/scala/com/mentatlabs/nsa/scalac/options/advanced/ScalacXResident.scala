@@ -8,6 +8,4 @@ package options
   *    2.9.0 - 2.12.0: Compiler stays resident: read source filenames from standard input.
   */
 case object ScalacXResident
-    extends ScalacOptionSwitch("-Xresident") {
-  val since = ScalacVersions.`2.6.0`
-}
+    extends ScalacOptionBoolean("-Xresident", ScalacVersions.`2.6.0`)

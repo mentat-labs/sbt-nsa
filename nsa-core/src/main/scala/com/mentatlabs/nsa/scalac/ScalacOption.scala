@@ -12,6 +12,7 @@ sealed trait ScalacOption
     since <= scalaVersion && removed.forall { scalaVersion < }
 }
 
+
 trait ScalacOptionSwitchLike
     extends CompilerOptionSwitch
     with ScalacOption

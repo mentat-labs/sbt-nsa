@@ -8,6 +8,4 @@ package options
   *    2.9.1 - 2.12.0: Warn when dead code is identified.
   */
 case object ScalacYWarnDeadCode
-    extends ScalacOptionSwitch("-Ywarn-dead-code") {
-  val since = ScalacVersions.`2.6.0`
-}
+    extends ScalacOptionBoolean("-Ywarn-dead-code", ScalacVersions.`2.6.0`)

@@ -7,6 +7,4 @@ package options
   *   2.10.0 - 2.12.0: (Requires -Xprint:) Print detailed ASTs in compact form.
   */
 case object ScalacYShowTreesCompact
-    extends ScalacOptionSwitch("-Yshow-trees-compact") {
-  val since = ScalacVersions.`2.10.0`
-}
+    extends ScalacOptionBoolean("-Yshow-trees-compact", ScalacVersions.`2.10.0`)

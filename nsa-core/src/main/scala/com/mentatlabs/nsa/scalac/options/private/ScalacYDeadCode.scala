@@ -8,6 +8,4 @@ package options
   *    2.9.0 - 2.12.0: Perform dead code elimination.
   */
 case object ScalacYDeadCode
-    extends ScalacOptionSwitch("-Ydead-code") {
-  val since = ScalacVersions.`2.6.0`
-}
+    extends ScalacOptionBoolean("-Ydead-code", ScalacVersions.`2.6.0`)

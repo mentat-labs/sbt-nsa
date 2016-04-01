@@ -8,6 +8,4 @@ package options
   *    2.9.0 - 2.12.0: Perform closure elimination.
   */
 case object ScalacYClosureElim
-    extends ScalacOptionSwitch("-Yclosure-elim") {
-  val since = ScalacVersions.`2.6.0`
-}
+    extends ScalacOptionBoolean("-Yclosure-elim", ScalacVersions.`2.6.0`)

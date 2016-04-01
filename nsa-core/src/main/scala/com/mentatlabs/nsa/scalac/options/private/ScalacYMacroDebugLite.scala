@@ -7,6 +7,4 @@ package options
   *   2.10.0 - 2.12.0: Trace essential macro-related activities.
   */
 case object ScalacYMacroDebugLite
-    extends ScalacOptionSwitch("-Ymacro-debug-lite") {
-  val since = ScalacVersions.`2.10.0`
-}
+    extends ScalacOptionBoolean("-Ymacro-debug-lite", ScalacVersions.`2.10.0`)

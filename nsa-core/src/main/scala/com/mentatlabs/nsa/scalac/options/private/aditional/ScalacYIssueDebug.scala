@@ -7,6 +7,4 @@ package options
   *   2.10.0 - 2.12.0: Print stack traces when a context issues an error.
   */
 case object ScalacYIssueDebug
-    extends ScalacOptionSwitch("-Yissue-debug") {
-  val since = ScalacVersions.`2.10.0`
-}
+    extends ScalacOptionBoolean("-Yissue-debug", ScalacVersions.`2.10.0`)

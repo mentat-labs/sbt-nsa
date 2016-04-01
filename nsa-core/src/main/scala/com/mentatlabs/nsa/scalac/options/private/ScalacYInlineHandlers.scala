@@ -7,6 +7,4 @@ package options
   *   2.10.0 - 2.12.0: Perform exception handler inlining when possible.
   */
 case object ScalacYInlineHandlers
-    extends ScalacOptionSwitch("-Yinline-handlers") {
-  val since = ScalacVersions.`2.10.0`
-}
+    extends ScalacOptionBoolean("-Yinline-handlers", ScalacVersions.`2.10.0`)

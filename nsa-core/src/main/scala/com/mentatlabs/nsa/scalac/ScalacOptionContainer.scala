@@ -31,3 +31,13 @@ class ScalacOptionChoiceContainer[T](
       override def since = self.since
     }
 }
+
+class ScalacOptionBoolean(
+    override val setting: String
+  , override val since: ScalacVersion
+  ) extends ScalacOptionChoiceContainer[Boolean](setting, since)
+  with ScalacOptionEmptyChoice {
+
+  def `true` = apply(true)
+  def `false` = apply(false)
+}

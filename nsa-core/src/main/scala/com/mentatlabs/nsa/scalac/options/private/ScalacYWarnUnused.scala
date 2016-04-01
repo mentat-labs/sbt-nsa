@@ -8,6 +8,4 @@ package options
   *   2.11.3 - 2.12.0: Warn when local and private vals, vars, defs, and types are are unused.
   */
 case object ScalacYWarnUnused
-    extends ScalacOptionSwitch("-Ywarn-unused") {
-  val since = ScalacVersions.`2.11.0`
-}
+    extends ScalacOptionBoolean("-Ywarn-unused", ScalacVersions.`2.11.0`)

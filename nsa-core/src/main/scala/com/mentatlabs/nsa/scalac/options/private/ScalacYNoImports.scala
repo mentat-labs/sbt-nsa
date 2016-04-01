@@ -9,6 +9,4 @@ package options
   *   2.10.0 - 2.12.0: Compile without importing scala.*, java.lang.*, or Predef.
   */
 case object ScalacYNoImports
-    extends ScalacOptionSwitch("-Yno-imports") {
-  val since = ScalacVersions.`2.6.0`
-}
+    extends ScalacOptionBoolean("-Yno-imports", ScalacVersions.`2.6.0`)

@@ -8,6 +8,4 @@ package options
   *    2.9.0 - 2.12.0: Show more detail on why some implicits are not applicable.
   */
 case object ScalacXLogImplicits
-    extends ScalacOptionSwitch("-Xlog-implicits") {
-  val since = ScalacVersions.`2.7.0`
-}
+    extends ScalacOptionBoolean("-Xlog-implicits", ScalacVersions.`2.7.0`)

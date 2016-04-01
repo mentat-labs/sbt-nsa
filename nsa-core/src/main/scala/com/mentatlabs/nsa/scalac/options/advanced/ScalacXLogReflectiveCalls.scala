@@ -7,6 +7,4 @@ package options
   *   2.10.0 - 2.12.0: Print a message when a reflective method call is generated
   */
 case object ScalacXLogReflectiveCalls
-    extends ScalacOptionSwitch("-Xlog-reflective-calls") {
-  val since = ScalacVersions.`2.10.0`
-}
+    extends ScalacOptionBoolean("-Xlog-reflective-calls", ScalacVersions.`2.10.0`)

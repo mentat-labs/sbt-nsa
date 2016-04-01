@@ -8,6 +8,4 @@ package options
   *    2.9.0 - 2.12.0: Print a synopsis of compiler phases.
   */
 case object ScalacXShowPhases
-    extends ScalacOptionSwitch("-Xshow-phases") {
-  val since = ScalacVersions.`2.6.0`
-}
+    extends ScalacOptionBoolean("-Xshow-phases", ScalacVersions.`2.6.0`)

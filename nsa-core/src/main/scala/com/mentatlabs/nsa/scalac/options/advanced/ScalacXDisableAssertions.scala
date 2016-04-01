@@ -8,6 +8,4 @@ package options
   *    2.9.0 - 2.12.0: Generate no assertions or assumptions.
   */
 case object ScalacXDisableAssertions
-    extends ScalacOptionSwitch("-Xdisable-assertions") {
-  val since = ScalacVersions.`2.6.0`
-}
+    extends ScalacOptionBoolean("-Xdisable-assertions", ScalacVersions.`2.6.0`)

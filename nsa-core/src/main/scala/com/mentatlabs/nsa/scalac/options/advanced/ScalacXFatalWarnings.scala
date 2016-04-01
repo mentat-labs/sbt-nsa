@@ -7,6 +7,4 @@ package options
   *    2.8.0 - 2.12.0: Fail the compilation if there are any warnings.
   */
 case object ScalacXFatalWarnings
-    extends ScalacOptionSwitch("-Xfatal-warnings") {
-  val since = ScalacVersions.`2.8.0`
-}
+    extends ScalacOptionBoolean("-Xfatal-warnings", ScalacVersions.`2.8.0`)

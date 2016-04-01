@@ -25,7 +25,7 @@ trait CompilerOptionValue[T]
     extends CompilerOption {
   def setting: String
   def value: T
-  def params = Seq(setting, value.toString)
+  def params = Seq(setting, String valueOf value)
 }
 
 /** Compiler option with a name followed by concatenated choices */

@@ -8,6 +8,4 @@ package options
   *    2.9.0 - 2.12.0: Do not generate static forwarders in mirror classes.
   */
 case object ScalacXNoForwarders
-    extends ScalacOptionSwitch("-Xno-forwarders") {
-  val since = ScalacVersions.`2.8.0`
-}
+    extends ScalacOptionBoolean("-Xno-forwarders", ScalacVersions.`2.8.0`)

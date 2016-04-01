@@ -8,7 +8,6 @@ package options
   *                      deprecated: Use -Ymacro-expand:none
   */
 case object ScalacYMacroNoExpand
-    extends ScalacOptionSwitch("-Ymacro-no-expand") {
-  val since = ScalacVersions.`2.10.1`
+    extends ScalacOptionBoolean("-Ymacro-no-expand", ScalacVersions.`2.10.1`) {
   override val deprecated = Some(ScalacVersions.`2.11.0`)
 }

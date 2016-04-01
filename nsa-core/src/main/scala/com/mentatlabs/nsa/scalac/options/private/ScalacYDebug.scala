@@ -8,6 +8,4 @@ package options
   *    2.9.0 - 2.12.0: Increase the quantity of debugging output.
   */
 case object ScalacYDebug
-    extends ScalacOptionSwitch("-Ydebug") {
-  val since = ScalacVersions.`2.6.0`
-}
+    extends ScalacOptionBoolean("-Ydebug", ScalacVersions.`2.6.0`)

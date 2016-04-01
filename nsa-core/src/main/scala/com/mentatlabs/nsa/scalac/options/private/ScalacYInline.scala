@@ -8,6 +8,4 @@ package options
   *    2.9.0 - 2.12.0: Perform inlining when possible.
   */
 case object ScalacYInline
-    extends ScalacOptionSwitch("-Yinline") {
-  val since = ScalacVersions.`2.6.0`
-}
+    extends ScalacOptionBoolean("-Yinline", ScalacVersions.`2.6.0`)

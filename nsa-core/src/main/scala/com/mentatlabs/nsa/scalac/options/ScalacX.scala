@@ -8,6 +8,4 @@ package options
   *    2.9.0 - 2.12.0: Print a synopsis of advanced options.
   */
 case object ScalacX
-    extends ScalacOptionSwitch("-X") {
-  val since = ScalacVersions.`2.6.0`
-}
+    extends ScalacOptionBoolean("-X", ScalacVersions.`2.6.0`)

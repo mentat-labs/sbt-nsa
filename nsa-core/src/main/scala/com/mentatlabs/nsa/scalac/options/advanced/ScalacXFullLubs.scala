@@ -7,6 +7,4 @@ package options
   *   2.10.0 - 2.12.0: Retains pre 2.10 behavior of less aggressive truncation of least upper bounds.
   */
 case object ScalacXFullLubs
-    extends ScalacOptionSwitch("-Xfull-lubs") {
-  val since = ScalacVersions.`2.10.0`
-}
+    extends ScalacOptionBoolean("-Xfull-lubs", ScalacVersions.`2.10.0`)

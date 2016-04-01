@@ -7,6 +7,4 @@ package options
   *   2.11.0 - 2.12.0: Trace quasiquote-related activities.
   */
 case object ScalacYQuasiquoteDebug
-    extends ScalacOptionSwitch("-Yquasiquote-debug") {
-  val since = ScalacVersions.`2.11.0`
-}
+    extends ScalacOptionBoolean("-Yquasiquote-debug", ScalacVersions.`2.11.0`)

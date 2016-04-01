@@ -7,6 +7,4 @@ package options
   *    2.8.0 - 2.12.0: Generate, validate and output trees using the interactive compiler.
   */
 case object ScalacYIdeDebug
-    extends ScalacOptionSwitch("-Yide-debug") {
-  val since = ScalacVersions.`2.8.0`
-}
+    extends ScalacOptionBoolean("-Yide-debug", ScalacVersions.`2.8.0`)

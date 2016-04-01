@@ -7,6 +7,4 @@ package options
   *    2.9.1 - 2.12.0: Do not use asynchronous code for repl startup
   */
 case object ScalacYReplSync
-    extends ScalacOptionSwitch("-Yrepl-sync") {
-  val since = ScalacVersions.`2.9.1`
-}
+    extends ScalacOptionBoolean("-Yrepl-sync", ScalacVersions.`2.9.1`)

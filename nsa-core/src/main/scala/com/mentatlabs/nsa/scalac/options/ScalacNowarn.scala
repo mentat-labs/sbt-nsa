@@ -8,6 +8,4 @@ package options
   *    2.9.0 - 2.12.0: Generate no warnings.
   */
 case object ScalacNowarn
-    extends ScalacOptionSwitch("-nowarn") {
-  val since = ScalacVersions.`2.0.0`
-}
+    extends ScalacOptionBoolean("-nowarn", ScalacVersions.`2.0.0`)

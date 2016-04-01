@@ -8,6 +8,4 @@ package options
   *    2.9.0 - 2.12.0: Turn on future language features.
   */
 case object ScalacXFuture
-    extends ScalacOptionSwitch("-Xfuture") {
-  val since = ScalacVersions.`2.7.2`
-}
+    extends ScalacOptionBoolean("-Xfuture", ScalacVersions.`2.7.2`)

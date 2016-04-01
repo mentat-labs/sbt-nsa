@@ -7,6 +7,4 @@ package options
   *   2.11.0 - 2.12.0: Utilize the manifest in classpath resolution.
   */
 case object ScalacUsemanifestcp
-    extends ScalacOptionSwitch("-usemanifestcp") {
-  val since = ScalacVersions.`2.11.0`
-}
+    extends ScalacOptionBoolean("-usemanifestcp", ScalacVersions.`2.11.0`)

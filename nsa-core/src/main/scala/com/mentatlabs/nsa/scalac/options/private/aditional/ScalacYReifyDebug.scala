@@ -7,6 +7,4 @@ package options
   *   2.10.0 - 2.12.0: Trace reification.
   */
 case object ScalacYReifyDebug
-    extends ScalacOptionSwitch("-Yreify-debug") {
-  val since = ScalacVersions.`2.10.0`
-}
+    extends ScalacOptionBoolean("-Yreify-debug", ScalacVersions.`2.10.0`)

@@ -7,6 +7,4 @@ package options
   *    2.9.0 - 2.12.0: Do not use the boot classpath for the scala jars.
   */
 case object ScalacNobootcp
-    extends ScalacOptionSwitch("-nobootcp") {
-  val since = ScalacVersions.`2.9.0`
-}
+    extends ScalacOptionBoolean("-nobootcp", ScalacVersions.`2.9.0`)

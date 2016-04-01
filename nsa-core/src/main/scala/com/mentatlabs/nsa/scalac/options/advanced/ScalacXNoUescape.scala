@@ -8,6 +8,4 @@ package options
   *    2.9.0 - 2.12.0: Disable handling of \\u unicode escapes.
   */
 case object ScalacXNoUescape
-    extends ScalacOptionSwitch("-Xno-uescape") {
-  val since = ScalacVersions.`2.6.0`
-}
+    extends ScalacOptionBoolean("-Xno-uescape", ScalacVersions.`2.6.0`)

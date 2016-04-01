@@ -8,8 +8,7 @@ package options
   *                      deprecated: This flag is scheduled for removal in 2.12. If you have a case where you need this flag then please report a bug.
   */
 case object ScalacYInferByName
-    extends ScalacOptionSwitch("-Yinfer-by-name") {
-  val since = ScalacVersions.`2.11.0`
+    extends ScalacOptionBoolean("-Yinfer-by-name", ScalacVersions.`2.11.0`) {
   override val deprecated = Some(ScalacVersions.`2.11.0`)
   override val removed = Some(ScalacVersions.`2.12.0`)
 }

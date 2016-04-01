@@ -7,6 +7,4 @@ package options
   *    2.8.0 - 2.12.0: Utilize the java.class.path in classpath resolution.
   */
 case object ScalacUsejavacp
-    extends ScalacOptionSwitch("-usejavacp") {
-  val since = ScalacVersions.`2.8.0`
-}
+    extends ScalacOptionBoolean("-usejavacp", ScalacVersions.`2.8.0`)

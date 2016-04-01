@@ -8,6 +8,4 @@ package options
   *    2.9.0 - 2.12.0: Infer types for arguments of overriden methods.
   */
 case object ScalacYInferArgumentTypes
-    extends ScalacOptionSwitch("-Yinfer-argument-types") {
-  val since = ScalacVersions.`2.8.1`
-}
+    extends ScalacOptionBoolean("-Yinfer-argument-types", ScalacVersions.`2.8.1`)

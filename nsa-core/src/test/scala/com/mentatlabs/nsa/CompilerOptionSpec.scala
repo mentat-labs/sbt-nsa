@@ -93,10 +93,10 @@ class CompilerOptionSpec extends Specification {
   def compilerChoiceMultiple = {
     val option = new CompilerOptionChoice[String] {
       def setting = "-choice"
-      def values = Seq("foo", "bar", "baz")
+      def values = Seq("foo", "bar", "-baz")
     }
 
-    option.params === Seq("-choice:foo,bar,baz") and
-    option.toString === "-choice:foo,bar,baz"
+    option.params === Seq("-choice:foo,bar,-baz") and
+    option.toString === "-choice:foo,bar,-baz"
   }
 }

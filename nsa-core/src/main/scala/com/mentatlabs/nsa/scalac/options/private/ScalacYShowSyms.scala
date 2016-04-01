@@ -7,6 +7,4 @@ package options
   *    2.9.0 - 2.12.0: Print the AST symbol hierarchy after each phase.
   */
 case object ScalacYShowSyms
-    extends ScalacOptionSwitch("-Yshow-syms") {
-  val since = ScalacVersions.`2.9.0`
-}
+    extends ScalacOptionBoolean("-Yshow-syms", ScalacVersions.`2.9.0`)

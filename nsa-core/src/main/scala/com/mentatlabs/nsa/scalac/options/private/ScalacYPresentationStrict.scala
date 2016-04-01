@@ -7,6 +7,4 @@ package options
   *    2.8.2 - 2.12.0: Enable debugging output for the presentation compiler.
   */
 case object ScalacYPresentationStrict
-    extends ScalacOptionSwitch("-Ypresentation-strict") {
-  val since = ScalacVersions.`2.8.2`
-}
+    extends ScalacOptionBoolean("-Ypresentation-strict", ScalacVersions.`2.8.2`)

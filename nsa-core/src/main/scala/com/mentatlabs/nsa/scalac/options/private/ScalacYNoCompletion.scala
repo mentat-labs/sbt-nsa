@@ -8,6 +8,4 @@ package options
   *    2.9.0 - 2.12.0: Disable tab-completion in the REPL.
   */
 case object ScalacYNoCompletion
-    extends ScalacOptionSwitch("-Yno-completion") {
-  val since = ScalacVersions.`2.8.0`
-}
+    extends ScalacOptionBoolean("-Yno-completion", ScalacVersions.`2.8.0`)

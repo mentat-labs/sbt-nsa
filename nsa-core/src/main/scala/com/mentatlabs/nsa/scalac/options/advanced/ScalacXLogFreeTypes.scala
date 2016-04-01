@@ -7,6 +7,4 @@ package options
   *   2.10.0 - 2.12.0: Print a message when reification resorts to generating a free type.
   */
 case object ScalacXLogFreeTypes
-    extends ScalacOptionSwitch("-Xlog-free-types") {
-  val since = ScalacVersions.`2.10.0`
-}
+    extends ScalacOptionBoolean("-Xlog-free-types", ScalacVersions.`2.10.0`)

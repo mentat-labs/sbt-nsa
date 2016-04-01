@@ -9,6 +9,4 @@ package options
   *    2.9.0 - 2.12.0: Print a synopsis of private options.
   */
 case object ScalacY
-    extends ScalacOptionSwitch("-Y") {
-  val since = ScalacVersions.`2.6.0`
-}
+    extends ScalacOptionBoolean("-Y", ScalacVersions.`2.6.0`)

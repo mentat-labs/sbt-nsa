@@ -98,7 +98,9 @@ class ScalacOptionsPrivateSpec extends ScalacOptionsSpec {
     ScalacYInlineHandlers =>= "-Yinline-handlers"
 
   def `-Yinline-warnings test` =
-    ScalacYInlineWarnings =>= "-Yinline-warnings"
+    (ScalacYInlineWarnings)         =>= "-Yinline-warnings" and
+    (ScalacYInlineWarnings `false`) =>= "-Yinline-warnings:false" and
+    (ScalacYInlineWarnings (false)) =>= "-Yinline-warnings:false"
 
   def `-Yinfer-argument-types test` =
     ScalacYInferArgumentTypes =>= "-Yinfer-argument-types"

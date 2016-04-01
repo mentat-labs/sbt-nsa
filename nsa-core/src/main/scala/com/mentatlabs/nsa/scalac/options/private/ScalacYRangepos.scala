@@ -7,6 +7,4 @@ package options
   *    2.8.0 - 2.12.0: Use range positions for syntax trees.
   */
 case object ScalacYRangepos
-    extends ScalacOptionSwitch("-Yrangepos") {
-  val since = ScalacVersions.`2.8.0`
-}
+    extends ScalacOptionBoolean("-Yrangepos", ScalacVersions.`2.8.0`)

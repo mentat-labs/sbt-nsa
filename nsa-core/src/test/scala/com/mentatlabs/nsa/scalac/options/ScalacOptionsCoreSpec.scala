@@ -28,7 +28,9 @@ class ScalacOptionsCoreSpec extends ScalacOptionsSpec {
 """
 
   def `-deprecation test` =
-    ScalacDeprecation =>= "-deprecation"
+    (ScalacDeprecation)         =>= "-deprecation" and
+    (ScalacDeprecation `false`) =>= "-deprecation:false" and
+    (ScalacDeprecation (false)) =>= "-deprecation:false"
 
   def `-encoding test` =
     (ScalacEncoding ASCII)      =>= "-encoding ASCII" and
@@ -89,10 +91,10 @@ class ScalacOptionsCoreSpec extends ScalacOptionsSpec {
     ScalacSourcepath ("foo") =>= "-sourcepath foo"
 
   def `-target test` =
-    (ScalacTarget `jvm-1.6`)     =>= "-target:jvm-1.6" and
-    (ScalacTarget jvm-1.7)       =>= "-target:jvm-1.7" and
-    (ScalacTarget ("msil")) =>= "-target:msil" and
-    (ScalacTarget ("cldc")) =>= "-target:cldc"
+    (ScalacTarget `jvm-1.6`) =>= "-target:jvm-1.6" and
+    (ScalacTarget jvm-1.7)   =>= "-target:jvm-1.7" and
+    (ScalacTarget ("msil"))  =>= "-target:msil" and
+    (ScalacTarget ("cldc"))  =>= "-target:cldc"
 
   def `-unchecked test` =
     ScalacUnchecked =>= "-unchecked"

@@ -7,6 +7,4 @@ package options
   *   2.10.0 - 2.12.0: Dump the reified trees in copypasteable representation.
   */
 case object ScalacYReifyCopypaste
-    extends ScalacOptionSwitch("-Yreify-copypaste") {
-  val since = ScalacVersions.`2.10.0`
-}
+    extends ScalacOptionBoolean("-Yreify-copypaste", ScalacVersions.`2.10.0`)

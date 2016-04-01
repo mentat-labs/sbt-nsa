@@ -7,6 +7,4 @@ package options
   *   2.10.0 - 2.12.0: Trace pattern matching translation.
   */
 case object ScalacYPatmatDebug
-    extends ScalacOptionSwitch("-Ypatmat-debug") {
-  val since = ScalacVersions.`2.10.0`
-}
+    extends ScalacOptionBoolean("-Ypatmat-debug", ScalacVersions.`2.10.0`)

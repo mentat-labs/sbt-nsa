@@ -7,6 +7,4 @@ package options
   *    2.6.0 - 2.12.0: Generates faster bytecode by applying optimisations to the program
   */
 case object ScalacOptimise
-    extends ScalacOptionSwitch("-optimise") {
-  val since = ScalacVersions.`2.6.0`
-}
+    extends ScalacOptionBoolean("-optimise", ScalacVersions.`2.6.0`)

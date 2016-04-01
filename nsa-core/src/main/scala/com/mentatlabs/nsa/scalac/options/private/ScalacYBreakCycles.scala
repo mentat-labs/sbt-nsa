@@ -7,6 +7,4 @@ package options
   *   2.11.0 - 2.12.0: Attempt to break cycles encountered during typing
   */
 case object ScalacYBreakCycles
-    extends ScalacOptionSwitch("-Ybreak-cycles") {
-  val since = ScalacVersions.`2.11.0`
-}
+    extends ScalacOptionBoolean("-Ybreak-cycles", ScalacVersions.`2.11.0`)

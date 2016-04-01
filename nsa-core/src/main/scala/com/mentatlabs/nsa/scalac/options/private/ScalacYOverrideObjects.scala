@@ -7,6 +7,4 @@ package options
   *   2.10.0 - 2.12.0: Allow member objects to be overridden.
   */
 case object ScalacYOverrideObjects
-    extends ScalacOptionSwitch("-Yoverride-objects") {
-  val since = ScalacVersions.`2.10.0`
-}
+    extends ScalacOptionBoolean("-Yoverride-objects", ScalacVersions.`2.10.0`)

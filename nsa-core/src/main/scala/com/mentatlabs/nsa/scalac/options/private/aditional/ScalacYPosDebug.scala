@@ -7,6 +7,4 @@ package options
   *   2.10.0 - 2.12.0: Trace position validation.
   */
 case object ScalacYPosDebug
-    extends ScalacOptionSwitch("-Ypos-debug") {
-  val since = ScalacVersions.`2.10.0`
-}
+    extends ScalacOptionBoolean("-Ypos-debug", ScalacVersions.`2.10.0`)

@@ -8,6 +8,4 @@ package options
   *    2.9.0 - 2.12.0: Do not use JLine for editing.
   */
 case object ScalacXNojline
-    extends ScalacOptionSwitch("-Xnojline") {
-  val since = ScalacVersions.`2.6.0`
-}
+    extends ScalacOptionBoolean("-Xnojline", ScalacVersions.`2.6.0`)

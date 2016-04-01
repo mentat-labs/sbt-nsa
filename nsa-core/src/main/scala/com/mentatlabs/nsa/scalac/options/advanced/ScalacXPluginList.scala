@@ -8,6 +8,4 @@ package options
   *    2.9.0 - 2.12.0: Print a synopsis of loaded plugins.
   */
 case object ScalacXPluginList
-    extends ScalacOptionSwitch("-Xplugin-list") {
-  val since = ScalacVersions.`2.6.0`
-}
+    extends ScalacOptionBoolean("-Xplugin-list", ScalacVersions.`2.6.0`)

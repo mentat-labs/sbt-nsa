@@ -8,6 +8,4 @@ package options
   *    2.9.0 - 2.12.0: Trace all type assignments.
   */
 case object ScalacYTyperDebug
-    extends ScalacOptionSwitch("-Ytyper-debug") {
-  val since = ScalacVersions.`2.8.0`
-}
+    extends ScalacOptionBoolean("-Ytyper-debug", ScalacVersions.`2.8.0`)

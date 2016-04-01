@@ -7,6 +7,4 @@ package options
   *   2.11.0 - 2.12.0: Warn when a type argument is inferred to be `Any`.
   */
 case object ScalacYWarnInferAny
-    extends ScalacOptionSwitch("-Ywarn-infer-any") {
-  val since = ScalacVersions.`2.11.0`
-}
+    extends ScalacOptionBoolean("-Ywarn-infer-any", ScalacVersions.`2.11.0`)

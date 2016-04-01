@@ -7,6 +7,4 @@ package options
   *   2.11.0 - 2.12.0: Perform optimization with constant values.
   */
 case object ScalacYConstOpt
-    extends ScalacOptionSwitch("-Yconst-opt") {
-  val since = ScalacVersions.`2.11.0`
-}
+    extends ScalacOptionBoolean("-Yconst-opt", ScalacVersions.`2.11.0`)

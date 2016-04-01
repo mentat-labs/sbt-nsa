@@ -9,6 +9,4 @@ package options
   *    2.9.0 - 2.12.0: Uniquely tag all identifiers in debugging output.
   */
 case object ScalacUniqid
-    extends ScalacOptionSwitch("-uniqid") {
-  val since = ScalacVersions.`2.0.0`
-}
+    extends ScalacOptionBoolean("-uniqid", ScalacVersions.`2.0.0`)

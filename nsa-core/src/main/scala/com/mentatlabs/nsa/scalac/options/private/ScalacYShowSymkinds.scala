@@ -7,6 +7,4 @@ package options
   *   2.10.0 - 2.12.0: Print abbreviated symbol kinds next to symbol names.
   */
 case object ScalacYShowSymkinds
-    extends ScalacOptionSwitch("-Yshow-symkinds") {
-  val since = ScalacVersions.`2.10.0`
-}
+    extends ScalacOptionBoolean("-Yshow-symkinds", ScalacVersions.`2.10.0`)

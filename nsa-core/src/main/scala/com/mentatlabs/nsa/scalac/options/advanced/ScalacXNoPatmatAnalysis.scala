@@ -7,6 +7,4 @@ package options
   *   2.10.0 - 2.12.0: Don't perform exhaustivity/unreachability analysis. Also, ignore @switch annotation.
   */
 case object ScalacXNoPatmatAnalysis
-    extends ScalacOptionSwitch("-Xno-patmat-analysis") {
-  val since = ScalacVersions.`2.10.0`
-}
+    extends ScalacOptionBoolean("-Xno-patmat-analysis", ScalacVersions.`2.10.0`)

@@ -7,6 +7,4 @@ package options
   *   2.11.0 - 2.12.0: Use classes to wrap REPL snippets instead of objects
   */
 case object ScalacYReplClassBased
-    extends ScalacOptionSwitch("-Yrepl-class-based") {
-  val since = ScalacVersions.`2.11.0`
-}
+    extends ScalacOptionBoolean("-Yrepl-class-based", ScalacVersions.`2.11.0`)

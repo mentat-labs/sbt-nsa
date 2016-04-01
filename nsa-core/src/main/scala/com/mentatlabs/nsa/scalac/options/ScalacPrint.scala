@@ -15,6 +15,4 @@ package options
   *    2.9.0 - 2.12.0: Print program with Scala-specific features removed.
   */
 case object ScalacPrint
-    extends ScalacOptionSwitch("-print") {
-  val since = ScalacVersions.`2.6.0`
-}
+    extends ScalacOptionBoolean("-print", ScalacVersions.`2.6.0`)
