@@ -1,6 +1,5 @@
 def commonSettings = Seq(
   organization := "com.mentatlabs.nsa"
-
 , libraryDependencies ++= Seq(
     "org.specs2" %% "specs2-core" % "2.4.15" % "test"
   , "com.github.scala-incubator.io" %% "scala-io-file" % (
@@ -9,27 +8,19 @@ def commonSettings = Seq(
         case _             => "0.4.3"
       }) % "test"
   )
-
 , unmanagedSourceDirectories in Compile := Seq(scalaSource in Compile value)
 , unmanagedSourceDirectories in Test := Seq(scalaSource in Test value)
 
 , publishArtifact in (Compile, packageDoc) := false
 )
 
-lazy val nsaCore = (
-  project in file("nsa-core")
-  settings(commonSettings)
-)
+lazy val `nsa-core` = project settings(commonSettings)
+lazy val `nsa-dsl` = project settings(commonSettings) dependsOn(`nsa-core`)
 
-lazy val nsaDsl = (
-  project in file("nsa-dsl")
-  settings(commonSettings)
-) dependsOn(nsaCore)
+def aggregatedCompile = ScopeFilter(inProjects(`nsa-core`, `nsa-dsl`), inConfigurations(Compile))
+def aggregatedTest = ScopeFilter(inProjects(`nsa-core`, `nsa-dsl`), inConfigurations(Test))
 
-def aggregatedCompile = ScopeFilter(inProjects(nsaCore, nsaDsl), inConfigurations(Compile))
-def aggregatedTest = ScopeFilter(inProjects(nsaCore, nsaDsl), inConfigurations(Test))
-
-lazy val sbtNsa = (
+lazy val `sbt-nsa` = (
   project in file(".")
   settings(commonSettings)
   settings(
