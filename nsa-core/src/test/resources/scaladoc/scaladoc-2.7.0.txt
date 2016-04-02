@@ -1,0 +1,13 @@
+Usage: scalac <options> <source files>
+where possible standard options include:
+  -access:<access>                  Show only public, protected/public (default) or all classes and members (public,protected,private)
+  -bottom <pagebottom>              Include bottom text for each page
+  -charset <doccharset>             Charset for cross-platform viewing of generated documentation.
+  -doctitle <doctitle>              Include title for the overview page
+  -footer <pagefooter>              Include footer text for each page
+  -header <pageheader>              Include header text for each page
+  -linksource                       Generate source in HTML
+  -nocomment                        Suppress description and tags, generate only declarations.
+  -stylesheetfile <stylesheetfile>  File to change style of the generated documentation
+  -top <pagetop>                    Include top text for each page
+  -windowtitle <windowtitle>        Specify window title of generated HTML documentation
