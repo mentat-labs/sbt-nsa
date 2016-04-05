@@ -1,6 +1,12 @@
 No Strings Attached
 ===================
 
+[![Build Status](https://travis-ci.org/mentat-labs/sbt-nsa.svg?branch=master)](https://travis-ci.org/mentat-labs/sbt-nsa)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.mentatlabs.nsa/sbt-nsa_2.10_0.13/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.mentatlabs.nsa/sbt-nsa_2.10_0.13)
+[![Scaladoc](https://javadoc-badge.appspot.com/com.mentatlabs.nsa/sbt-nsa_2.10_0.13.svg?label=scaladoc)](http://javadoc-badge.appspot.com/com.mentatlabs.nsa/sbt-nsa_2.10_0.13)
+[![License](https://img.shields.io/badge/license-BSD%203--clause-brightgreen.svg)](https://spdx.org/licenses/BSD-3-Clause)
+[![Codacy](https://api.codacy.com/project/badge/grade/3b1c081128d64a1ba128e881d02424e5)](https://www.codacy.com/app/melezov/sbt-nsa)
+
 Installation:
 
 In `project/plugins.sbt`
