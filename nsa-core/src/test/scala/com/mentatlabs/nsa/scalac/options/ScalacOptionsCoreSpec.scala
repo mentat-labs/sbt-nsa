@@ -2,6 +2,8 @@ package com.mentatlabs.nsa
 package scalac
 package options
 
+import java.io.File
+
 class ScalacOptionsCoreSpec extends ScalacOptionsSpec {
   def is = s2"""
   -deprecation         ${`-deprecation test`}         ${ScalacDeprecation}
@@ -88,7 +90,10 @@ class ScalacOptionsCoreSpec extends ScalacOptionsSpec {
     ScalacPrint =>= "-print"
 
   def `-sourcepath test` =
-    ScalacSourcepath ("foo") =>= "-sourcepath foo"
+    ScalacSourcepath ("foo")                =>= "-sourcepath foo" and
+    ScalacSourcepath ("./bar")              =>= s"-sourcepath .${FS}bar" and
+    ScalacSourcepath (new File("X:\\y\\"))  =>= s"-sourcepath X:${FS}y" and
+    ScalacSourcepath (new File("/tmp/fs/")) =>= s"-sourcepath ${FS}tmp${FS}fs"
 
   def `-target test` =
     (ScalacTarget `jvm-1.6`) =>= "-target:jvm-1.6" and

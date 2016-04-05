@@ -9,6 +9,8 @@ import scala.collection.mutable.ArrayBuffer
 trait ScalacOptionsDSLExperimentalSpec
     extends Specification {
 
+  protected val FS = sys.props("file.separator")
+
   protected implicit def CheckToSpec(check: CheckDSL): SpecPart =
     if (check.isEmpty) {
       pending
@@ -16,8 +18,8 @@ trait ScalacOptionsDSLExperimentalSpec
     else {
       for {
         first :: second :: Nil <- check.grouped(2).toList
-        (expected, actual) <- second.params.zipAll(first.params, "", "")
-      } yield expected === actual
+        (actual, expected) <- first.params.zipAll(second.params, "", "")
+      } yield actual ==== expected
     }
 
   class CheckDSL

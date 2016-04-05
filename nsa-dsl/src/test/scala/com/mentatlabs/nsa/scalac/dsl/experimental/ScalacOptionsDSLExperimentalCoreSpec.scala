@@ -19,6 +19,7 @@ class ScalacOptionsDSLExperimentalCoreSpec extends ScalacOptionsDSLExperimentalS
   -nowarn              ${`-nowarn test`}
   -optimise            ${`-optimise test`}
   -print               ${`-print test`}
+  -sourcepath          ${`-sourcepath test`}
   -target              ${`-target test`}
   -unchecked           ${`-unchecked test`}
   -uniqid              ${`-uniqid test`}
@@ -120,6 +121,10 @@ class ScalacOptionsDSLExperimentalCoreSpec extends ScalacOptionsDSLExperimentalS
 
   def `-print test` = new CheckDSL { init (
     -print, "-print"
+  )}
+
+  def `-sourcepath test` = new CheckDSL { init (
+    -sourcepath ("/a/b"), ("-sourcepath", s"${FS}a${FS}b")
   )}
 
   def `-target test` = new CheckDSL { init (

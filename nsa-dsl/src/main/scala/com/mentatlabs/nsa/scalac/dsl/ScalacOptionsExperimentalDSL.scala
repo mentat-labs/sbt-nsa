@@ -20,6 +20,7 @@ trait ScalacOptionsExperimentalDSL
     with ScalacNowarnDSL
     with ScalacOptimiseDSL
     with ScalacPrintDSL
+    with ScalacSourcepathDSL
     with ScalacTargetDSL
     with ScalacUncheckedDSL
     with ScalacUniqidDSL

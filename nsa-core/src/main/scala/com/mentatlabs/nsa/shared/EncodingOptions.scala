@@ -1336,6 +1336,17 @@ trait EncodingOptions
   def `x-Big5-Solaris` = apply("x-Big5-Solaris")
   def `x-big5-solaris` = apply("x-big5-solaris")
 
+  // x-COMPOUND_TEXT
+  def COMPOUND_TEXT = apply("COMPOUND_TEXT")
+  def compound_text = apply("compound_text")
+  def `X-COMPOUND-TEXT` = apply("X-COMPOUND-TEXT")
+  def `x-compound-text` = apply("x-compound-text")
+  def `X-COMPOUND_TEXT` = apply("X-COMPOUND_TEXT")
+  def `x-COMPOUND_TEXT` = apply("x-COMPOUND_TEXT")
+  def `x-compound_text` = apply("x-compound_text")
+  def `X11-COMPOUND_TEXT` = apply("X11-COMPOUND_TEXT")
+  def `x11-compound_text` = apply("x11-compound_text")
+
   // x-euc-jp-linux
   def `EUC-JP-LINUX` = apply("EUC-JP-LINUX")
   def `euc-jp-linux` = apply("euc-jp-linux")
@@ -1475,6 +1486,18 @@ trait EncodingOptions
   def `X-IBM1124` = apply("X-IBM1124")
   def `x-IBM1124` = apply("x-IBM1124")
   def `x-ibm1124` = apply("x-ibm1124")
+
+  // x-IBM1166
+  def `1166` = apply("1166")
+  def CP1166 = apply("CP1166")
+  def cp1166 = apply("cp1166")
+  def `IBM-1166` = apply("IBM-1166")
+  def `ibm-1166` = apply("ibm-1166")
+  def IBM1166 = apply("IBM1166")
+  def ibm1166 = apply("ibm1166")
+  def `X-IBM1166` = apply("X-IBM1166")
+  def `x-IBM1166` = apply("x-IBM1166")
+  def `x-ibm1166` = apply("x-ibm1166")
 
   // x-IBM1364
   def `1364` = apply("1364")

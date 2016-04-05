@@ -7,6 +7,8 @@ import scala.collection.mutable.{LinkedHashSet => MSet}
 trait ScalacOptionsSpec
     extends Specification {
 
+  protected val FS = sys.props("file.separator")
+
   protected implicit class PimpedScalacOption(scalacOption: ScalacOption) {
     def =>=(expected: String) = {
       /* unit tests check options by joining them with a space
