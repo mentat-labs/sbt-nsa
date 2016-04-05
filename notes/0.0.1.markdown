@@ -1,0 +1,9 @@
+Initial release!  
+Time to show the world that `-encoding UTF-8` is valid Scala code!
+
+### Changes:
+* Published to Sonatype OSS
+* All scalac versions from 2.0.0 to 2.12.0-M4
+* Two grammars are available:
+  * Backtick DSL: `` `-target` `jvm-1.8` ``
+  * Experimental DSL: `-target jvm-1.8`

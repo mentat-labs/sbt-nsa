@@ -2,19 +2,17 @@ No Strings Attached
 ===================
 
 [![Build Status](https://travis-ci.org/mentat-labs/sbt-nsa.svg?branch=master)](https://travis-ci.org/mentat-labs/sbt-nsa)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.mentatlabs.nsa/sbt-nsa_2.10_0.13/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.mentatlabs.nsa/sbt-nsa_2.10_0.13)
-[![Scaladoc](https://javadoc-badge.appspot.com/com.mentatlabs.nsa/sbt-nsa_2.10_0.13.svg?label=scaladoc)](http://javadoc-badge.appspot.com/com.mentatlabs.nsa/sbt-nsa_2.10_0.13)
-[![License](https://img.shields.io/badge/license-BSD%203--clause-brightgreen.svg)](https://spdx.org/licenses/BSD-3-Clause)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.mentatlabs.nsa/sbt-nsa/badge.svg)](https://repo1.maven.org/maven2/com/mentatlabs/nsa/sbt-nsa_2.10_0.13/0.0.1/sbt-nsa-0.0.1.pom)
+[![Scaladoc](https://img.shields.io/badge/scaladoc-0.0.1-brightgreen.svg)](https://oss.sonatype.org/service/local/repositories/releases/archive/com/mentatlabs/nsa/sbt-nsa_2.10_0.13/0.0.1/sbt-nsa-0.0.1-javadoc.jar/!/index.html)
+[![License](https://img.shields.io/badge/license-BSD%203--clause-brightgreen.svg)](https://spdx.org/licenses/BSD-3-Clause.html)
 [![Codacy](https://api.codacy.com/project/badge/grade/3b1c081128d64a1ba128e881d02424e5)](https://www.codacy.com/app/melezov/sbt-nsa)
 
-Installation:
-
-In `project/plugins.sbt`
+To install, add the NSA plugin to your `project/plugins.sbt`
 
     addSbtPlugin("com.mentatlabs.nsa" % "sbt-nsa" % "0.0.1")
 
 
-Strongly typed Scala version (note the \`backticks\`):
+Afterwards, you will be able to abuse strongly typed Scala versions (note the \`backticks\`):
 
     scala> `2.11.8`
     res0: com.mentatlabs.nsa.scalac.ScalacVersion = 2.11.8
