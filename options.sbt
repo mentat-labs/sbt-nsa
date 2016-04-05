@@ -14,6 +14,7 @@ nsaScalacOptions ++= Seq(
 , -Xfatal-warnings
 , -Xlint
 , -Xno-forwarders
+, -Xno-uescape
 , -Xstrict-inference
 , -Xverify
 , -Yclosure-elim

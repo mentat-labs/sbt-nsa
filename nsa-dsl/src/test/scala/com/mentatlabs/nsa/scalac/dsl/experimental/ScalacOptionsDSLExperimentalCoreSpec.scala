@@ -3,6 +3,7 @@ package scalac
 package dsl
 package experimental
 
+import java.io.File
 import java.nio.charset.Charset
 
 class ScalacOptionsDSLExperimentalCoreSpec extends ScalacOptionsDSLExperimentalSpec {
@@ -124,7 +125,8 @@ class ScalacOptionsDSLExperimentalCoreSpec extends ScalacOptionsDSLExperimentalS
   )}
 
   def `-sourcepath test` = new CheckDSL { init (
-    -sourcepath ("/a/b"), ("-sourcepath", s"${FS}a${FS}b")
+    -sourcepath ("/a/b")         , ("-sourcepath", s"${FS}a${FS}b")
+  , -sourcepath (new File("./x")), ("-sourcepath", s".${FS}x")
   )}
 
   def `-target test` = new CheckDSL { init (

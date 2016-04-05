@@ -92,7 +92,7 @@ class ScalacOptionsCoreSpec extends ScalacOptionsSpec {
   def `-sourcepath test` =
     ScalacSourcepath ("foo")                =>= "-sourcepath foo" and
     ScalacSourcepath ("./bar")              =>= s"-sourcepath .${FS}bar" and
-    ScalacSourcepath (new File("X:\\y\\"))  =>= s"-sourcepath X:${FS}y" and
+    ScalacSourcepath (new File("X:/y/"))    =>= s"-sourcepath X:${FS}y" and
     ScalacSourcepath (new File("/tmp/fs/")) =>= s"-sourcepath ${FS}tmp${FS}fs"
 
   def `-target test` =

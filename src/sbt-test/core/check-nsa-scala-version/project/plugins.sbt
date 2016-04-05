@@ -1,1 +1,1 @@
-addSbtPlugin("com.mentatlabs.nsa" % "nsa-plugin" % sys.props("project.version")
+addSbtPlugin("com.mentatlabs.nsa" % "sbt-nsa" % sys.props("project.version"))

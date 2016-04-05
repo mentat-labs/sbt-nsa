@@ -8,3 +8,5 @@
 .settings
 
 target
+
+private.sbt
