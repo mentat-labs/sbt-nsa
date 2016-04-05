@@ -2,11 +2,10 @@ package com.mentatlabs.nsa
 package scalac
 package options
 
-/** -Xmax-classfile-name <n>
-  * ====================
-  *   2.9.0 - 2.9.0-1: Maximum filename length for generated classes
-  *    2.9.1 - 2.12.0: Maximum filename length for generated classes
-  */
+/* -Xmax-classfile-name <n>
+ * ========================
+ *    2.9.0 - 2.12.0: Maximum filename length for generated classes
+ */
 object ScalacXMaxClassfileName
     extends ScalacOptionValueContainer[Int]("-Xmax-classfile-name", ScalacVersions.`2.9.0`) {
 

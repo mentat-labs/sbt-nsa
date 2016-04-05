@@ -2,11 +2,11 @@ package com.mentatlabs.nsa
 package scalac
 package options
 
-/** -Xlint:<_,warning,-warning>
-  * ======
-  *    2.9.1 - 2.11.1: Enable recommended additional warnings.
-  *   2.11.2 - 2.12.0: Enable or disable specific warnings: `_' for all, `-Xlint:help' to list
-  */
+/* -Xlint:<_,warning,-warning>
+ * ===========================
+ *    2.9.1 - 2.11.1: Enable recommended additional warnings.
+ *   2.11.2 - 2.12.0: Enable or disable specific warnings: `_' for all, `-Xlint:help' to list
+ */
 object ScalacXLint
     extends ScalacOptionChoiceContainer[String]("-Xlint", ScalacVersions.`2.9.1`)
     with ScalacOptionEmptyChoice {

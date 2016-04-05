@@ -21,7 +21,6 @@ where possible standard options include:
   -no-specialization              Ignore @specialize annotations.
   -nobootcp                       Do not use the boot classpath for the scala jars.
   -nowarn                         Generate no warnings.
-  -optimise                       Generates faster bytecode by applying optimisations to the program
   -print                          Print program with Scala-specific features removed.
   -sourcepath <path>              Specify location(s) of source files.
   -target:<target>                Target platform for object files. All JVM 1.5 - 1.7 targets are deprecated. (jvm-1.5,jvm-1.6,jvm-1.7,jvm-1.8) default:jvm-1.8
@@ -33,3 +32,7 @@ where possible standard options include:
   -verbose                        Output messages about what the compiler is doing.
   -version                        Print product version and exit.
   @<file>                         A text file containing compiler arguments (options and source files)
+
+Deprecated settings:
+  -optimise                       Compiler flag for the optimizer in Scala 2.11
+                                    deprecated: In 2.12, -optimise enables -Yopt:l:classpath. Check -Yopt:help for using the Scala 2.12 optimizer.

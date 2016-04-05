@@ -2,10 +2,10 @@ package com.mentatlabs.nsa
 package scalac
 package options
 
-/** -Yopt:<_,optimization,-optimization>
-  * ====================================
-  *   2.11.3 - 2.12.0: Enable optimizations: `_' for all, `-Yopt:help' to list
-  */
+/* -Yopt:<_,optimization,-optimization>
+ * ====================================
+ *   2.11.3 - 2.12.0: Enable optimizations: `_' for all, `-Yopt:help' to list
+ */
 object ScalacYOpt
     extends ScalacOptionChoiceContainer[String]("-Yopt", ScalacVersions.`2.11.3`) {
 

@@ -2,11 +2,11 @@ package com.mentatlabs.nsa
 package scalac
 package options
 
-/** -Ystop-before:<phases>
-  * =====================
-  *     2.9.0 - 2.9.3: Stop before given phase <phase>.
-  *   2.10.0 - 2.12.0: Stop before <phases>
-  */
+/* -Ystop-before:<phases>
+ * ======================
+ *     2.9.0 - 2.9.3: Stop before given phase <phase>. // previously -Ystop-before:<phase>
+ *   2.10.0 - 2.12.0: Stop before <phases>
+ */
 object ScalacYStopBefore
     extends ScalacOptionChoiceContainer[String]("-Ystop-before", ScalacVersions.`2.9.0`) {
 

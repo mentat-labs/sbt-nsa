@@ -30,7 +30,7 @@ object ScalacHelp {
   import scala.collection.mutable.LinkedHashMap
 
   def read(resource: String) = util.Try {
-    Resource.fromClasspath(resource).string(UTF8).ensuring(_.length >= 1000,
+    Resource.fromClasspath(resource).string(UTF8).ensuring(_.length >= 500,
       s"Resource doesn't look like a help listing: $resource")
   }.toOption
 

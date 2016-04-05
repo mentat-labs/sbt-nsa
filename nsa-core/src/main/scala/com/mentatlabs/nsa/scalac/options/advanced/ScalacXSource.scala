@@ -2,10 +2,10 @@ package com.mentatlabs.nsa
 package scalac
 package options
 
-/** -Xsource:<version>
-  * ==================
-  *   2.11.0 - 2.12.0: Treat compiler input as Scala source for the specified version, see SI-8126.
-  */
+/* -Xsource:<version>
+ * ==================
+ *   2.11.0 - 2.12.0: Treat compiler input as Scala source for the specified version, see SI-8126.
+ */
 object ScalacXSource
     extends ScalacOptionChoiceContainer[String]("-Xsource", ScalacVersions.`2.11.0`) {
 

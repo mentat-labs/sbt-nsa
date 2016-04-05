@@ -2,13 +2,15 @@ package com.mentatlabs.nsa
 package scalac
 package options
 
-/** -Yskip:<phases>
-  * ==============
-  *     2.6.0 - 2.7.7: Skip <phase>
-  *     2.8.0 - 2.8.2: Skip <phase> or "all"
-  *     2.9.0 - 2.9.3: Skip <phase>.
-  *   2.10.0 - 2.12.0: Skip <phases>
-  */
+/* -Yskip:<phases>
+ * ===============
+ *     2.0.0 - 2.1.0: Skip <phases> (see below) // previously -skip:<phase>
+ *     2.1.1 - 2.5.1: Skip <phase> // previously -skip:<phase>
+ *     2.6.0 - 2.7.7: Skip <phase> // previously -Yskip:<phase>
+ *     2.8.0 - 2.8.2: Skip <phase> or "all" // previously -Yskip:<phase>
+ *     2.9.0 - 2.9.3: Skip <phase>. // previously -Yskip:<phase>
+ *   2.10.0 - 2.12.0: Skip <phases>
+ */
 object ScalacYSkip
     extends ScalacOptionChoiceContainer[String]("-Yskip", ScalacVersions.`2.6.0`) {
 

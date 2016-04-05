@@ -2,12 +2,12 @@ package com.mentatlabs.nsa
 package scalac
 package options
 
-/** -language:<_,feature,-feature>
-  * ==============================
-  *   2.10.0 - 2.11.0: Enable one or more language features.
-  *            2.11.1: Enable one or more language features: dynamics,postfixOps,reflectiveCalls,implicitConversions,higherKinds,existentials,experimental.macros.
-  *   2.11.2 - 2.12.0: Enable or disable language features: `_' for all, `-language:help' to list
-  */
+/* -language:<_,feature,-feature>
+ * ==============================
+ *   2.10.0 - 2.11.0: Enable one or more language features.
+ *            2.11.1: Enable one or more language features: dynamics,postfixOps,reflectiveCalls,implicitConversions,higherKinds,existentials,experimental.macros.
+ *   2.11.2 - 2.12.0: Enable or disable language features: `_' for all, `-language:help' to list
+ */
 object ScalacLanguage extends ScalacOptionChoiceContainer[String]("-language", ScalacVersions.`2.10.0`) {
   def `_` = apply("_")
   def help = apply("help")

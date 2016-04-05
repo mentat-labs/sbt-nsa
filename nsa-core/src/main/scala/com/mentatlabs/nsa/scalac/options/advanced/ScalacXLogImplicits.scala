@@ -2,10 +2,10 @@ package com.mentatlabs.nsa
 package scalac
 package options
 
-/** -Xlog-implicits
-  * ===============
-  *     2.7.0 - 2.8.2: Show more info on why some implicits are not applicable
-  *    2.9.0 - 2.12.0: Show more detail on why some implicits are not applicable.
-  */
+/* -Xlog-implicits
+ * ===============
+ *     2.7.0 - 2.8.2: Show more info on why some implicits are not applicable
+ *    2.9.0 - 2.12.0: Show more detail on why some implicits are not applicable.
+ */
 case object ScalacXLogImplicits
     extends ScalacOptionBoolean("-Xlog-implicits", ScalacVersions.`2.7.0`)

@@ -2,12 +2,13 @@ package com.mentatlabs.nsa
 package scalac
 package options
 
-/** -Ystatistics:<_,phase,-phase>
-  * ============
-  *     2.6.0 - 2.8.2: Print compiler statistics
-  *    2.9.0 - 2.11.2: Print compiler statistics.
-  *   2.11.3 - 2.12.0: Print compiler statistics for specific phases: `_' for all, `-Ystatistics:help' to list
-  */
+/* -Ystatistics:<_,phase,-phase>
+ * =============================
+ *     2.0.0 - 2.5.1: Print compiler statistics // previously -statistics
+ *     2.6.0 - 2.8.2: Print compiler statistics // previously -Ystatistics
+ *    2.9.0 - 2.11.2: Print compiler statistics. // previously -Ystatistics
+ *   2.11.3 - 2.12.0: Print compiler statistics for specific phases: `_' for all, `-Ystatistics:help' to list
+ */
 object ScalacYStatistics
     extends ScalacOptionChoiceContainer[String]("-Ystatistics", ScalacVersions.`2.6.0`) {
 

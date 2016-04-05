@@ -2,11 +2,11 @@ package com.mentatlabs.nsa
 package scalac
 package options
 
-/** -Xelide-below <n>
-  * =============
-  *     2.8.0 - 2.8.2: Generate calls to @elidable-marked methods only if method priority is greater than argument.
-  *    2.9.0 - 2.12.0: Calls to @elidable methods are omitted if method priority is lower than argument
-  */
+/* -Xelide-below <n>
+ * =================
+ *     2.8.0 - 2.8.2: Generate calls to @elidable-marked methods only if method priority is greater than argument.
+ *    2.9.0 - 2.12.0: Calls to @elidable methods are omitted if method priority is lower than argument
+ */
 object ScalacXElideBelow
     extends ScalacOptionValueContainer[Int]("-Xelide-below", ScalacVersions.`2.8.0`) {
 
